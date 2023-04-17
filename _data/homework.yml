@@ -1,0 +1,9 @@
+semester: Fall 2023
+home: assets/homework/F23
+homework:
+- name: Assignment 1
+  due: FIXME
+  #blank: A1.pdf
+  #sections: 1.1-1.4, 2.1-2.4
+  #seealsoname: Classical iterative methods slides
+  #seealsopdf: https://bueler.github.io/nade/assets/slides/iterative.pdf
