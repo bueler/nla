@@ -15,13 +15,13 @@ Email me at [elbueler@alaska.edu](mailto:elbueler@alaska.edu).  I hold [office h
 
 ### Canvas course page
 
-Log in to [canvas.alaska.edu/courses/FIXME](FIXME) for the Zoom lecture link, Homework and Exam solutions, and to see your grades.
+Log in to [canvas.alaska.edu/courses/15800](https://canvas.alaska.edu/courses/15800) for the Zoom lecture link, Homework and Exam solutions, and to see your grades.
 
 **UNDER CONSTRUCTION**
 
 ### Getting Started
 
-* Attend lectures: FIXME
+* Attend lectures: MWF 1:00–2:00pm in Chapman 107.
 
 * Read the [Syllabus (PDF)](assets/general/F23/syllabus.pdf).
 
