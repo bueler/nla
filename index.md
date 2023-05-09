@@ -25,7 +25,7 @@ Log in to [canvas.alaska.edu/courses/15800](https://canvas.alaska.edu/courses/15
 
 * Read the [Syllabus (PDF)](assets/general/F23/syllabus.pdf).
 
-* See the [Schedule (PDF)](assets/general/S23/schedule.pdf).  Check it often for due dates, and for which topics come next!
+* See the [Schedule (PDF)](assets/general/F23/schedule.pdf).  Check it often for due dates, and for which topics come next!
 
 * Check out the near-weekly [homework Assignments](homework.html).
 
@@ -33,7 +33,7 @@ Log in to [canvas.alaska.edu/courses/15800](https://canvas.alaska.edu/courses/15
 
 * Homework will require some programming in Matlab/Octave or some other suitable scientific computing language.  See the [Computing](computing.html) tab and [_Programming languages compared_ (PDF)](https://bueler.github.io/compareMOP.pdf) for recommended languages.
 
-
+[<img src="assets/images/trefbau.jpg" height="250">](https://my.siam.org/Store/Product/viewproduct/?ProductId=42813031 "the textbook")
 
 * What are we studying?  Check out these Wikipedia pages:
 
@@ -44,4 +44,4 @@ Log in to [canvas.alaska.edu/courses/15800](https://canvas.alaska.edu/courses/15
 ---
 _Site design derived from [coordinated Calc I](https://uaf-math251.github.io/), an original [Jekyll](https://jekyllrb.com/) design by [David Maxwell](https://damaxwell.github.io/)._
 
-[<img src="assets/images/GitHub-Mark-32px.png" align="right">](https://github.com/bueler/nade "github repository for this site")
+[<img src="assets/images/GitHub-Mark-32px.png" align="right">](https://github.com/bueler/nla "github repository for this site")
