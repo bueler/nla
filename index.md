@@ -9,6 +9,8 @@ title: Bueler's Math F614 in Fall 2023 at UAF
 
 Welcome to the public homepage of **Math F614 Numerical Linear Algebra**, Fall 2023, in the [Dept. of Mathematics and Statistics](http://www.uaf.edu/dms/) at the [University of Alaska Fairbanks](http://www.uaf.edu/).
 
+If you plan to be present in Fairbanks during the semester, please sign up for the in-person "901" section (crn 75513), and plan to attend lecture in Chapman 107.  If you are genuinely remote, signing up for the web-based "701" section (crn 75512) is just fine!
+
 #### Instructor:  [Ed Bueler](http://bueler.github.io/)
 
 Email me at [elbueler@alaska.edu](mailto:elbueler@alaska.edu).  I hold [office hours](http://bueler.github.io/OffHrs.htm) in Chapman 306C.
@@ -21,7 +23,7 @@ Log in to [canvas.alaska.edu/courses/15800](https://canvas.alaska.edu/courses/15
 
 ### Getting Started
 
-* Attend lectures: MWF 1:00–2:00pm in Chapman 107.
+* Attend lectures: MWF 2:15-3:15pm in Chapman 107, or online (details forthcoming).
 
 * Read the [Syllabus (PDF)](assets/general/F23/syllabus.pdf).
 
