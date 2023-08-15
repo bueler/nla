@@ -1,9 +1,15 @@
 semester: Fall 2023
 home: assets/worksheets/F23
 worksheets:
-- name: FIXME
-  description: FIXME
-  #blank: whyitworks.pdf
-  #more: see
-  #solutions: solns/singular.pdf
+- name: Visualize vectors and matrices
+  description: How do you visualize a matrix, anyway?
+  blank: visualize.pdf
+- name: Matrix norm essentials
+  description: Summary of facts you really want to know about matrix norms.
+  blank: normmanifesto.pdf
+#- name: FIXME
+#  description: FIXME
+#  blank: whyitworks.pdf
+#  more: see
+#  solutions: solns/singular.pdf
 

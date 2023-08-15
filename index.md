@@ -41,8 +41,6 @@ Log in to [canvas.alaska.edu/courses/15800](https://canvas.alaska.edu/courses/15
 
     * [FIXME](FIXME) for FIXME
 
-* See the one-page [advertisement (PDF)](FIXME) for this course.
-
 ---
 _Site design derived from [coordinated Calc I](https://uaf-math251.github.io/), an original [Jekyll](https://jekyllrb.com/) design by [David Maxwell](https://damaxwell.github.io/)._
 
