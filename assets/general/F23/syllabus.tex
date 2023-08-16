@@ -22,8 +22,8 @@
     linkcolor=blue,
     filecolor=magenta,      
     urlcolor=blue,
-    pdftitle={Syllabus for MATH F614 Fall 2023 (Bueler)},
-    pdfpagemode=FullScreen,
+    pdfauthor={Ed Bueler}
+    pdftitle={Syllabus for MATH F614 Fall 2023},
     }
 
 % Paragraph spacing
@@ -60,7 +60,7 @@
 \strut & \cr
 {\emph{Class meeting}} & MWF 2:15--3:15 pm, Chapman 107 \cr
 \strut & \cr
-{\emph{CRNs}} & in-person:\, 75513 \quad online: 75512 \href{https://canvas.alaska.edu/courses/15800}{(zoom link on Canvas site)}\cr
+{\emph{CRNs}} & in-person:\, 75513 \quad online: 75512 \href{https://canvas.alaska.edu/courses/15800}{(find zoom link on Canvas)}\cr
 \strut & \cr
 {\emph{Public website}} & \href{https://bueler.github.io/nla/}{\texttt{bueler.github.io/nla}}\cr
 \strut & \cr
@@ -73,19 +73,29 @@
 }
 \hfil}}
 
+
 \heading{Description}
-This course covers numerical approximations of partial and ordinary differential equations on computers.  PDEs are the underlying structure for fluid flow, electric/magnetic fields, thermodynamics, elastic deformation, quantum mechanics and chemistry, and even financial mathematics.  ODEs are even more universal, sometimes as parts of PDE problems.  The course will include both linear and nonlinear examples.
+This course covers how matrices and vectors of any (finite) dimension are actually handled in a fast and accurate manner on computers. This is essential technology for scientific and engineering computation.  Applications of these ideas include solving large linear systems, least squares methods, systems of ordinary differential equations, inverse methods in geophysics, and Markov processes.  Numerical linear algebra is equally important for partial differential equations, network problems, and optimization, and it is an underlying theory in machine learning.
 
-The emphasis will be on finite difference methods for PDEs.  However, we will also understand ODE numerical schemes more deeply than from the brief introduction in an undergraduate differential equations course like MATH 302.
+We will place linear algebra in a clear mathematical framework, emphasizing the geometry of the matrix action.  We will cover famous matrix decompositions and algorithms: singular value decomposition (SVD), Householder reflections and the QR decomposition, LU and Cholesky decompositions, spectral theorem, Schur decomposition, the QR method for eigenvalues, and Krylov methods.  Additionally, the conditioning of problems and the stability of floating-point algorithms are central themes.
 
-We will not be satisfied with seeing pretty pictures coming from the computer, so we will use mathematical analysis on numerical methods.  How well do our numbers correctly approximate the intended differential equation?  How are these methods implemented and  verified?  When are they stable?  Do we know in advance that they converge?
-
-Homework assignments and a student-chosen project will require actual implementations in Matlab, Python, or another suitable language of your choice.  I will support Matlab but you may use other languages for assignments and the project.  Lectures will include Matlab demonstrations, plus getting-started help.  However, if you have not done it before then you will need to show initiative in learning numerical computation.
+Student competence with a scientific computing language is a goal of the course. Homework assignments will require actual implementations.  Examples/demonstrations in class, and also homework solutions, will routinely use Matlab/Octave, but student work can be done in Matlab, Octave, Python, or Julia.  (These are well-suited to numerical linear algebra.)  The instructor and the textbook will support Matlab/Octave, includign with getting-started help.  If you have never used a programming language before then please show initiative in learning this aspect of the course.
 
 
 \heading{Course Goals and Student Learning Outcomes}
-At the end of the course you will be able to evaluate and use numerical tools for solving scientific and engineering problems involving differential equations.  You will be able to code some of the basic methods and you will have the mathematical start needed for learning other approaches like the finite element method and spectral methods.  Student competence with actual scientific computing is a goal of the course; you will be comfortable using Matlab, Python, or a similar language for programming standard mathematial algorithms.
+At the end of this course you will be able to understand and apply the ideas and algorithms of numerical linear algebra.  You will be very comfortable with Matlab or a similar scientific computing language.
 
+
+\heading{The Hybrid Classroom}
+There are two sections of the class, in-person (901) and online (701).  These two sections are treated as one course and they occur simultaneously.  In this ``hybrid'' set-up, each lecture will be a (recorded) Zoom session generated from Chapman 107.  The link for the Zoom session is \href{https://canvas.alaska.edu/courses/15800}{in Canvas}.  The recordings will be linked from inside Canvas only; they are not public.
+
+I will try to treat all students the same regarding proctored assessments (see below) and participation during class time.  Students have certain obligations to help make this work:
+\begin{itemize}
+\item \textbf{in-person students}: To allow in-class play with Matlab etc., and to help classroom communication for e.g. group work, please bring a laptop if you can, and join the Zoom session so you can see the online students.  I prefer for in-person students to turn in their homework assignments on paper.
+\item \textbf{online students}: Please sign into the Zoom session, from Canvas, just before class starts.  Please participate as energetically as you can, and, if possible, keep your camera on.  For in-class group work, try to get any worksheet PDFs from the \href{https://bueler.github.io/nla/}{public site} before class starts.  When you turn in homework assignments electronically, please generate clear, well-ordered, and combined PDFs; this may require scanning documents.  You will need to schedule proctoring for the in-class assessments (see below), or make it in person on those days.
+\end{itemize}
+
+FIXME
 
 \heading{Schedule and Online Materials}
 The \href{https://bueler.github.io/nade/}{public course website} includes a \href{https://bueler.github.io/nade/assets/general/S23/schedule.pdf}{schedule} listing the textbook sections to be covered during each lecture, the due date of each homework Assignment, and the dates for the Midterm and Final Exams.  Please consult this schedule frequently; it is subject to change and will be kept up to date.
@@ -138,10 +148,6 @@ Exercises on the homework will require Matlab, or another suitable language, bot
 Homework assignments and their due dates will regularly be posted at the \href{https://bueler.github.io/nade/}{\texttt{public website}}.  The site also has a daily schedule of topics.  The schedule will be updated on an ongoing basis to reflect which topics were actually covered each day, so it is subject to change.  The public website will also link a growing list of short Matlab codes; this is a good resource for coding examples.
 
 Problems very similar to, or shortened versions of, Homework problems will appear on the in-class Midterm Exam.
-
-
-\heading{Project}
-The project is in two parts, with the first part due midsemester and the second due just before final exams (dates above).  The topic will mostly be up to you, but I will make suggestions, and I reserve veto power on choice of topics.  The project must include both theory and practical computation.  A detailed handout will appear on Monday 27 March, outlining how you might choose a topic, and what are the expectations.
 
 
 \heading{Exams}
