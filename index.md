@@ -3,8 +3,6 @@ layout: course-page
 title: Bueler's Math F614 in Fall 2023 at UAF
 ---
 
-**UNDER CONSTRUCTION!  MANY BROKEN LINKS!**
-
 Welcome to the public homepage of **Math F614 Numerical Linear Algebra**, Fall 2023, in the [Dept. of Mathematics and Statistics](http://www.uaf.edu/dms/) at the [University of Alaska Fairbanks](http://www.uaf.edu/).
 
 If you plan to be present on campus in Fairbanks during the semester, please sign up for the in-person "901" section (crn 75513), and plan to attend lecture in Chapman 107.  If you are remote, signing up for the web-based "701" section (crn 75512) is just fine!
@@ -16,8 +14,6 @@ Email me at [elbueler@alaska.edu](mailto:elbueler@alaska.edu).  I hold [office h
 ### Canvas course page
 
 Log in to [canvas.alaska.edu/courses/15800](https://canvas.alaska.edu/courses/15800) for the lecture Zoom link, Homework and Exam solutions, and to see your grades.
-
-**UNDER CONSTRUCTION**
 
 ### Getting Started
 
@@ -38,11 +34,13 @@ Log in to [canvas.alaska.edu/courses/15800](https://canvas.alaska.edu/courses/15
 * What are we studying?  Check out these Wikipedia pages for the topics we will get to, in this approximate order:
 
     * [matrix-vector and matrix-matrix multiplication](https://en.wikipedia.org/wiki/Matrix_multiplication)
+    * [orthogonal matrices](https://en.wikipedia.org/wiki/Orthogonal_matrix)
     * [singular value decomposition](https://en.wikipedia.org/wiki/Singular_value_decomposition)
     * [QR factorization](https://en.wikipedia.org/wiki/QR_decomposition)
     * [least squares methods](https://en.wikipedia.org/wiki/Linear_least_squares)
     * [over- and under-determined linear systems](https://en.wikipedia.org/wiki/Overdetermined_system)
     * [conditioning of problems](https://en.wikipedia.org/wiki/Condition_number)
+    * [backward stable algorithms](https://en.wikipedia.org/wiki/Numerical_stability)
     * [Gaussian elimination (LU factorization) and its variants](https://en.wikipedia.org/wiki/Gaussian_elimination)
     * [Cholesky factorization](https://en.wikipedia.org/wiki/Cholesky_decomposition)
     * [power iteration for eigenvalues](https://en.wikipedia.org/wiki/Power_iteration), an important and impractical method
