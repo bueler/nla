@@ -66,8 +66,6 @@
 \strut & \cr
 {\emph{Canvas website}} & \href{https://canvas.alaska.edu/courses/15800}{\texttt{canvas.alaska.edu/courses/15800}} \cr
 \strut & \cr
-\emph{Prerequisites} & Undergraduate linear algebra.  Exposure to computer programming.\cr
-\strut & \cr
 \emph{Required text} & L.~N.~Trefethen and D.~Bau, \textsl{Numerical Linear Algebra}, \cr
  & SIAM Press 1997 \cr
 }
@@ -75,38 +73,45 @@
 
 
 \heading{Description}
-This course covers how matrices and vectors of any (finite) dimension are actually handled in a fast and accurate manner on computers. This is essential technology for scientific and engineering computation.  Applications of these ideas include solving large linear systems, least squares methods, systems of ordinary differential equations, inverse methods in geophysics, and Markov processes.  Numerical linear algebra is equally important for partial differential equations, network problems, and optimization, and it is an underlying theory in machine learning.
+This course covers how matrices and vectors are actually handled in a fast and accurate manner on computers. This is essential technology for scientific and engineering computation.  Applications include solving large linear systems, least squares methods, systems of ordinary differential equations, inverse methods in geophysics, and Markov processes.  Numerical linear algebra is equally important for partial differential equations, network problems, and optimization, and it is an underlying theory in machine learning.
 
 We will place linear algebra in a clear mathematical framework, emphasizing the geometry of the matrix action.  We will cover famous matrix decompositions and algorithms: singular value decomposition (SVD), Householder reflections and the QR decomposition, LU and Cholesky decompositions, spectral theorem, Schur decomposition, the QR method for eigenvalues, and Krylov methods.  Additionally, the conditioning of problems and the stability of floating-point algorithms are central themes.
 
-Student competence with a scientific computing language is a goal of the course. Homework assignments will require actual implementations.  Examples/demonstrations in class, and also homework solutions, will routinely use Matlab/Octave, but student work can be done in Matlab, Octave, Python, or Julia.  (These are well-suited to numerical linear algebra.)  The instructor and the textbook will support Matlab/Octave, includign with getting-started help.  If you have never used a programming language before then please show initiative in learning this aspect of the course.
+Student competence with a scientific computing language is a course goal, so homework assignments will require actual implementations.  Examples/demonstrations in class, and also homework solutions, will routinely use Matlab/Octave, but student work can also be done in Python or Julia.  (All of these are well-suited to numerical linear algebra; see the separate document \textsl{Programming languages compared} (\href{https://bueler.github.io/compareMOP.pdf}{\texttt{bueler.github.io/compareMOP.pdf}}.)  The instructor and the textbook support Matlab/Octave, including with getting-started help.  If you have never used a programming language before then please show initiative in learning this aspect of the course.
 
 
 \heading{Course Goals and Student Learning Outcomes}
-At the end of this course you will be able to understand and apply the ideas and algorithms of numerical linear algebra.  You will be very comfortable with Matlab or a similar scientific computing language.
+At the end you will be able to understand and apply the ideas and algorithms of numerical linear algebra.  You will be very comfortable with a scientific computing language.
+
+
+\clearpage \newpage
+\phantom{foo}
+\heading{Prerequisites}
+In summary, the prerequisites are undergraduate linear algebra, exposure to or interest in scientific programming, and a certain amount of mathematical maturity.
+
+Officially: \textsl{MATH 314 Linear Algebra or equivalent.  Recommended: MATH 421 Applied Analysis OR MATH 401 Introduction to Real Analysis OR equivalent post-calculus course in analysis.}
 
 
 \heading{The Hybrid Classroom}
-There are two sections of the class, in-person (901) and online (701).  These two sections are treated as one course and they occur simultaneously.  In this ``hybrid'' set-up, each lecture will be a (recorded) Zoom session generated from Chapman 107.  The link for the Zoom session is \href{https://canvas.alaska.edu/courses/15800}{in Canvas}.  The recordings will be linked from inside Canvas only; they are not public.
-
-I will try to treat all students the same regarding proctored assessments (see below) and participation during class time.  Students have certain obligations to help make this work:
+There are two sections of the class, in-person (901) and online (701).  They are treated as one course and occur simultaneously.  In this ``hybrid'' set-up, each lecture will be a recorded Zoom session generated from Chapman 107.  (The link for the Zoom session is \href{https://canvas.alaska.edu/courses/15800}{in Canvas}.  The recordings will be linked from inside Canvas only; they are not public.)  I will try to treat all students the same regarding proctored assessments---see below---and participation during class time.  Students have certain obligations to help make this work:
 \begin{itemize}
-\item \textbf{in-person students}: To allow in-class play with Matlab etc., and to help classroom communication for e.g. group work, please bring a laptop if you can, and join the Zoom session so you can see the online students.  I prefer for in-person students to turn in their homework assignments on paper.
-\item \textbf{online students}: Please sign into the Zoom session, from Canvas, just before class starts.  Please participate as energetically as you can, and, if possible, keep your camera on.  For in-class group work, try to get any worksheet PDFs from the \href{https://bueler.github.io/nla/}{public site} before class starts.  When you turn in homework assignments electronically, please generate clear, well-ordered, and combined PDFs; this may require scanning documents.  You will need to schedule proctoring for the in-class assessments (see below), or make it in person on those days.
+\item \textbf{in-person students}: To allow in-class play with Matlab etc., and to help classroom communication for e.g.~group work, please bring a laptop if you can, and perhaps join the Zoom session so you can see the online students.  I prefer for in-person students to turn in their homework assignments on paper.
+\item \textbf{online students}: Please sign into the Zoom session, from Canvas, just before class starts.  Please participate as energetically as you can, and, if possible, keep your camera on.  Regarding in-class group work, check for worksheet PDFs from the \href{https://bueler.github.io/nla/}{public site} before class starts.  When you turn in homework assignments electronically, please generate clear, well-ordered, and combined PDFs; this may require scanning documents.  You will need to schedule proctoring for the in-class assessments (see below), or attend in person on those days.
 \end{itemize}
 
-FIXME
 
 \heading{Schedule and Online Materials}
-The \href{https://bueler.github.io/nade/}{public course website} includes a \href{https://bueler.github.io/nade/assets/general/S23/schedule.pdf}{schedule} listing the textbook sections to be covered during each lecture, the due date of each homework Assignment, and the dates for the Midterm and Final Exams.  Please consult this schedule frequently; it is subject to change and will be kept up to date.
+The \href{https://bueler.github.io/nla/}{public course website} includes a \href{https://bueler.github.io/nla/assets/general/F23/schedule.pdf}{day-by-day schedule} listing the textbook sections to be covered during each lecture, the due date of each homework Assignment, and the dates for the Midterm Quizzes and Final Exam.  Please consult this schedule frequently; it is subject to change and will be kept up to date.
 
-Most course materials (syllabus, schedule, homework Assignments, code examples, project description, etc.) will be posted on the \href{https://bueler.github.io/nade/}{public website}.  Some course materials (student grades, homework and exam solutions, etc.) will go on the \href{https://canvas.alaska.edu/courses/13208}{Canvas site}.
+Most course materials (syllabus, schedule, homework Assignments, code examples, etc.) will be posted on the \href{https://bueler.github.io/nla/}{public website}.  Some course materials (student grades, homework and exam solutions) will go on the \href{https://canvas.alaska.edu/courses/15800}{Canvas site}.
 
 
 \heading{Office Hours and Communication}
-My Office Hours are shown online at \href{http://bueler.github.io/OffHrs.htm}{\texttt{bueler.github.io/OffHrs.htm}}; I hold office hours in Chapman 306C.  Students can also schedule meetings with me outside of regular office hours.  I will use Canvas to send announcements.  If I need to contact you outside of class times, I'll try to email via Canvas, so please set your email address in Canvas to one that you check regularly!
+My Office Hours are shown online at \href{http://bueler.github.io/OffHrs.htm}{\texttt{bueler.github.io/OffHrs.htm}}; I hold office hours in Chapman 306C.  Students can also schedule meetings with me outside of regular office hours.  I will use Canvas to send announcements.  If I need to contact you outside of class times, I'll try to email via Canvas.  (Please set your email address in Canvas to one that you check regularly!)
 
-\medskip
+
+\clearpage\newpage
+\phantom{foo}
 \heading{Evaluation and Grades}
 \vskip -10pt
 
@@ -114,13 +119,11 @@ My Office Hours are shown online at \href{http://bueler.github.io/OffHrs.htm}{\t
 \hline
 Homework & nearly weekly & 50\% \\
 \hline
-Project: proposal & due Monday 3 April & 5\%  \\
+Midterm Quiz 1 & in-class Wednesday 11 October  & 15\%  \\
 \hline
-Project: completed & due Monday 1 May & 15\%  \\
+Midterm Quiz 2 & in-class Wednesday 15 November & 15\%  \\
 \hline
-Midterm Exam & in-class Friday 24 March & 20\%  \\
-\hline
-Final Exam & \, in-class \emph{Thursday 4 May, 10:15--12:15} \, & 10\% \\
+Final Exam     & in-class Wednesday 13 December, 1:00--3:00pm & 20\% \\
 \hline
 total & & 100\% \, \\
 \hline
@@ -141,19 +144,21 @@ These ranges are a guarantee and a lower bound.  I reserve the right to increase
 \heading{Homework}
 Homework is due at the start of class.  \emph{Late homework is not accepted.}  If you have unavoidable circumstances which do not allow you to turn in an Assignment on time then please contact me (\href{mailto:elbueler@alaska.edu}{\texttt{elbueler\@@alaska.edu}}) in advance.
 
-The homework consists of by-hand computations, design and analysis of numerical algorithms, computer implementation of those algorithms, by-hand and computer visualization, rigorously-justified examples and counter-examples, and some proofs.
+The homework consists of by-hand computations, design and analysis of numerical algorithms, computer implementation of those algorithms, by-hand and computer visualization, rigorously-justified examples and counter-examples, and proofs.  Problems very similar to, or shortened versions of, Homework problems will appear on the in-class Midterm Quizzes.
 
-Exercises on the homework will require Matlab, or another suitable language, both as a supercalculator and for writing programs.  Help will be given to learn Matlab, including examples in lecture.  Codes on homework solutions will only be in Matlab.  See the separate document \textsl{Programming languages compared} (\href{https://bueler.github.io/compareMOP.pdf}{\texttt{bueler.github.io/compareMOP.pdf}}) for other recommended scientific computing languages.
-
-Homework assignments and their due dates will regularly be posted at the \href{https://bueler.github.io/nade/}{\texttt{public website}}.  The site also has a daily schedule of topics.  The schedule will be updated on an ongoing basis to reflect which topics were actually covered each day, so it is subject to change.  The public website will also link a growing list of short Matlab codes; this is a good resource for coding examples.
-
-Problems very similar to, or shortened versions of, Homework problems will appear on the in-class Midterm Exam.
+Exercises on the homework will require Matlab, or another suitable scientific computing language, both as a supercalculator and for writing programs.  Codes on homework solutions will only be in Matlab/Octave.  Homework assignments and their due dates will regularly be posted at the \href{https://bueler.github.io/nla/}{\texttt{public website}}.  The site also has a daily schedule of topics.  The schedule will be updated on an ongoing basis to reflect which topics were actually covered each day, so it is subject to change.  The public website will also link a growing list of short Matlab/Octave codes; this is a good resource for coding examples.
 
 
 \heading{Exams}
-There will be one in-class Midterm Exam covering mostly basic concepts and definitions. The in-class Final Exam will require you to be familiar with two of the methods we have studied.  A make-up Midterm will be given only for documented extenuating circumstances, at my discretion.  Department policy (below) does not allow me to move the time of the Final Exam.
+There will be two in-class Midterm Quizzes covering mostly basic concepts and definitions.  Each of these will be 45 minutes, with a 15 minute debrief at the end after all exams are turned in.
+
+The in-class Final Exam will require you to be familiar with two of the major methods we have studied.  I will describe the format of this Exam in more detail in due course.
+
+Make-up Quizzes or Exam will be given only for documented extenuating circumstances, at my discretion.  Department policy (below) does not allow me to move the time of the Final Exam.
 
 
+\clearpage\newpage
+\phantom{foo}
 \heading{Rules and Policies}
 \vskip -20pt
 
