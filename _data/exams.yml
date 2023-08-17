@@ -1,14 +1,17 @@
 semester: Fall 2023
 home: assets/exams/F23
 exams:
-- name: Midterm Exam
-  date: FIXME
-  info: <b>in class</b>, FIXME
+- name: Midterm Quiz 1
+  date: 11 October
+  info: <b>in class</b> or proctored
+- name: Midterm Quiz 1
+  date: 15 November
+  info: <b>in class</b> or proctored
+- name: Final Exam
+  date: 13 December, 1:00--3:00pm
+  info: <b>in class</b> or proctored
   #reviewguide: midreview.pdf
   #blank: mid.pdf
   #solutions: midsolns.pdf
-- name: Final Exam
-  date: FIXME
-  info: <b>in class</b>, FIXME
   #doc: finalessays.pdf
   #rubric: finalrubric.pdf

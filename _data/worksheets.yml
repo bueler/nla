@@ -5,7 +5,7 @@ worksheets:
   description: How do you visualize a matrix, anyway?
   blank: visualize.pdf
 - name: Matrix norm essentials
-  description: Summary of facts you really want to know about matrix norms.
+  description: Facts to know about matrix norms.
   blank: normmanifesto.pdf
 #- name: FIXME
 #  description: FIXME

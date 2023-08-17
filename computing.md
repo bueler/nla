@@ -1,9 +1,9 @@
 ---
 layout: course-page
-title: Practical computing in this course
+title: Computing in this course
 ---
 
-# Practical computing in this course
+# Computing in this course
 
 The programming and computational portions of this course are important, and students will need to work at these parts, but I am very flexible about how you accomplish them.  While my expectations about homework are quite flexible, our textbook by Trefethen & Bau definitely supports Matlab/Octave in particular.
 
