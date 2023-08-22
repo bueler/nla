@@ -5,9 +5,9 @@ worksheets:
   blank: visualize.pdf
 - name: Matrix norm essentials
   blank: normmanifesto.pdf
-#- name: FIXME
 #  description: FIXME
-#  blank: whyitworks.pdf
 #  more: see
 #  solutions: solns/singular.pdf
+#  image: trefbau.jpg
+#  file: test.py
 
