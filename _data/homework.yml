@@ -5,10 +5,10 @@ homework:
   due: Wed 6 September
   blank: A1.pdf
   sections: Lectures 1 and 2
+- name: Assignment 2
+  due: Wed 13 September
+  blank: A2.pdf
+  sections: Lectures 2,3,4
 
-#- name: Assignment 1
-#  due: FIXME
-#  blank: A1.pdf
-#  sections: 1.1-1.4, 2.1-2.4
 #  seealsoname: Classical iterative methods slides
 #  seealsopdf: https://bueler.github.io/nade/assets/slides/iterative.pdf
