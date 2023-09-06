@@ -9,7 +9,8 @@ All the codes used for demonstrations in lecture, and in solutions to homework, 
 
 ## from lecture
 
-  * FIXME
+  * [manipulations.m](assets/codes/manipulations.m)
+  * [matstats.m](assets/codes/matstats.m)
 
 ## from homework solutions
 
