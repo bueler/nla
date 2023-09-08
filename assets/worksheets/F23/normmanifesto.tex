@@ -57,23 +57,24 @@
   \item[$\circ$] 3 are \alert{induced} from vector norms: \quad $1,2,\infty$
   \item[$\circ$] 3 have \alert{easy-to-compute formulas}: \quad $1,\infty,\mathrm{Frob}$
   \end{itemize}
-\item Induced norms and the Frobenius norm have an additional \alert{multiplicative} property:
+\item Induced norms (and Frobenius) have an additional \alert{multiplicative} property:
   \begin{itemize}
   \item[$\circ$] $\|A B\|\le \|A\|\|B\|$
   \end{itemize}
-\item Induced norms satisfy $\rho(A)\le \|A\|$.
+\item Induced norms (and Frobenius) satisfy $\rho(A)\le \|A\|$.
   \begin{itemize}
   \item[$\circ$] Recall $\rho(A) = \max |\lambda|$ where $\lambda$ is an eigenvalue.
-  \item[$\circ$] However, $\rho(A)\ll\|A\|$ is common.  The norm can a very conservative estimate of $\rho(A)$.
+  \item[$\circ$] However, $\rho(A)\ll\|A\|$ is common.  The norm can be a very conservative estimate of $\rho(A)$.
   \end{itemize}
 \item The $\|\cdot\|_2$ norm is best for \alert{Euclidean ideas} and \alert{hermitian/normal matrices}.  Reasons: 
   \begin{itemize}
   \item[$\circ$]  $\|QA\|_2 = \|A\|_2$ if $Q$ is unitary ($Q^* Q = I$).
-  \item[$\circ$]  $\sigma_1(A) = \|A\|_2$.
+  \item[$\circ$]  Largest singular value: $\sigma_1(A) = \|A\|_2$.
   \item[$\circ$]  If $A^*=A$ then $\rho(A)=\|A\|_2$.
   \end{itemize}
-\item \alert{Iteration} $v, Av, A^2v, \dots$ converges if and only if
-    $$\rho(A)<1.$$
+\item \alert{Iteration}
+    $$v, Av, A^2v, \dots \text{ always converges}$$
+    $$\text{if and only if } \rho(A)<1.$$
   \begin{itemize}
   \item[$\circ$] Thus \alert{if} $\|A\|<1$ \alert{then} convergence.
   \item[$\circ$] But not conversely!
