@@ -1,0 +1,133 @@
+\documentclass[12pt]{amsart}
+%prepared in AMSLaTeX, under LaTeX2e
+\addtolength{\oddsidemargin}{-.65in} 
+\addtolength{\evensidemargin}{-.65in}
+\addtolength{\topmargin}{-.4in}
+\addtolength{\textwidth}{1.3in}
+\addtolength{\textheight}{.75in}
+
+\renewcommand{\baselinestretch}{1.05}
+
+\usepackage{verbatim} % for "comment" environment
+
+\usepackage{palatino}
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{defn}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{problem}{Problem}
+\newtheorem*{remark}{Remark}
+
+\newcommand{\mtt}{\texttt}
+\usepackage{verbatim,xspace}
+
+\usepackage[final]{graphicx}
+
+% macros
+\usepackage{amssymb}
+
+\usepackage{hyperref}
+\hypersetup{pdfauthor={Ed Bueler},
+            pdfcreator={pdflatex},
+            colorlinks=true,
+            citecolor=blue,
+            linkcolor=red,
+            urlcolor=blue,
+            }
+
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\grad}{\nabla}
+\newcommand{\lam}{\lambda}
+\newcommand{\lap}{\triangle}
+
+\newcommand{\ip}[2]{\ensuremath{\left<#1,#2\right>}}
+
+\newcommand{\image}{\operatorname{im}}
+\newcommand{\onull}{\operatorname{null}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\range}{\operatorname{range}}
+\newcommand{\trace}{\operatorname{tr}}
+
+\newcommand{\prob}[1]{\bigskip\noindent\textbf{#1.}\quad }
+\newcommand{\exer}[2]{\prob{Exercise #2 in Lecture #1}}
+
+\newcommand{\pts}[1]{(\emph{#1 pts}) }
+\newcommand{\epart}[1]{\medskip\noindent\textbf{(#1)}\quad }
+\newcommand{\ppart}[1]{\,\textbf{(#1)}\quad }
+
+\newcommand{\Matlab}{\textsc{Matlab}\xspace}
+\newcommand{\Octave}{\textsc{Octave}\xspace}
+\newcommand{\Python}{\textsc{Python}\xspace}
+\newcommand{\Julia}{\textsc{Julia}\xspace}
+
+\newcommand{\ds}{\displaystyle}
+
+
+\begin{document}
+\scriptsize \noindent Math 614 Numerical Linear Algebra (Bueler) \hfill \emph{Assigned 12 September 2023}
+\normalsize\medskip
+
+\Large\centerline{\textbf{Assignment 3}}
+\large
+\medskip
+
+\centerline{\textbf{Due Friday 22 September 2023, at the start of class}}
+\medskip
+\normalsize
+
+\thispagestyle{empty}
+
+{\huge DRAFT}
+
+\bigskip
+\noindent Please read Lectures 3,4,5,6 in the textbook \emph{Numerical Linear Algebra} by Trefethen and Bau.  This Assignment covers norms (Lecture 3) and the SVD (Lectures 4 \& 5).
+
+\bigskip
+\noindent \textsc{Do the following exercises} from Lecture 2:
+
+\begin{itemize}
+\item \textbf{Exercise 2.3} ?????
+\end{itemize}
+
+\bigskip
+\noindent \textsc{Do the following exercises} from Lecture 3:
+
+\begin{itemize}
+\item \textbf{Exercise 3.2}
+\item \textbf{Exercise 3.3}  Do parts (a) and (b) only.
+\end{itemize}
+
+\bigskip
+\noindent \textsc{Do the following exercises} from Lecture 4:
+
+\begin{itemize}
+\item \textbf{Exercise 4.3}  \begin{minipage}[t]{0.68\textwidth}
+Use the \texttt{svd} command on $A$.  Write a \Matlab/\Octave (or \Python, \Julia, \dots) \texttt{function} of the form \texttt{vismat(A)}.  Start by checking that the input matrix $A$ is in fact $2\times 2$, and that its entries are real.  Correctness of the program is more important than figure appearance.
+\end{minipage}
+\end{itemize}
+
+
+\bigskip
+\noindent \textsc{Do the following additional exercises.}
+
+\prob{P7}  On page 21 of the textbook, equation (3.10) gives a formula for the $\infty$-norm of an $m\times n$ matrix.  Prove it:
+    $$\|A\|_\infty = \max_{1\le i \le m} \|a_i^*\|_1.$$
+
+\prob{P8}  Use by-hand calculations to determine SVDs of the following matrices.  Note that in the decomposition $A = U \Sigma V^*$, the factor $\Sigma$ is unique but the factors $U$, $V$ are not, and thus there will be more than one correct answer.  (\emph{Hints.  First, think.  Then use Theorem 5.4 or Theorem 5.5 if needed.  When in doubt, check (and show) that the unitary factors are indeed unitary.})
+
+\textbf{(a)} \quad $\ds \begin{bmatrix} 5 & 0 \\ 0 & -3 \end{bmatrix}$ \qquad
+\textbf{(b)} \quad $\ds \begin{bmatrix} 0 & 0 \\ 0 & 0 \\ 3 & 0 \end{bmatrix}$ \qquad
+\textbf{(c)} \quad $\ds \begin{bmatrix} 0 & 0 \\ 1 & 1 \end{bmatrix}$ \qquad
+\textbf{(d)} \quad $\ds \begin{bmatrix} 2 & 1 \\ 1 & 2 \end{bmatrix}$
+
+
+\end{document}
