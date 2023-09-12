@@ -141,21 +141,4 @@ Consider the $3\times 3$ real matrix
 \prob{P3}  (\emph{This problem exercises additional \Matlab commands such as} \texttt{rand,ones,norm, plot,loglog,semilogy}. \emph{It is also an exercise in communicating numerical results.  In fact, because you will generate 80 matrices, please do \emph{not} turn in a giant table of the matrices themselves!  Don't even turn in a table of their ranks, norms, or determinants.  Instead, use plots to communicate data and patterns.  It may make sense to compute averages over the 10 tries, but generally the data itself should appear in a plot.})
 
 Write a \Matlab script which generates 10 random matrices of size $m\times m$ for each of these powers of two: $m=2,4,8,\dots,256$.  Every matrix will have entries which are independent random real numbers uniformly distributed on $[-5,5]$.  For each of these matrices compute the rank, the 2-norm, and the absolute value of the determinant.  Now communicate these data using plots in reasonable and appropriate ways.  Add the plot commands to your script.  A significant part of your script will be devoted to generating the plots.  In a few final sentences, describe the patterns you see.
-
-\begin{comment}
-MOVE TO ASSIGNMENT #2
-\prob{P3}  (\emph{This problem is about the most basic algorithms of linear algebra, and about their elementary implementations.  Nothing fancy.  Be careful with indices!})
-
-\epart{a}  Consider the algorithm which computes the product of a rectangular matrix $A\in \CC^{m\times n}$ and a column vector $v \in \CC^{n\times 1}$.  Count the number of floating point operations exactly, i.e.~as an expression in $m$ and $n$, for this algorithm.
-
-\epart{b}  Now implement this algorithm in a program \texttt{matvec.m} which is a function; the first line will say
-
-\texttt{function z = matvec(A,v)}
-
-\noindent The code will start by extracting the sizes of the input objects using the \Matlab command \texttt{size}.  Use \texttt{error} if the user-supplied inputs \texttt{A} and \texttt{v} have incompatible sizes.  Use \texttt{for} loops to implement the algorithm.  (That is, use \texttt{for} loops instead of colon notation; thereby show the underlying implementation.)  Check your code against some example $A\in \RR^{4\times 3}$ and $v\in \RR^3$, perhaps using \texttt{A*v} in \Matlab.
-
-\epart{c}  Write a function \texttt{matmat.m} for the product $C=AB$ of matrices $A\in \RR^{m\times n}$ and $B\in \RR^{n\times k}$.  Count operations.  Check your code against the \Matlab result \texttt{A*B} on some example with $m=3$, $n=4$, and $k=3$.
-\end{comment}
-
-
 \end{document}
