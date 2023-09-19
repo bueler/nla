@@ -1,0 +1,127 @@
+\documentclass[12pt]{amsart}
+%prepared in AMSLaTeX, under LaTeX2e
+\addtolength{\oddsidemargin}{-.65in} 
+\addtolength{\evensidemargin}{-.65in}
+\addtolength{\topmargin}{-.4in}
+\addtolength{\textwidth}{1.3in}
+\addtolength{\textheight}{.75in}
+
+\renewcommand{\baselinestretch}{1.05}
+
+\usepackage{verbatim} % for "comment" environment
+
+\usepackage{palatino}
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{defn}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{problem}{Problem}
+\newtheorem*{remark}{Remark}
+
+\newcommand{\mtt}{\texttt}
+\usepackage{verbatim,xspace}
+
+\usepackage[final]{graphicx}
+
+% macros
+\usepackage{amssymb}
+
+\usepackage{hyperref}
+\hypersetup{pdfauthor={Ed Bueler},
+            pdfcreator={pdflatex},
+            colorlinks=true,
+            citecolor=blue,
+            linkcolor=red,
+            urlcolor=blue,
+            }
+
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\grad}{\nabla}
+\newcommand{\lam}{\lambda}
+\newcommand{\lap}{\triangle}
+
+\newcommand{\ip}[2]{\ensuremath{\left<#1,#2\right>}}
+
+\newcommand{\image}{\operatorname{im}}
+\newcommand{\onull}{\operatorname{null}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\range}{\operatorname{range}}
+\newcommand{\trace}{\operatorname{tr}}
+
+\newcommand{\prob}[1]{\bigskip\noindent\textbf{#1.}\quad }
+\newcommand{\exer}[2]{\prob{Exercise #2 in Lecture #1}}
+
+\newcommand{\pts}[1]{(\emph{#1 pts}) }
+\newcommand{\epart}[1]{\medskip\noindent\textbf{(#1)}\quad }
+\newcommand{\ppart}[1]{\,\textbf{(#1)}\quad }
+
+\newcommand{\Matlab}{\textsc{Matlab}\xspace}
+\newcommand{\Octave}{\textsc{Octave}\xspace}
+\newcommand{\Python}{\textsc{Python}\xspace}
+\newcommand{\Julia}{\textsc{Julia}\xspace}
+
+\newcommand{\ds}{\displaystyle}
+
+
+\begin{document}
+\scriptsize \noindent Math 614 Numerical Linear Algebra (Bueler) \hfill \emph{assigned 20 September 2023}
+\normalsize\medskip
+
+\Large\centerline{\textbf{Assignment 4}}
+\large
+\medskip
+
+\centerline{\textbf{Due Monday 2 October 2023, at the start of class}}
+\medskip
+\normalsize
+
+\thispagestyle{empty}
+
+\bigskip
+\noindent Please read Lectures 4,5,6,7 in the textbook \emph{Numerical Linear Algebra} by Trefethen and Bau.  This Assignment covers the SVD (Lectures 4 \& 5) and projectors (Lecture 6).
+
+\bigskip
+\noindent \textsc{Do the following exercise} from Lecture 4:
+
+\begin{itemize}
+\item \textbf{Exercise 4.4}
+\end{itemize}
+
+\bigskip
+\noindent \textsc{Do the following exercises} from Lecture 5:
+
+\begin{itemize}
+\item \textbf{Exercise 5.1}
+\item \textbf{Exercise 5.2}
+\item \textbf{Exercise 5.3}
+\end{itemize}
+
+\bigskip
+\noindent \textsc{Do the following exercises} from Lecture 6:
+
+\begin{itemize}
+\item \textbf{Exercise 6.1}
+\item \textbf{Exercise 6.3} \qquad \emph{You are free to use the SVD!}
+\end{itemize}
+
+
+\bigskip
+\noindent \textsc{Do the following additional exercises.}
+
+\prob{P9}  \ppart{a} Give an example of a projector which is not an orthogonal projector.
+
+\epart{b} Show that if $P$ is a projector and $\lambda$ is an eigenvalue of $P$ then $\lambda = 0$ or $\lambda = 1$.
+
+\epart{c} Show that if a projector is invertible then it is the identity.
+
+
+\end{document}
