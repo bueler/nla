@@ -23,3 +23,7 @@ From Assignment #2:
   * [matvec.m](assets/codes/F23/matvec.m)
   * [matmat.m](assets/codes/F23/matmat.m)
   * [fourballs.m](assets/codes/F23/fourballs.m)
+
+From Assignment #3:
+
+  * [vismat.m](assets/codes/F23/vismat.m)
