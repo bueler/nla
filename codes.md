@@ -7,6 +7,8 @@ title: Matlab/Octave Codes
 
 All the codes used for demonstrations in lecture, and in solutions to homework, will appear here in due course.
 
+## used in lectures
+
   * [blockimage.m](assets/codes/F23/blockimage.m)  Show a real matrix as a grey-scale image.
   * [pie.mat](assets/codes/F23/pie.mat)  An image saved as a `.mat` Matlab data file.  Compare the [original image](assets/codes/F23/pie.png).
   * [piecompress.m](assets/codes/F23/piecompress.m)  Application of SVD.  Show low-rank, i.e. compressed, approximations of a matrix.
