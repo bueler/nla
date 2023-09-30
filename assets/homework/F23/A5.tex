@@ -1,0 +1,123 @@
+\documentclass[12pt]{amsart}
+%prepared in AMSLaTeX, under LaTeX2e
+\addtolength{\oddsidemargin}{-.65in} 
+\addtolength{\evensidemargin}{-.65in}
+\addtolength{\topmargin}{-.4in}
+\addtolength{\textwidth}{1.3in}
+\addtolength{\textheight}{.75in}
+
+\renewcommand{\baselinestretch}{1.05}
+
+\usepackage{verbatim} % for "comment" environment
+
+\usepackage{palatino}
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{defn}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{problem}{Problem}
+\newtheorem*{remark}{Remark}
+
+\newcommand{\mtt}{\texttt}
+\usepackage{verbatim,xspace}
+
+\usepackage[final]{graphicx}
+
+% macros
+\usepackage{amssymb}
+
+\usepackage{hyperref}
+\hypersetup{pdfauthor={Ed Bueler},
+            pdfcreator={pdflatex},
+            colorlinks=true,
+            citecolor=blue,
+            linkcolor=red,
+            urlcolor=blue,
+            }
+
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\grad}{\nabla}
+\newcommand{\lam}{\lambda}
+\newcommand{\lap}{\triangle}
+
+\newcommand{\ip}[2]{\ensuremath{\left<#1,#2\right>}}
+
+\newcommand{\image}{\operatorname{im}}
+\newcommand{\onull}{\operatorname{null}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\range}{\operatorname{range}}
+\newcommand{\trace}{\operatorname{tr}}
+
+\newcommand{\prob}[1]{\bigskip\noindent\textbf{#1.}\quad }
+\newcommand{\exer}[2]{\prob{Exercise #2 in Lecture #1}}
+
+\newcommand{\pts}[1]{(\emph{#1 pts}) }
+\newcommand{\epart}[1]{\medskip\noindent\textbf{(#1)}\quad }
+\newcommand{\ppart}[1]{\,\textbf{(#1)}\quad }
+
+\newcommand{\Matlab}{\textsc{Matlab}\xspace}
+\newcommand{\Octave}{\textsc{Octave}\xspace}
+\newcommand{\Python}{\textsc{Python}\xspace}
+\newcommand{\Julia}{\textsc{Julia}\xspace}
+
+\newcommand{\ds}{\displaystyle}
+
+
+\begin{document}
+\scriptsize \noindent Math 614 Numerical Linear Algebra (Bueler) \hfill \emph{assigned 2 October 2023}
+\normalsize\medskip
+
+\Large\centerline{\textbf{Assignment 5}}
+\large
+\medskip
+
+\centerline{\textbf{Due Monday 9 October 2023, at the start of class}}
+\medskip
+\normalsize
+
+\thispagestyle{empty}
+
+\bigskip
+\noindent Please read Lectures 6,7,8,9,10 in the textbook \emph{Numerical Linear Algebra} by Trefethen and Bau.  This Assignment covers projectors, QR, and Gram-Schmidt.
+
+\bigskip
+\noindent \textsc{Do the following exercises} from Lecture 6:
+
+\begin{itemize}
+\item \textbf{Exercise 6.3} \qquad \emph{Hint. You are free to use the SVD!}
+\item \textbf{Exercise 6.4}
+\end{itemize}
+
+\bigskip
+\noindent \textsc{Do the following exercises} from Lecture 7:
+
+\begin{itemize}
+\item \textbf{Exercise 7.1}
+\end{itemize}
+
+\bigskip
+\noindent \textsc{Do the following exercises} from Lecture 8:
+
+\begin{itemize}
+\item \textbf{Exercise 8.2} \qquad \begin{minipage}[t]{0.68\textwidth}
+\emph{Note. This simply asks you to implement Algorithm 8.1.  Use your preferred language.}
+\end{minipage}
+\end{itemize}
+
+
+\bigskip
+\noindent \textsc{Do the following additional exercises.}
+
+\prob{P10}  Suppose $A\in \CC^{m\times n}$, for $m\ge n$, is a matrix with ortho\emph{gonal}, but not ortho\emph{normal}, columns.  Describe its reduced QR decomposition.
+
+
+\end{document}
