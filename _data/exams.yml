@@ -4,7 +4,7 @@ exams:
 - name: Midterm Quiz 1
   date: 11 October
   info: <b>in class</b> or proctored
-  #reviewguide: mid1review.pdf
+  reviewguide: mid1review.pdf
   #blank: mid1.pdf
   #solutions: mid1solns.pdf
 - name: Midterm Quiz 2
