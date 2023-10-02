@@ -106,8 +106,8 @@ The Midterm Quiz will cover Lectures 1, 2, 3, 4, 5, 6, 7, 8 in \textbook.  The p
 \item reduced SVD, $m\ge n$: $A=\hat U \hat \Sigma V^*$
 \item full QR, $m\ge n$: $A=QR$
 \item reduced QR, $m\ge n$: $A=\hat Q \hat R$
-\item eigenvalue, $m=n$: $A = X\Lambda X^{-1}$
-\item orthogonal projector: $P=\hat Q\hat Q^* = A\left(A^* A\right)^{-1} A^*$
+\item eigenvalue, $m=n$: $A = X\Lambda X^{-1}$ \hfill {\footnotesize\emph{$\leftarrow$ not always possible!}}
+\item orthogonal projector onto $\range(A)$: $P=\hat Q\hat Q^* = A\left(A^* A\right)^{-1} A^*$
 %\item Householder reflector: $F = I - 2 v v^* / (v^* v)$
 \end{itemize}
 
@@ -130,9 +130,9 @@ The Midterm Quiz will cover Lectures 1, 2, 3, 4, 5, 6, 7, 8 in \textbook.  The p
 \item invariance of $\|\cdot\|_2$ and $\|\cdot\|_F$ matrix norms under unitaries
 \item $\|A\|_F = \sqrt{\sigma_1^2 + \dots + \sigma_r^2}$
 \item $\|A\|_2 = \sigma_1$
-\item $\rank(A)$ is number of nonzero singular values (in exact arithmetic)
 \item for $A\in \CC^{m\times n}$ with $m\ge n$, $A$ has full rank if and only if $A^* A$ is nonsingular
-%\item if $m=n$ then $|\det(A)|=\prod_{i=1}^m \sigma_i$
+\item $\rank(A)$ is number of nonzero singular values (in exact arithmetic)
+\item if $m=n$ then $|\det(A)|=\prod_{i=1}^m \sigma_i$
 \item the singular values of $A$ are the square roots of the eigenvalues of $A^*A$
 \item if $P$ is an (orthogonal) projector then $I-P$ is an (orthogonal) projector
 \item if $P$ is an orthogonal projector then $I-2P$ is unitary
@@ -149,6 +149,7 @@ The Midterm Quiz will cover Lectures 1, 2, 3, 4, 5, 6, 7, 8 in \textbook.  The p
 \item L4: the image of the unit sphere under any $m\times n$ matrix is a hyperellipsoid
 \item L5: sums like this are optimal (in what sense?) approximations of $A$:
 	$$A_\nu = \sum_{j=1}^\nu \sigma_j u_j v_j^*$$
+\item L6: given $A$, the orthogonal projector onto $\range(A)$ is constructable \dots know the formulas \dots full rank versus not full rank?
 \item L7: construction of orthogonal functions (e.g.~orthogonal polynomials) is an application of the Gram-Schmidt process, and/or of $A=QR$, when the columns of $A$ are infinitely long
 \item L8: the leading-order number of operations in some algorithm can be counted by geometric arguments
 %\item L10: Gram-Schmidt is ``triangular orthogonalization'' while Householder is ``orthogonal triangularization''\footnote{Gauss elimination is ``triangular triangularization'' \dots but it will not be on the Midterm Exam!}
