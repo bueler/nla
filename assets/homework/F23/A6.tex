@@ -1,0 +1,150 @@
+\documentclass[12pt]{amsart}
+%prepared in AMSLaTeX, under LaTeX2e
+\addtolength{\oddsidemargin}{-.65in} 
+\addtolength{\evensidemargin}{-.65in}
+\addtolength{\topmargin}{-.4in}
+\addtolength{\textwidth}{1.3in}
+\addtolength{\textheight}{.75in}
+
+\renewcommand{\baselinestretch}{1.05}
+
+\usepackage{verbatim} % for "comment" environment
+
+\usepackage{palatino}
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{defn}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{problem}{Problem}
+\newtheorem*{remark}{Remark}
+
+\usepackage{fancyvrb,xspace}
+
+\usepackage[final]{graphicx}
+
+% macros
+\usepackage{amssymb}
+
+\usepackage{hyperref}
+\hypersetup{pdfauthor={Ed Bueler},
+            pdfcreator={pdflatex},
+            colorlinks=true,
+            citecolor=blue,
+            linkcolor=red,
+            urlcolor=blue,
+            }
+
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\grad}{\nabla}
+\newcommand{\lam}{\lambda}
+\newcommand{\lap}{\triangle}
+
+\newcommand{\ip}[2]{\ensuremath{\left<#1,#2\right>}}
+
+\newcommand{\image}{\operatorname{im}}
+\newcommand{\onull}{\operatorname{null}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\range}{\operatorname{range}}
+\newcommand{\trace}{\operatorname{tr}}
+
+\newcommand{\prob}[1]{\bigskip\noindent\textbf{#1.}\quad }
+\newcommand{\exer}[2]{\prob{Exercise #2 in Lecture #1}}
+
+\newcommand{\pts}[1]{(\emph{#1 pts}) }
+\newcommand{\epart}[1]{\medskip\noindent\textbf{(#1)}\quad }
+\newcommand{\ppart}[1]{\,\textbf{(#1)}\quad }
+
+\newcommand{\Matlab}{\textsc{Matlab}\xspace}
+\newcommand{\Octave}{\textsc{Octave}\xspace}
+\newcommand{\Python}{\textsc{Python}\xspace}
+\newcommand{\Julia}{\textsc{Julia}\xspace}
+
+\newcommand{\ds}{\displaystyle}
+
+\DefineVerbatimEnvironment{mVerb}{Verbatim}{numbersep=2mm,
+frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
+
+
+
+\begin{document}
+\scriptsize \noindent Math 614 Numerical Linear Algebra (Bueler) \hfill \emph{assigned 9 October 2023}
+\normalsize\medskip
+
+\Large\centerline{\textbf{Assignment 6}}
+\large
+\medskip
+
+\centerline{\textbf{Due Friday 20 October 2023, at the start of class}}
+\medskip
+\normalsize
+
+\thispagestyle{empty}
+
+\bigskip
+\noindent Please read Lectures 8,9,10,11,12 in the textbook \emph{Numerical Linear Algebra} by Trefethen and Bau.  This Assignment mostly covers Gram-Schmidt QR, Householder reflectors and QR, and least squares.
+
+\bigskip
+\noindent \textsc{Do the following exercises} from Lecture 8:
+
+\begin{itemize}
+\item \textbf{Exercise 8.3}
+\end{itemize}
+
+\bigskip
+\noindent \textsc{Do the following exercises} from Lecture 9:
+
+\begin{itemize}
+\item \textbf{Exercise 9.3}
+\end{itemize}
+
+\bigskip
+\noindent \textsc{Do the following exercises} from Lecture 10:
+
+\begin{itemize}
+\item \textbf{Exercise 10.2}
+\item \textbf{Exercise 10.3}
+\end{itemize}
+
+
+\bigskip
+\noindent \textsc{Do the following additional exercises.}
+
+\prob{P11}  Either by using the built-in functions \texttt{polyfit()} and \texttt{polyval()}, or by setting-up linear systems and solving using Matlab's backslash command, reproduce Figures 11.1 and 11.2.  Please make at least modest effort to duplicate the appearance of these Figures.  (\emph{Hints.}  Note that \texttt{axis off} will generate a clean picture without unnecessary ticks and axes labels, and such.  But then you might want to put back the axes themselves using \texttt{plot([-6 6],[0 0],'k')} and similar commands.)
+
+
+\prob{P12}  \emph{The Matlab built-in} \texttt{qr()} \emph{computes the QR factorization using Householder transformations as described in Lecture 10.  In this problem, go ahead and use it.  While we have used QR to solve linear systems, here we see that QR has a completely different purpose.  For more, see Lectures 24--29.}
+
+\epart{a} By searching for ``unsolvable quintic polynomials'' or similar, confirm that there is a theorem which shows that fifth and higher-degree polynomials cannot be solved using finitely-many operations including roots (``radicals'').  In other words, there is no finite formula for the roots of such polynomials.  Who proved this theorem and when?  Show a quintic polynomial for which it is known that there is no finite formula.  (\emph{You do \emph{not} need to prove your claim!})
+
+\clearpage\newpage
+\epart{b} At the Matlab command line, try the following:
+\begin{mVerb}
+>> A = randn(5,5);  A = A' * A;    % create a random 5x5 symmetric matrix
+>> A0 = A;                         % save a copy of the original A
+>> [Q, R] = qr(A);  A = R * Q
+...                                % repeat about 10 times
+>> [Q, R] = qr(A);  A = R * Q
+\end{mVerb}
+We start with a random, symmetric $5\times 5$ matrix $A_0$ and then generate a sequence of new matrices $A_i$.  Specifically, each matrix $A_i$ is factored
+    $$A_i = Q_i R_i$$
+and then the next matrix $A_{i+1}$ is generated by multiplying-back in reversed order:
+    $$A_{i+1} = R_i Q_i.$$
+Watch what happens to the matrix entries when you iterate at least 10 times.  (\emph{Use a} \texttt{for} \emph{loop to see a strong effect from e.g.~100 iterations.})  What do you observe about this sequence of $A_i$?  Now compare \verb|sort(diag(A))| to \verb|sort(eig(A0))|.
+
+\epart{c} To see a bit more of what is going on in part \textbf{(b)}, show that
+    $$A_{i+1} = Q_i^* A_i Q_i.$$
+This shows $A_{i+1}$ has exactly the same eigenvalues as $A_i$; explain.
+
+\epart{d} Write a few sentences which relate part \textbf{(a)} to what happens in parts \textbf{(b)} and \textbf{(c)}.  (\emph{Hint.  Try to relate the two parts by yourself first.  Then read Lecture 25 to confirm your understanding.})
+
+
+\end{document}
