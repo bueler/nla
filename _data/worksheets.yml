@@ -9,6 +9,8 @@ worksheets:
   blank: proofadvice.pdf
 - name: Condition numbers practice
   blank: conditioning.pdf
+- name: Practice with bits ("IEEE binary12")
+  blank: binary12.pdf
 #  description: FIXME
 #  more: see
 #  solutions: solns/singular.pdf
