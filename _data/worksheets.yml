@@ -5,6 +5,8 @@ worksheets:
   blank: visualize.pdf
 - name: Matrix norm essentials
   blank: normmanifesto.pdf
+- name: One-page advice on writing proofs
+  blank: proofadvice.pdf
 #  description: FIXME
 #  more: see
 #  solutions: solns/singular.pdf
