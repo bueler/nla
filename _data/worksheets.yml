@@ -9,7 +9,9 @@ worksheets:
   blank: proofadvice.pdf
 - name: Condition numbers practice
   blank: conditioning.pdf
-- name: Practice with bits ("IEEE binary12")
+- name: IEEE 754 floating point
+  blank: ieeefloat.pdf
+- name: Practice with bits ("binary12")
   blank: binary12.pdf
 #  description: FIXME
 #  more: see
