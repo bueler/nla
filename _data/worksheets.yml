@@ -13,6 +13,8 @@ worksheets:
   blank: ieeefloat.pdf
 - name: Practice with bits ("binary12")
   blank: binary12.pdf
+- name: Unitary multiplication is backward-stable
+  blank: unitarybs.pdf
 #  description: FIXME
 #  more: see
 #  solutions: solns/singular.pdf
