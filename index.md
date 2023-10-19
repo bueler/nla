@@ -23,11 +23,11 @@ Log in to [canvas.alaska.edu/courses/15800](https://canvas.alaska.edu/courses/15
 
 * See the [Schedule (PDF)](assets/general/F23/schedule.pdf).  Check it often for due dates, and for which topics come next!
 
-* Check out the nearly-weekly [homework Assignments](homework.html).
+* Check out the nearly-weekly [homework Assignments](homework).
 
-* There are two Exams, a Midterm and a Final.  Both are in class, and the Final will happen at the scheduled time.  See the [Exams](exams.html) tab for review guides.
+* There are three Exams, two Midterm Quizzes and a Final.  All are in class, and the Final will happen at the scheduled time.  See the [Exams](exams) tab for review guides.
 
-* Homework will require programming in Matlab/Octave or some other suitable scientific computing language.  See the [Computing](computing.html) tab and the [_Programming languages compared_ (PDF)](https://bueler.github.io/compareMOP.pdf) handout for recommended languages.
+* Homework will require programming in Matlab/Octave or some other suitable scientific computing language.  See the [this page](computing) and the [_Programming languages compared_ (PDF)](https://bueler.github.io/compareMOP.pdf) handout for recommended languages.  Code example are at the [Codes tab](codes).
 
 [<img src="assets/images/trefbau.jpg" height="250">](https://my.siam.org/Store/Product/viewproduct/?ProductId=42813031 "the textbook")
 
