@@ -90,13 +90,20 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 \thispagestyle{empty}
 
 \bigskip
-\noindent Please read Lectures 11,12,13,14,15 in the textbook \emph{Numerical Linear Algebra} by Trefethen and Bau.  This Assignment covers least squares, condition number, floating point, and backward stability.
+\noindent Please read Lectures 11,12,13,14,15 in the textbook \emph{Numerical Linear Algebra} by Trefethen and Bau.  This Assignment covers least squares, conditioning, and floating point.
 
 \bigskip
 \noindent \textsc{Do the following exercises} from Lecture 11:
 
 \begin{itemize}
-\item \textbf{Exercise 11.X}
+\item \textbf{Exercise 11.3}
+\end{itemize}
+
+\bigskip
+\noindent \textsc{Do the following exercises} from Lecture 13:
+
+\begin{itemize}
+\item \textbf{Exercise 13.2} \quad \emph{Do parts \emph{(a)} and \emph{(b)} only.}
 \end{itemize}
 
 
@@ -105,6 +112,57 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 
 \medskip
 
-\prob{P13}  
+\prob{P13}  Suppose $A$ is a $100\times 100$ matrix with $\|A\|_2=20$ and $\|A\|_F=21$.  Give the sharpest possible lower bound on the 2-norm condition number of $A$.  (\emph{Hint.  Write everything in terms of singular values, and then think about best cases for $\kappa_2(A)$.})
 
+
+\prob{P14}  For each problem, compute the absolute condition number $\hat\kappa$ and the relative condition number $\kappa$; generally both formulas will involve $x$.\footnote{You can use formulas (12.3) and (12.6) without justification.}  Choose the most convenient norm, but make your choice explicit.\footnote{For \textbf{a)} and \textbf{b)} just use absolute values for the norm.}  Comment on when the problem is well-conditioned or ill-conditioned; generally this answer also depends on $x$.
+\renewcommand{\labelenumi}{\textbf{\alph{enumi})}}
+\begin{enumerate}
+\item Compute $x^3$ for $x>0$.
+\item Compute $\cos x$ for real $x$.
+\item For $x\in\CC^2$ compute $x_1x_2$, the product of the entries.
+\item Fix $a\in\RR^m$, a column vector.  Compute the inner product $a^*x$ for $x\in \RR^m$.
+\end{enumerate}
+
+
+\prob{P15}  Consider the polynomial
+\begin{align*}
+p(x) &= (x-3)^{10} \\
+     &= x^{10} - 30 x^9 + 405 x^8 - 3240 x^7 + 17010 x^6 - 61236 x^5 \\
+     &\qquad   + 153090 x^4 - 262440 x^3 + 295245 x^2 - 196830 x + 59049
+\end{align*}
+
+\epart{a} Por $x=$ \small\verb|2.85:0.01:3.15|\normalsize, plot $p(x)$ by evaluating it via its coefficients $1,-30,405,\dots$
+
+\epart{b} Plot $p(x)$ again on the same interval and same graph, using expression $(x-3)^{10}$.
+
+\epart{c} In two or three sentences, compare and contrast the bad behavior here with the ill-conditioning phenomenon in Example 12.5 on page 92, i.e.~Wilkinson's example.
+
+
+\prob{P16}  \emph{This is a reading assignment.  Actually read it!  It's good.}
+
+\medskip
+\noindent Please read the following 12 page encyclopedia entry:
+
+\medskip
+\begin{quote}
+L.~N.~Trefethen, \emph{Numerical Analysis}, in W.~T.~Gowers, editor, Princeton Companion to Mathematics, Princeton U.~Press, 2008.
+
+\href{https://people.maths.ox.ac.uk/trefethen/NAessay.pdf}{\texttt{people.maths.ox.ac.uk/trefethen/NAessay.pdf}}
+\end{quote}
+
+\medskip
+\noindent Answer the following questions with a sentence or two at most:
+\renewcommand{\labelenumi}{\emph{(\roman{enumi})}}
+\begin{enumerate}
+\item Give a one-sentence version of Trefethen's definition of ``numerical analysis.''
+% from 2nd page: Numerical analysis is the study of algorithms for solving the problems of continuous mathematics, by which we mean problems involving real or complex variables.
+\item Is analysis of rounding errors the main business of numerical analysis?  If not, what is?
+\item Gaussian elimination with pivoting is a matrix factorization.  State it.
+\item Trefethen refers to Householder triangularization, Algorithm 10.1 in our textbook, as ``QR factorization''.  But then what does the ``QR algorithm'' do?
+%\item Which of the major ``algorithmic developments in the history of numerical analysis'' have we already covered in MATH 614?  Which do you think we will (or should) cover?
+\item What is the ``central dogma'' of numerical linear algebra?
+\item Fill the blank: ``The discovery of \underline{\phantom{LJpivotingAJ}} came quickly, but its theoretical analysis has proved astonishingly hard.'' %pivoting
+\item What is the ``the biggest unsolved problem in numerical analysis''?
+\end{enumerate}
 \end{document}

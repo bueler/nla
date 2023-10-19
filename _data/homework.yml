@@ -25,6 +25,10 @@ homework:
   due: Friday 20 October
   blank: A6.pdf
   sections: Lectures 8,9,10,11
+- name: Assignment 7
+  due: Monday 30 October
+  blank: A7.pdf
+  sections: Lectures 11,12,13
 
 #  seealsoname: Classical iterative methods slides
 #  seealsopdf: https://bueler.github.io/nade/assets/slides/iterative.pdf
