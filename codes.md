@@ -35,3 +35,10 @@ From Assignment #3:
 From Assignment #5:
 
   * [mgs.m](assets/codes/F23/mgs.m)
+
+From Assignment #6:
+
+  * [hello.m](assets/codes/F23/hello.m)
+  * [svdhello.m](assets/codes/F23/svdhello.m)
+  * [house.m](assets/codes/F23/house.m)
+  * [formQ.m](assets/codes/F23/formQ.m)
