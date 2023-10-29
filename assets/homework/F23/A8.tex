@@ -1,0 +1,134 @@
+\documentclass[12pt]{amsart}
+%prepared in AMSLaTeX, under LaTeX2e
+\addtolength{\oddsidemargin}{-.65in} 
+\addtolength{\evensidemargin}{-.65in}
+\addtolength{\topmargin}{-.4in}
+\addtolength{\textwidth}{1.3in}
+\addtolength{\textheight}{.85in}
+
+\renewcommand{\baselinestretch}{1.05}
+
+\usepackage{verbatim} % for "comment" environment
+
+\usepackage{palatino}
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{defn}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{problem}{Problem}
+\newtheorem*{remark}{Remark}
+
+\usepackage{fancyvrb,xspace}
+
+\usepackage[final]{graphicx}
+
+% macros
+\usepackage{amssymb}
+
+\usepackage{hyperref}
+\hypersetup{pdfauthor={Ed Bueler},
+            pdfcreator={pdflatex},
+            colorlinks=true,
+            citecolor=blue,
+            linkcolor=red,
+            urlcolor=blue,
+            }
+
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\grad}{\nabla}
+\newcommand{\lam}{\lambda}
+\newcommand{\lap}{\triangle}
+
+\newcommand{\ip}[2]{\ensuremath{\left<#1,#2\right>}}
+
+\newcommand{\image}{\operatorname{im}}
+\newcommand{\onull}{\operatorname{null}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\range}{\operatorname{range}}
+\newcommand{\trace}{\operatorname{tr}}
+
+\newcommand{\prob}[1]{\bigskip\noindent\textbf{#1.}\quad }
+\newcommand{\exer}[2]{\prob{Exercise #2 in Lecture #1}}
+
+\newcommand{\pts}[1]{(\emph{#1 pts}) }
+\newcommand{\epart}[1]{\medskip\noindent\textbf{(#1)}\quad }
+\newcommand{\ppart}[1]{\,\textbf{(#1)}\quad }
+
+\newcommand{\Matlab}{\textsc{Matlab}\xspace}
+\newcommand{\Octave}{\textsc{Octave}\xspace}
+\newcommand{\Python}{\textsc{Python}\xspace}
+\newcommand{\Julia}{\textsc{Julia}\xspace}
+
+\newcommand{\fl}{\operatorname{fl}}
+
+\newcommand{\ds}{\displaystyle}
+
+\DefineVerbatimEnvironment{mVerb}{Verbatim}{numbersep=2mm,
+frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
+
+
+
+\begin{document}
+\scriptsize \noindent Math 614 Numerical Linear Algebra (Bueler) \hfill \emph{assigned 30 October 2023}
+\normalsize\medskip
+
+\Large\centerline{\textbf{Assignment 8}}
+\large
+\medskip
+
+\centerline{\textbf{Due Friday 10 November 2023, at the start of class}}
+\medskip
+\normalsize
+
+\thispagestyle{empty}
+
+\bigskip
+\noindent Please read Lectures 13,14,15,16,17 in the textbook \emph{Numerical Linear Algebra} by Trefethen and Bau.  This Assignment covers backward stability.  Always assume axioms (13.5) and (13.7).
+
+\bigskip
+\noindent \textsc{Do the following exercises} from Lecture 14:
+
+\begin{itemize}
+\item \textbf{Exercise 14.1} \quad \emph{Do parts \emph{(a)}, \emph{(b)}, \emph{(c)}, \emph{(f)}, and \emph{(g)} only.}
+\item \textbf{Exercise 14.2}
+\end{itemize}
+
+\bigskip
+\noindent \textsc{Do the following exercises} from Lecture 15:
+
+\begin{itemize}
+\item \textbf{Exercise 15.1} \quad \emph{Do parts \emph{(a)}, \emph{(b)}, \emph{(c)}, and \emph{(d)} only.}
+\item \textbf{Exercise 15.2}
+\end{itemize}
+
+
+\bigskip
+\noindent \textsc{Do the following additional exercises.}
+
+\medskip
+
+\prob{P17}  \emph{The goal of this exercise is to show that the usual matrix-vector multiplication algorithm is backward-stable when we regard the \emph{matrix} as the input; see part} \textbf{(c)}.  \emph{For simplicity, please assume all entries are real numbers.  Always assume axioms (13.5) and (13.7) hold.}
+
+\epart{a}  Fix $x\in \RR^1$.  Show that if the problem is scalar multiplication, $f(a) = ax$ for $a \in \RR^1$, then the obvious algorithm $\tilde f(a) = \fl(a)\otimes \fl(x)$ is backward-stable.
+
+\epart{b}  Fix $x\in \RR^2$, a column vector.   Show that if $a \in \RR^2$, a column vector, then the obvious algorithm $\tilde f(a) = \fl(a_1)\otimes \fl(x_1) \oplus \fl(a_2)\otimes \fl(x_2)$ for the inner product problem $f(a) = a^\top x$ is backward-stable.  (\emph{Hint.  You must choose a vector norm to finish the proof.})
+
+\medskip
+\noindent \emph{A proof by induction extends part} \textbf{(b)} \emph{to show that the obvious inner product algorithm is backward-stable in any dimension; see Example 15.1.  From now on you can assume it is true.}
+
+\epart{c}  Fix $x\in \RR^n$.   Show that if $A \in \RR^{m \times n}$ then the obvious algorithm $\tilde f(A)$ for the product problem $f(A) = A x$ is backward-stable.  (\emph{Hints.  Express $Ax$ using inner products.  Do not bother with scalar entries of $A$ or $x$.  You must pick a vector norm and an induced norm.})
+
+\epart{d}  Fix $A \in \RR^{m \times n}$.  Explain in at most 8 sentences why the obvious algorithm $\tilde f(x)$ for the problem $f(x) = A x$ is generally \textbf{\emph{not}} backward-stable.  However, this result depends on dimension.  In fact, for what $m$, $n$ is this $\tilde f(x)$ backward-stable?  (\emph{Hints.  The algorithm is the same as in part} \textbf{(c)}, \emph{but the input is $x$.  Use what we know for inner products.})
+
+\prob{Extra Credit}  Is the standard algorithm for matrix-matrix multiplication backward-stable?  Regard the problem with maximum flexibility, that is, as treating \emph{both} factors as inputs: $F(A,B)=AB$ for $A \in \RR^{m \times k}$ and $B \in \RR^{k \times n}$.  Explain in at most 10 sentences.  (\emph{Hints.  The answer depends on dimensions.  Be precise and consider different cases in order to get full credit.})
+
+\end{document}
