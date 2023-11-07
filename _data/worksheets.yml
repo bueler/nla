@@ -14,6 +14,8 @@ worksheets:
 - name: Practice with bits ("binary12")
   blank: binary12.pdf
   solutions: binary12-solns.pdf
+- name: Practice proving backward stability
+  blank: backstab.pdf
 - name: Unitary multiplication is backward-stable
   blank: unitarybs.pdf
 #  description: FIXME

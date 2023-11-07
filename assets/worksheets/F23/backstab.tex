@@ -1,0 +1,106 @@
+\documentclass[11pt]{amsart}
+%prepared in AMSLaTeX, under LaTeX2e
+\addtolength{\oddsidemargin}{-.9in} 
+\addtolength{\evensidemargin}{-.9in}
+\addtolength{\topmargin}{-.9in}
+\addtolength{\textwidth}{1.5in}
+\addtolength{\textheight}{1.5in}
+
+\renewcommand{\baselinestretch}{1.05}
+
+\usepackage{verbatim} % for "comment" environment
+
+\usepackage{palatino}
+
+\usepackage[final]{graphicx}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\usepackage{amssymb,enumitem,xspace,fancyvrb,mathabx}
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{defn}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{problem}{Problem}
+\newtheorem*{remark}{Remark}
+
+\DefineVerbatimEnvironment{mVerb}{Verbatim}{numbersep=2mm,frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
+
+% macros
+\usepackage{amssymb}
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\bB}{\mathbf{B}}
+\newcommand{\bE}{\mathbf{E}}
+\newcommand{\bF}{\mathbf{F}}
+\newcommand{\bJ}{\mathbf{J}}
+
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bx}{\mathbf{x}}
+
+\newcommand{\Div}{\ensuremath{\nabla\cdot}}
+\newcommand{\Curl}{\ensuremath{\nabla\times}}
+\newcommand{\eps}{\epsilon}
+\newcommand{\grad}{\nabla}
+\newcommand{\ip}[2]{\ensuremath{\left<#1,#2\right>}}
+\newcommand{\lam}{\lambda}
+\newcommand{\lap}{\triangle}
+
+\newcommand{\Null}{\operatorname{null}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\range}{\operatorname{range}}
+\newcommand{\trace}{\operatorname{tr}}
+
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\ds}{\displaystyle}
+
+\newcommand{\prob}[1]{\bigskip\noindent\textbf{#1.}\quad }
+\newcommand{\epart}[1]{\bigskip\noindent\textbf{(#1)}\quad }
+\newcommand{\ppart}[1]{\,\textbf{(#1)}\quad }
+
+\newcommand{\fl}{\operatorname{fl}}
+\newcommand{\emach}{\eps_{\text{machine}}}
+\newcommand{\Matlab}{\textsc{Matlab}\xspace}
+
+
+\begin{document}
+\scriptsize \noindent Math 614 Numerical Linear Algebra (Bueler) \hfill \fbox{\emph{Not to be turned in!}}
+\normalsize\medskip
+
+\Large\centerline{\textbf{Worksheet: Proving backward stability.}}
+\medskip
+\normalsize
+
+\thispagestyle{empty}
+
+\bigskip
+\noindent Recall axiom (13.5): for each $x\in\RR$ there is a real value $\eps$ so that $\fl(x)=x(1+\eps)$ and $|\eps|\le \emach$.  Recall axiom (13.7): for all $x,y\in\RR$, and for operations $\ast=+,-,\times,\div$, there is a real value $\eps$ so that $x \circledast y=(x\ast y)(1+\eps)$ and $|\eps|\le \emach$.
+
+\medskip
+\noindent A \emph{problem} is a function $f:X \to Y$, where $X$ and $Y$ are normed vector spaces.  An \emph{algorithm} is another function $\tilde f:X \to Y$.  On computers for which axioms (13.5) and (13.7) are true, we say the algorithm is \emph{backward stable} for some input $x$ if
+    $$\boxed{\tilde f(x) = f(\tilde x)} \quad \text{for some } \tilde x \text{ satisfying } \quad\boxed{\ds \frac{\|\tilde x - x\|}{\|x\|} = O(\emach)}.$$
+
+\medskip
+\noindent In each of the following exercises, if I have not done it already, start by precisely identifying the problem and the algorithm.  Then prove backward stability.
+
+\bigskip
+\begin{enumerate}[leftmargin=15pt]
+\renewcommand{\labelenumi}{\Large \textbf{\arabic{enumi}.}}
+\item Prove that the obvious algorithm $\tilde f(x)=\fl(x_1) \odiv \fl(x_2)$ for dividing real numbers ($f(x)=x_1 \div x_2$) is backward stable.  Assume $x_2\ne 0$.
+
+\vfill
+\item Prove that the obvious algorithm for raising a real number to the third power is backward stable.
+
+\vfill
+\newpage
+\item Let $x\in\RR^3$ be fixed.  Prove that the obvious computer algorithm for computing the inner product $a^* x$, for $a\in\RR^3$, is backward stable.
+
+\vfill
+\end{enumerate}
+
+\end{document}
