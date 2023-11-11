@@ -1,6 +1,6 @@
 \documentclass[11pt]{amsart}
-\addtolength{\topmargin}{-0.6in} % usually -0.25in
-\addtolength{\textheight}{1.2in} % usually 1.25in
+\addtolength{\topmargin}{-0.7in} % usually -0.25in
+\addtolength{\textheight}{1.3in} % usually 1.25in
 \addtolength{\oddsidemargin}{-0.7in}
 \addtolength{\evensidemargin}{-0.7in}
 \addtolength{\textwidth}{1.5in} %\setlength{\parindent}{0pt}
@@ -78,12 +78,9 @@
 \bigskip
 \normalspacing
 \begin{quote}
-The Midterm Quiz will cover Lectures 10, 11, 12, 13, 14, 15, 16, 17 in \textbook.  The problems will be of these types: \textbf{state definitions and axioms}, state theorems, state algorithms (as pseudocode or \Matlab), describe or illustrate geometrical ideas, basic applications of theorems, quick calculations, prove simple theorems/corollaries.
+The second Midterm Quiz will cover Lectures 10, 11, 12, 13, 14, 15, 16, 17 in \textbook.  The problems will be of these types: \textbf{state definitions and axioms}, state theorems, state algorithms (as pseudocode or \Matlab), describe or illustrate geometrical ideas, basic applications of theorems, quick calculations, prove simple theorems/corollaries.
 \end{quote}
 \bigskip
-
-\bigspacing
-\noindent \textbf{Background Definitions}.  These will be inevitably needed somewhere, but I won't literally ask for the definition: matrix-vector product, matrix-matrix product, inner product, outer product, triangular matrix, unitary matrix, projector, orthogonal projector, $\|\cdot\|_p$ for vectors, induced matrix norm, $\|\cdot\|_F$, eigenvalue, eigenvector, singular value
 
 \medskip
 \noindent \textbf{Definitions and Axioms}. Know how to define, and how to use:
@@ -96,21 +93,25 @@ The Midterm Quiz will cover Lectures 10, 11, 12, 13, 14, 15, 16, 17 in \textbook
 \item axiom (13.5): \quad $\fl(x) = x (1+\eps)$ where $|\eps|\le \emach$
 \item axiom (13.7): \quad $x \circledast y = (x \ast y) (1+\eps)$ where $|\eps|\le \emach$
 \item big O: $f(t) = O(g(t))$ as $t\to 0$ means there is $C\ge 0$ so that $|f(t)| \le C |g(t)|$ for all $t$ \dots
+\item big O: $\phi(n) = O(\psi(n))$ as $n\to \infty$ means there is $C\ge 0$ so that $|\phi(n)| \le C |\psi(n)|$ \dots
 \item backward stability and stability of an algorithm
 \end{itemize}
+
+\bigspacing
+\noindent \textbf{Background Definitions}.  The following may be needed somewhere, but I won't literally ask for the definition: matrix-vector product, matrix-matrix product, inner product, outer product, triangular matrix, unitary matrix, projector, orthogonal projector, $\|\cdot\|_p$ for vectors, induced matrix norm, $\|\cdot\|_F$, eigenvalue, eigenvector, singular value
 
 \medskip\noindent \textbf{Constructions}.  Know the properties of the objects in each construction below.  Be able to use the construction in simple cases.
 
 \begin{itemize}
-\item orthogonal projector onto $\range(A)$: $P=\hat Q\hat Q^* = A\left(A^* A\right)^{-1} A^*$
-\item Householder reflector: $F = I - 2 v v^* / (v^* v)$
-\item normal equations (for overdetermined ``$Ax=b$''): $A^* A x = A^* b$
+\item orthogonal projector onto $\range(A)$: \quad $P=\hat Q\hat Q^* = A\left(A^* A\right)^{-1} A^*$
+\item Householder reflector: \quad $F = I - 2 q q^* = I - 2 v v^* / (v^* v)$
+\item normal equations for overdetermined ``$Ax=b$'': \quad $A^* A x = A^* b$
 \end{itemize}
 
-\medskip\noindent \textbf{Algorithms}. Be able to state these algorithms, including the amount of work to leading order.  If relevant, know about backward stability, and what this means.
+\medskip\noindent \textbf{Algorithms}. Be able to state these algorithms, including the amount of work to leading order.
 \begin{itemize}
 \item Alg.~10.1: Householder triangularization for $QR$
-\item Alg.~10.2: compute $Q^*b$ after Householder triangularization
+%\item Alg.~10.2: compute $Q^*b$ after Householder triangularization
 \item Alg.~11.1: solve normal equations for least squares on overdetermined ``$Ax=b$''
     \begin{itemize}
     \item[$\circ$] just know that you use Cholesky \dots what that \emph{is} will not be on Midterm
@@ -120,31 +121,38 @@ The Midterm Quiz will cover Lectures 10, 11, 12, 13, 14, 15, 16, 17 in \textbook
     \begin{itemize}
     \item[$\circ$] \emph{how} SVD is computed will not be on Midterm
     \end{itemize}
-\item Alg.~16.1: solve $Ax=b$ via QR factorization
-\item Alg.~17.1: back substitution for $Rx=b$ where $R$ is square and upper-triangular
+\item Alg.~16.1: solve $Ax=b$, $A$ invertible, via QR factorization
+\item Alg.~17.1: back substitution for $Rx=b$ where $R$ is upper-triangular and invertible
 \end{itemize}
 
-\noindent \textbf{Facts/Formulas/Theorems}.  Know as facts.  Be able to prove unless otherwise stated.
+\clearpage\newpage
+\noindent \textbf{Facts/Formulas/Theorems}.  Know as facts.  Be able to use in a context.
 \begin{itemize}
 \item for $A\in \CC^{m\times n}$ with $m\ge n$, $A$ has full rank if and only if $A^* A$ is nonsingular
 \item if $P$ is an orthogonal projector then $I-2P$ is unitary
 \item if $A$ is square then $\kappa_2(A)=\sigma_1/\sigma_m$
 \item if $f(x)$ is a differentiable problem then $\hat\kappa(x) = \|J(x)\|$
 \item if $f(x)$ is a differentiable problem then $\ds \kappa(x) = \frac{\|J(x)\|}{\|f(x)\|/\|x\|} = \frac{\|J(x)\|\|x\|}{\|f(x)\|}$
+\item Theorem 15.1: if $f(x)$ is a problem with condition number $\kappa(x)$, and if $\tilde f(x)$ is a backward stable algorithm for it, then $\ds \frac{\|\tilde f(x) - f(x)\|}{\|f(x)\|} = O(\kappa(x) \emach)$
+
+\smallskip
+\item Theorem 16.1: QR factorization is backward stable
+\item Theorem 16.2: Alg.~16.1 is backward stable
+\item Theorem 16.3: the solution $\tilde x$ computed by Alg.~16.1 satisfies $\ds \frac{\|\tilde x - x\|}{\|x\|} = O(\kappa(A) \emach)$
+\item Theorem 17.1: back substitution is backward stable
 \end{itemize}
 
 \normalspacing
 
-\bigskip\noindent \textbf{Ideas}.  Please be comfortable with the following ideas!  Some ideas correspond to theorems, but otherwise it is just a perspective or paradigm.
+\bigskip\noindent \textbf{Ideas}.  Please be comfortable with the following ideas!  Some ideas correspond to theorems, but others are just a perspective or paradigm.
 
 \bigspacing
 \begin{itemize}
-\item L10: Gram-Schmidt is ``triangular orthogonalization'' while Householder is ``orthogonal triangularization''.  Gauss elimination is ``triangular triangularization''.
-\item L12: Theorems 12.1, 12.2: Problems associated to linear system $Ax=b$ have $\kappa(A)=\|A\|\|A^{-1}\|$ as the relative condition number or as a bound on it.
-\item L13: The most useful definition of $\emach$ is that it is the smallest number so that axioms (13.5) and (13.7) hold for your computer.
+\item L10: Householder is ``orthogonal triangularization''.  (Gram-Schmidt is ``triangular orthogonalization'' and Gauss elimination is ``triangular triangularization''.)
+\item L12: Theorems 12.1, 12.2: Problems associated to linear system $Ax=b$ have $\kappa(A)=\|A\|\|A^{-1}\|$ as the relative condition number, or as a bound on it.
+\item L13: The most useful definition of $\emach$ is as the smallest number so that axioms (13.5) and (13.7) hold for your computer.
 \item L14: It is o.k.~for the constant in your proof of backward stability or stability to depend on the vector/matrix dimension, i.e.~$m$ or $n$.
-\item L15: The backward stability of the usual inner product algorithm, and its failure for the outer product, are instances of the (informal) idea that backward stability only occurs when the input has large enough dimension to assign blame on it.
-\item 
+\item L15: The usual inner product algorithm is backward stability.  Not so for the outer product.  These facts are instances of the (informal) idea that backward stability only occurs when the problem input has large enough dimension to assign blame on it.
 \end{itemize}
 
 
