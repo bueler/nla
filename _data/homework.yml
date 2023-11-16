@@ -1,6 +1,10 @@
 semester: Fall 2023
 home: assets/homework/F23
 homework:
+- name: Assignment 9
+  due: Wednesday 29 November
+  blank: A9.pdf
+  sections: Lectures 17, 20, 21, 22
 - name: Assignment 8
   due: Friday 10 November
   blank: A8.pdf

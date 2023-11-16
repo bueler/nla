@@ -18,7 +18,7 @@
 \newtheorem*{problem}{Problem}
 \newtheorem*{remark}{Remark}
 
-\usepackage{fancyvrb,xspace}
+\usepackage{fancyvrb,xspace,bm}
 
 \usepackage[final]{graphicx}
 
@@ -34,10 +34,14 @@
             urlcolor=blue,
             }
 
+\newcommand{\bbf}{\mathbf{f}}
 \newcommand{\br}{\mathbf{r}}
+\newcommand{\bs}{\mathbf{s}}
 \newcommand{\bv}{\mathbf{v}}
 \newcommand{\bx}{\mathbf{x}}
 \newcommand{\by}{\mathbf{y}}
+
+\newcommand{\bzero}{\bm{0}}
 
 \newcommand{\CC}{\mathbb{C}}
 \newcommand{\RR}{\mathbb{R}}
@@ -78,7 +82,7 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 
 
 \begin{document}
-\scriptsize \noindent Math 614 Numerical Linear Algebra (Bueler) \hfill \emph{assigned 13 November 2023}
+\scriptsize \noindent Math 614 Numerical Linear Algebra (Bueler) \hfill \emph{assigned 15 November 2023}
 \normalsize\medskip
 
 \Large\centerline{\textbf{Assignment 9}}
@@ -92,21 +96,37 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 \thispagestyle{empty}
 
 \bigskip
-\noindent Please read Lectures 16,17,20,21,22,23 in the textbook \emph{Numerical Linear Algebra} by Trefethen and Bau.  (We are skipping Lectures 18 and 19.)  This Assignment covers backward stability of QR and back-substitution, and Gauss elimination.
+\noindent Please read Lectures 17,20,21,22,23 in the textbook \emph{Numerical Linear Algebra} by Trefethen and Bau.  (We are skipping Lectures 18 and 19.)  This Assignment primarily covers Gauss elimination and pivoting.
 
 \bigskip
 \noindent \textsc{Do the following exercises} from Lecture 17:
 
 \begin{itemize}
-\item \textbf{Exercise 17.2}
-\item \textbf{Exercise 17.3} \quad \emph{Do part \emph{(a)} only.}
+\item \textbf{Exercise 17.2} \quad \emph{Hint.  Exactly what does Theorem 17.1 \underline{and Theorem  15.1} imply \dots}
 \end{itemize}
 
 \bigskip
 \noindent \textsc{Do the following exercises} from Lecture 20:
 
 \begin{itemize}
-\item \textbf{Exercise 20.X}
+\item \textbf{Exercise 20.3} \quad \emph{Do part \emph{(a)} only.}
+\item \textbf{Exercise 20.4}
+\end{itemize}
+
+\bigskip
+\noindent \textsc{Do the following exercises} from Lecture 21:
+
+\begin{itemize}
+\item \textbf{Exercise 21.1}
+\item \textbf{Exercise 21.5}  \qquad \begin{minipage}[t]{0.68\textwidth}  \emph{Feel free to only do the real case; you will get full credit.  In part \emph{(a)} I would advise going ahead and writing a pseudocode to ``describe'' it.  Then show a $3\times 3$ example for illustration?  In part \emph{(b)}, note that ``symmetric pivoting'' of $A$ is $PAP^\top$.}
+\end{minipage}
+\end{itemize}
+
+\bigskip
+\noindent \textsc{Do the following exercises} from Lecture 22:
+
+\begin{itemize}
+\item \textbf{Exercise 22.1}
 \end{itemize}
 
 
@@ -115,6 +135,35 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 
 \medskip
 
-\prob{P18}  FIXME
+\prob{P18}  This question requires nothing but calculus as a prerequisite.  It shows a major source of linear systems from applications.
+
+\epart{a}  Consider these three equations, chosen for visualizability:
+\begin{gather*}
+x^2+y^2+z^2 = 4 \\
+y = \cos(\pi z) \\
+x = z^2
+\end{gather*}
+Sketch each equation individually as a surface in $\RR^3$.  (Do this by hand or in \Matlab.  Accuracy is not important.  The goal is to have a clear mental image of a nonlinear system as a set of intersecting surfaces.)  Considering where all three surfaces intersect, describe informally why there are two solutions, that is, two points $(x,y,z)\in\RR^3$ at which all three equations are satisfied.  Explain why both solutions are inside the closed box $0\le x \le 2, -1\le y \le 1, -2\le z \le 2$.
+
+\epart{b}  Newton's method for a system of nonlinear equations is an iterative, approximate, and sometimes very fast, method for solving systems like the one above.
+
+Let $\bx=(x_1,x_2,x_3)\in\RR^3$.  Suppose there are three scalar functions $f_i(\bx)$ forming a (column) vector function $\bbf(\bx)=(f_1,f_2,f_3)$, and consider the system
+    $$\bbf(\bx)=\bzero.$$
+(It is easy to put the part \textbf{(a)} system in this form.)  Let
+	$$J_{ij} = \frac{\partial f_i}{\partial x_j}$$
+be the Jacobian matrix: $J\in\RR^{3\times 3}$.  The Jacobian generally depends on location, i.e.~$J=J(\bx)$, and it generalizes the ordinary scalar derivative.
+
+Newton's method itself is
+\begin{gather}
+J(\bx_n)\, \bs = - \bbf(\bx_n), \label{stepeqn} \\
+\bx_{n+1} = \bx_n + \bs \label{updateeqn}
+\end{gather}
+where $\bs=(s_1,s_2,s_3)$ is the \emph{step} and $\bx_0$ is an initial iterate.  Equation \eqref{stepeqn} is a system of linear equations which determines $\bs$, and then equation \eqref{updateeqn} moves to the next iterate.
+
+Using $\bx_0=(1,-1,1)$, write out equation \eqref{stepeqn} in the $n=0$ case, for the problem in part \textbf{(a)}, as a concrete linear system of three equations for the three unknown components of the step $\bs = (s_1,s_2,s_3)$.
+
+\epart{c}  Implement Newton's method in \Matlab to solve the part \textbf{(a)} nonlinear system.  Show your script and generate at least five iterations.  Use $\bx_0=(1,-1,1)$ as an initial iterate to find one solution, and also find the other solution using a different initial iterate.  Note that \, \texttt{format long} \, is appropriate here for showing iterates.
+
+\epart{d}  In calculus you likely learned Newton's method as a memorized formula, $x_{n+1} = x_n - f(x_n)/f'(x_n)$.  Rewrite equations \eqref{stepeqn}, \eqref{updateeqn} for $\RR^1$ to derive this formula.
 
 \end{document}
