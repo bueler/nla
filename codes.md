@@ -42,7 +42,7 @@ From Assignment #6:
   * [svdhello.m](assets/codes/F23/svdhello.m)
   * [house.m](assets/codes/F23/house.m)
   * [formQ.m](assets/codes/F23/formQ.m)
-F
+
 From Assignment #7:
 
   * [polycos.m](assets/codes/F23/polycos.m)
