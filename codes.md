@@ -14,6 +14,7 @@ See [this page](computing) and [this PDF](https://bueler.github.io/compareMOP.pd
   * [blockimage.m](assets/codes/F23/blockimage.m)  Show a real matrix as a grey-scale image.
   * [pie.mat](assets/codes/F23/pie.mat)  An image saved as a `.mat` Matlab data file.  Compare the [original image](assets/codes/F23/pie.png).
   * [piecompress.m](assets/codes/F23/piecompress.m)  Application of SVD.  Show low-rank, i.e. compressed, approximations of a matrix.
+  * [badlu.m](assets/codes/F23/badlu.m)  Generate matrices nearly of form (22.4), and demonstrate that Matlab's lu(A) produces huge errors on these matrices.
 
 ## from homework solutions
 
