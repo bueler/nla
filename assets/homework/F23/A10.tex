@@ -1,0 +1,214 @@
+\documentclass[12pt]{amsart}
+%prepared in AMSLaTeX, under LaTeX2e
+\addtolength{\oddsidemargin}{-.65in} 
+\addtolength{\evensidemargin}{-.65in}
+\addtolength{\topmargin}{-.4in}
+\addtolength{\textwidth}{1.3in}
+\addtolength{\textheight}{.85in}
+
+\renewcommand{\baselinestretch}{1.05}
+
+\usepackage{verbatim} % for "comment" environment
+
+\usepackage{palatino}
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{defn}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{problem}{Problem}
+\newtheorem*{remark}{Remark}
+
+\usepackage{fancyvrb,xspace,bm}
+
+\usepackage[final]{graphicx}
+
+% macros
+\usepackage{amssymb}
+
+\usepackage{hyperref}
+\hypersetup{pdfauthor={Ed Bueler},
+            pdfcreator={pdflatex},
+            colorlinks=true,
+            citecolor=blue,
+            linkcolor=red,
+            urlcolor=blue,
+            }
+
+\newcommand{\bbf}{\mathbf{f}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bs}{\mathbf{s}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+
+\newcommand{\bzero}{\bm{0}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\grad}{\nabla}
+\newcommand{\lam}{\lambda}
+\newcommand{\lap}{\triangle}
+
+\newcommand{\ip}[2]{\ensuremath{\left<#1,#2\right>}}
+
+\newcommand{\image}{\operatorname{im}}
+\newcommand{\onull}{\operatorname{null}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\range}{\operatorname{range}}
+\newcommand{\trace}{\operatorname{tr}}
+
+\newcommand{\prob}[1]{\bigskip\noindent\textbf{#1.}\quad }
+\newcommand{\exer}[2]{\prob{Exercise #2 in Lecture #1}}
+
+\newcommand{\pts}[1]{(\emph{#1 pts}) }
+\newcommand{\epart}[1]{\medskip\noindent\textbf{(#1)}\quad }
+\newcommand{\ppart}[1]{\,\textbf{(#1)}\quad }
+
+\newcommand{\Matlab}{\textsc{Matlab}\xspace}
+\newcommand{\Octave}{\textsc{Octave}\xspace}
+\newcommand{\Python}{\textsc{Python}\xspace}
+\newcommand{\Julia}{\textsc{Julia}\xspace}
+
+\newcommand{\fl}{\operatorname{fl}}
+
+\newcommand{\ds}{\displaystyle}
+
+\DefineVerbatimEnvironment{mVerb}{Verbatim}{numbersep=2mm,
+frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
+
+
+
+\begin{document}
+\scriptsize \noindent Math 614 Numerical Linear Algebra (Bueler) \hfill \emph{assigned 27 November 2023}
+\normalsize\medskip
+
+\Large\centerline{\textbf{Assignment 10}}
+\large
+\medskip
+
+\centerline{\textbf{Due Monday 11 December 2023, at 5 pm in my Chapman 101 box}}
+\medskip
+\normalsize
+
+\thispagestyle{empty}
+
+\bigskip
+\noindent Please read Lectures 24, 25, 26, 27, and 28 in the textbook \emph{Numerical Linear Algebra} by Trefethen and Bau.  This Assignment mostly covers eigenvalues, including some iterations which approximate them: power, inverse, and Rayleigh quotient iterations.  We will not get to the actual/practical QR algorithm for eigenvalues (Lecture 29), nor to material beyond that.
+
+\bigskip
+\noindent \textsc{Do the following exercises} from Lecture 24:
+
+\begin{itemize}
+\item \textbf{Exercise 24.1}
+\end{itemize}
+
+
+\bigskip
+\noindent \textsc{Do the following additional exercises.}
+
+\prob{P19}   In an \emph{in place} Gauss elimination algorithm uses no more memory to store $L$ and $U$ than is already used to store $A$.
+
+\epart{a}  Write a function with signature \verb|Z = iplu(A)| which takes as input a square $m\times m$ matrix $A$ and computes $A=LU$ by Algorithm 20.1.  It will not create separate matrices $L$ and $U$.  It will produce a matrix $Z$ which has all numbers $l_{jk}$ and $u_{jk}$ in the corresponding locations.  You will be able to recover matrices $L$ and $U$ as follows:
+\begin{verbatim}
+  >> Z = iplu(A);
+  >> U = triu(Z)
+  >> L = tril(Z,-1) + diag(ones(m,1))
+\end{verbatim}
+Demonstrate that \verb|iplu(A)| works by applying it to the matrix $A$ in (20.3) and recovering the factors in (20.5).
+
+\epart{b}  Now write another function with signature \verb|x = bslash(A,b)| which solves square systems $Ax=b$.  It calls \texttt{iplu(A)} to compute the in-place LU factorization.  Then it solves the system from $Z$ \emph{without} forming $L$ or $U$.\footnote{And, of course, without using \Matlab's backslash operation!}  It will have loops which implement forward- and backward-substitution (Alg.~17.1) using the entries of $Z$.  Show it works by comparing to ``$\backslash$'' on some randomly-generated $10\times 10$ system $Ax=b$:
+\begin{verbatim}
+  >> x1 = bslash(A,b);
+  >> x2 = A \ b;
+  >> norm(x1 - x2) / norm(x2)
+\end{verbatim}
+
+\epart{c}  \textbf{Extra Credit} \quad Of course, Algorithm 20.1 is not a good idea.  Implement Gauss elimination with partial pivoting, Algorithm 21.1, returning/using an integer vector \texttt{p} for the row swaps.  (Do not actually move values in memory for row swaps.)  Demonstrate correctness of your updated \verb|bbslash(A)|\footnote{``Better backslash.''} as in part \textbf{(b)}.  Then find an example for which this updated version produces substantially less floating-point error.
+
+
+\prob{P20}   A \emph{circulant matrix} is one where constant diagonals ``wrap around'':
+\begin{equation} \label{circuC}
+C = \begin{bmatrix}
+	c_1 & c_{m} & \dots & c_3 & c_2 \\
+	c_2 & c_1 & c_{m} & & c_3 \\
+	\vdots & c_2 & c_1 & \ddots & \vdots \\
+	c_{m-1} & & \ddots & \ddots & c_{m} \\
+	c_{m} & c_{m-1} & \dots & c_2 & c_1
+	\end{bmatrix}
+\end{equation}
+\smallskip
+
+\noindent Each entry of $C \in \CC^{m\times m}$ is determined from the entries $c_1, \dots, c_{m}$ in its first column:
+	$$C_{jk} = \begin{cases}
+	c_{j-k + 1}, & j \ge k, \\
+	c_{m + j-k + 1}, & j < k.
+	\end{cases}$$
+Specifying the first column of a circulant matrix describes it completely.
+
+An extraordinary fact about a circulant matrix is that it has a complete set of complex eigenvectors \emph{that are known in advance}, without knowing the eigenvalues.  Specifically, define $f_k \in \CC^m$ by
+\begin{equation}
+(f_k)_j = \exp\left(-i(j-1) (k-1) \frac{2\pi}{m}\right) = e^{-i 2\pi (k-1)(j-1)/m}, \label{circulantev}
+\end{equation}
+where, as usual, $i=\sqrt{-1}$.  These vectors are \emph{waves}, i.e.~combinations of familiar sines and cosines, and in fact this exercise can be regarded as ``discovering'' Fourier series and Fourier-type ideas generally.  After some warm-up exercises you will show in part \textbf{(e)} that $C f_k = \lambda_k f_k$ for a computable eigenvalue $\lambda_k$.
+
+\epart{a}  Define the \emph{periodic convolution} $u \ast w\in \CC^m$ of vectors $u,w\in \CC^m$ by
+	$$(u\ast w)_j = \sum_{k=1}^m u_{\mu(j,k)} w_k \qquad \text{ where } \qquad \mu(j,k) = \begin{cases}
+	j-k + 1, & j \ge k, \\
+	m + j-k + 1, & j < k.
+	\end{cases}$$
+Show that $u\ast w = w\ast u$.
+
+\epart{b} Show that $C u = v\ast u$ if $C$ is a circulant matrix and $v$ is the first column of $C$.
+
+\epart{c}  Show that the vectors $f_1,\dots,f_m$ defined in \eqref{circulantev} are orthogonal.  (\emph{Hints.}  Remember the conjugate in the inner product.  Then use a fact about finite geometric series.)
+
+\epart{d}  For $m=20$, use Matlab to plot the real parts of the vectors $f_1,\dots,f_5$, together in a single figure.  (\emph{Hint.} They should look like discretized waves.)
+
+\epart{e}  For a general circulant matrix, i.e.~$C$ in \eqref{circuC} above, give a formula for the eigenvalues $\lambda_k$, in terms of the entries $c_1,\dots,c_m$.  That is, show via by-hand calculation that
+    $$C f_k = \lambda_k f_k$$
+where $f_k$ is given by \eqref{circulantev}.  Your solution should generate a formula for $\lambda_k$.
+
+\epart{f}  Construct a $5\times 5$ circulant matrix $C$ with a random first column.  Use the result of \textbf{(e)} to compute the eigenvalues $\lambda_k$, and compare these against the result of \texttt{eig()}.  (\emph{Hint.}  They should be the same to high accuracy.)
+
+
+\prob{P21}  \ppart{a}  Implement Algorithm 26.1, Householder reduction to Hessenberg form.  Specifically, build a code with the signature
+
+\begin{center}
+\verb|H = hessen(A,stages)|
+\end{center}
+
+\noindent Your code will check that $A$ is square, print the stages if \verb|stages| is \verb|true|, and finally return a Hessenberg matrix $H$ such that $A=QHQ^*$ for some unitary $Q$.  Note that your code can discard the vectors $v_k$ after they are used.
+
+\epart{b}  For a random $5\times 5$ matrix $A$ of your choice, run the code and show the four stages $A$,\, $Q_1^*AQ_1$,\, $Q_2^*Q_1^*AQ_1Q_2$,\, and $H=Q_3^*Q_2^*Q_1^*AQ_1Q_2Q_3$.  (\emph{Hint.}  This illustrates the cartoons on pages 197--198, in the \textbf{A Good Idea} subsection.)  Use the built-in \texttt{eig()} to show that the eigenvalues of $A$ and $H$ are the same to within rounding error.
+
+\epart{c}  Construct a new $4\times 4$ Hermitian matrix $S$ and compute \verb|T=hessen(S)|.  Check that $T$ is tridiagonal and Hermitian.  Show that the eigenvalues of $S$ and $T$ are the same within rounding error.
+
+
+\prob{P22}  \ppart{a}  Implement Algorithm 27.3, Rayleigh quotient iteration.  Specifically, write a code with signature
+\begin{center}
+\verb|[lam,v] = rqi(A,v0)|
+\end{center}
+which returns an eigenvalue \verb|lam| corresponding to the eigenvector \verb|v|, and which starts the iteration from a given vector \verb|v0|.  As a stopping criterion, to avoid a warning when solving the linear system with the matrix $B=A-\lambda^{(k-1)} I$, I suggest
+\begin{center}
+\verb|rcond(B) < 10*eps|
+\end{center}
+or equivalent; using Matlab or other documentation, explain what this criterion means.
+
+\epart{b} Show your code works by \emph{(i)} reproducing the iterates $\lambda^{(0)}$, $\lambda^{(1)}$, $\lambda^{(2)}$ in Example 27.1, and \emph{(ii)} by matching one of the eigenvalues and eigenvectors, computed by the built-in command \verb|eig()|, of a random $20\times 20$ Hermitian matrix.
+
+
+\prob{Extra Credit A}  Theorem 15.1 requires that your algorithm be \emph{backward stable}.  What if it is merely \emph{stable} according to the definition given in Lecture 14?  To my surprise, I was able to prove a theorem about the relative error which is nearly as strong.  Show:
+
+\newcommand{\emach}{\eps_{\text{machine}}}
+\begin{thm}
+Suppose a stable algorithm $\tilde f:X\to Y$ is applied to solve a problem $f:X\to Y$ with condition number $\kappa$ on a computer satisfying (13.5), (13.7).  Then there is a constant $\gamma \ge 0$ so that the relative errors satisfy
+    $$\frac{\|\tilde f(x) - f(x)\|}{\|f(x)\|} = O\left((\kappa(x) + \gamma) \emach\right) \qquad \text{as} \quad \emach \to 0.$$
+\end{thm}
+
+\medskip
+\noindent \emph{Hints}.  Roughly follow the proof of Theorem 15.1.  Replace ``$\tilde f(x) = f(\tilde x)$'' with $\tilde f(x) = \tilde f(x) - f(\tilde x) + f(\tilde x)$.  You will need the triangle inequality in addition to steps already in the proof of Theorem 15.1.  Make it clear how the constant ``$\gamma$'' arises; what does it depend on?
+
+\end{document}
