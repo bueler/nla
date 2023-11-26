@@ -126,7 +126,7 @@ Demonstrate that \verb|iplu(A)| works by applying it to the matrix $A$ in (20.3)
   >> norm(x1 - x2) / norm(x2)
 \end{verbatim}
 
-\epart{c}  \textbf{Extra Credit} \quad Of course, Algorithm 20.1 is not a good idea.  Implement Gauss elimination with partial pivoting, Algorithm 21.1, returning/using an integer vector \texttt{p} for the row swaps.  (Do not actually move values in memory for row swaps.)  Demonstrate correctness of your updated \verb|bbslash(A)|\footnote{``Better backslash.''} as in part \textbf{(b)}.  Then find an example for which this updated version produces substantially less floating-point error.
+\epart{c}  \textbf{Extra Credit} \quad Of course, Algorithm 20.1 is not a good idea.  Implement Gauss elimination with partial pivoting (Algorithm 21.1) using an integer permutation vector \texttt{p} for the row swaps.  (Do not actually move values in memory.)  Demonstrate correctness of your updated \verb|bbslash(A,b)|\footnote{``Better backslash.''} as in part \textbf{(b)}.  Then find an example for which this updated version produces substantially less floating-point error.
 
 
 \prob{P20}   A \emph{circulant matrix} is one where constant diagonals ``wrap around'':
