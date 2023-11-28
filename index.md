@@ -31,6 +31,8 @@ Log in to [canvas.alaska.edu/courses/15800](https://canvas.alaska.edu/courses/15
 
 [<img src="assets/images/trefbau.jpg" height="250">](https://my.siam.org/Store/Product/viewproduct/?ProductId=42813031 "the textbook")
 
+* A very good free online textbook makes sense as a supplement: [Advanced Linear Algebra: Foundations to Frontiers](https://www.cs.utexas.edu/users/flame/laff/alaff/ALAFF.html).  Each section has a short online video.
+
 * What are we studying?  Check out these Wikipedia pages for the topics we will get to, in this approximate order:
 
     * [matrix-vector and matrix-matrix multiplication](https://en.wikipedia.org/wiki/Matrix_multiplication)
