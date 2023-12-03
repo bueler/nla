@@ -82,7 +82,7 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 
 
 \begin{document}
-\scriptsize \noindent Math 614 Numerical Linear Algebra (Bueler) \hfill \emph{assigned 27 November 2023}
+\scriptsize \noindent Math 614 Numerical Linear Algebra (Bueler) \hfill \emph{assigned 27 Nov.~2023; revised 2 Dec.}
 \normalsize\medskip
 
 \Large\centerline{\textbf{Assignment 10}}
@@ -109,9 +109,9 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 \bigskip
 \noindent \textsc{Do the following additional exercises.}
 
-\prob{P19}   In an \emph{in place} Gauss elimination algorithm uses no more memory to store $L$ and $U$ than is already used to store $A$.
+\prob{P19}   An \emph{in place} Gauss elimination algorithm uses no more memory to store $L$ and $U$ than is already used to store $A$.
 
-\epart{a}  Write a function with signature \verb|Z = iplu(A)| which takes as input a square $m\times m$ matrix $A$ and computes $A=LU$ by Algorithm 20.1.  It will not create separate matrices $L$ and $U$.  It will produce a matrix $Z$ which has all numbers $l_{jk}$ and $u_{jk}$ in the corresponding locations.  You will be able to recover matrices $L$ and $U$ as follows:
+\epart{a}  Write a function with signature \verb|Z = iplu(A)| which takes as input a square $m\times m$ matrix $A$ and computes $A=LU$ by Algorithm 20.1.  It will not create separate matrices $L$ and $U$.  It will produce a matrix $Z$ which has the numbers $l_{jk}$ and $u_{jk}$ in the corresponding locations.  You will be able to recover matrices $L$ and $U$ as follows:
 \begin{verbatim}
   >> Z = iplu(A);
   >> U = triu(Z)
@@ -126,7 +126,7 @@ Demonstrate that \verb|iplu(A)| works by applying it to the matrix $A$ in (20.3)
   >> norm(x1 - x2) / norm(x2)
 \end{verbatim}
 
-\epart{c}  \textbf{Extra Credit} \quad Of course, Algorithm 20.1 is not a good idea.  Implement Gauss elimination with partial pivoting (Algorithm 21.1) using an integer permutation vector \texttt{p} for the row swaps.  (Do not actually move values in memory.)  Demonstrate correctness of your updated \verb|bbslash(A,b)|\footnote{``Better backslash.''} as in part \textbf{(b)}.  Then find an example for which this updated version produces substantially less floating-point error.
+\epart{c}  \textbf{Extra Credit} \quad Regarding stability, Algorithm 20.1 is not a good idea.  Implement Gauss elimination with partial pivoting (Algorithm 21.1) using an integer permutation vector \texttt{p} for the row swaps.  (Do not actually move values in memory.)  Demonstrate correctness of your updated \verb|bbslash(A,b)|\footnote{``Better backslash.''} as in part \textbf{(b)}.  Then find an example for which this updated version produces substantially reduced floating-point error.
 
 
 \prob{P20}   A \emph{circulant matrix} is one where constant diagonals ``wrap around'':
@@ -152,7 +152,7 @@ An extraordinary fact about a circulant matrix is that it has a complete set of 
 \begin{equation}
 (f_k)_j = \exp\left(-i(j-1) (k-1) \frac{2\pi}{m}\right) = e^{-i 2\pi (k-1)(j-1)/m}, \label{circulantev}
 \end{equation}
-where, as usual, $i=\sqrt{-1}$.  These vectors are \emph{waves}, i.e.~combinations of familiar sines and cosines, and in fact this exercise can be regarded as ``discovering'' Fourier series and Fourier-type ideas generally.  After some warm-up exercises you will show in part \textbf{(e)} that $C f_k = \lambda_k f_k$ for a computable eigenvalue $\lambda_k$.
+where, as usual, $i=\sqrt{-1}$.  These vectors are \emph{waves}, i.e.~combinations of familiar sines and cosines, and in fact this exercise can be regarded as how one ``discovers'' Fourier series (and Fourier-type ideas generally).  After some warm-up exercises you will show in part \textbf{(e)} that $C f_k = \lambda_k f_k$ for a computable eigenvalue $\lambda_k$.
 
 \epart{a}  Define the \emph{periodic convolution} $u \ast w\in \CC^m$ of vectors $u,w\in \CC^m$ by
 	$$(u\ast w)_j = \sum_{k=1}^m u_{\mu(j,k)} w_k \qquad \text{ where } \qquad \mu(j,k) = \begin{cases}
@@ -161,15 +161,15 @@ where, as usual, $i=\sqrt{-1}$.  These vectors are \emph{waves}, i.e.~combinatio
 	\end{cases}$$
 Show that $u\ast w = w\ast u$.
 
-\epart{b} Show that $C u = v\ast u$ if $C$ is a circulant matrix and $v$ is the first column of $C$.
+\epart{b}  Show that $C u = v\ast u$ if $C$ is a circulant matrix and $v$ is the first column of $C$.
 
 \epart{c}  Show that the vectors $f_1,\dots,f_m$ defined in \eqref{circulantev} are orthogonal.  (\emph{Hints.}  Remember the conjugate in the inner product.  Then use a fact about finite geometric series.)
 
 \epart{d}  For $m=20$, use Matlab to plot the real parts of the vectors $f_1,\dots,f_5$, together in a single figure.  (\emph{Hint.} They should look like discretized waves.)
 
-\epart{e}  For a general circulant matrix, i.e.~$C$ in \eqref{circuC} above, give a formula for the eigenvalues $\lambda_k$, in terms of the entries $c_1,\dots,c_m$.  That is, show via by-hand calculation that
+\epart{e}  For a general circulant matrix, $C$ in \eqref{circuC} above, give a formula for its eigenvalues $\lambda_k$ in terms of the entries $c_1,\dots,c_m$.  That is, show via by-hand calculation that
     $$C f_k = \lambda_k f_k$$
-where $f_k$ is given by \eqref{circulantev}.  Your solution should generate a formula for $\lambda_k$.
+where $f_k$ is given by \eqref{circulantev}.  Your solution will contain a formula for $\lambda_k$.
 
 
 \prob{P21}  \ppart{a}  Implement Algorithm 26.1, Householder reduction to Hessenberg form.  Specifically, build a code with the signature
