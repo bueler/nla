@@ -69,63 +69,65 @@
 \thispagestyle{empty}
 
 \bigskip
-\Large\textbf{\centerline{Final Exam: three algorithms}}
+\Large\textbf{\centerline{Final Exam: analyze 3 algorithms}}
 
 \medskip
 \large\textbf{\centerline{Wednesday, 13 December, 1:00pm--3:00pm, Chapman 107}}
 
 \normalsize
 \bigskip
-The in-class Final Exam will be a bit different, but short.  I would like you to summarize three major algorithms which we have seen during the semester, chosen from the options below.
+The in-class Final Exam will be a bit different, but fairly short and with a clear path for preparation.  I would like you to \textbf{summarize and analyze three major algorithms} which we have seen during the semester.  The allowed options are listed below.
 
 \smallskip
-You will have this document in your hand when you do the final, but otherwise you must remember what you want to say.  \textbf{You may NOT bring your own notes, or the textbook, to the final.}  However, you are \textbf{strongly encouraged to draft and practice your planned summaries.}  Make sure to read relevant sections of the textbook for your topics.  Feel free to get feedback on your drafts from other students or faculty/friends/family/pets, or me.  Then think through, in preparation, how you will remember enough detail so as to recreate the summary during the Final Exam itself.
-
-\medskip
-\centerline{\textbf{Please choose one of categories A,B,C from the lists below.}}
-
-\centerline{\textbf{For each one, write a Summary on a separate sheet.}}
+You will have this document in your hand when you do the final.  Otherwise you must remember what you want to say.  \textbf{You may NOT bring your own notes, or the textbook,} to the Exam.  However, you are \textbf{strongly encouraged to draft and practice} your planned summaries.  Make sure to read relevant sections of the textbook.  Get feedback on your drafts from other students/faculty/friends/family/pets, or me.  Decide in advance how you will remember enough detail so as to recreate the summary during the Exam itself.
 
 \smallskip
-Each summary should be at most a page.  FIXME Equations are important, plus a few (at most three) sketches as needed, but please write complete sentences for the major ideas.  A Summary which is \emph{only} equations or sketches cannot achieve a good grade.
+What should your summary and analysis include?  Clearly state the problem it solves.  (This includes what properties the input and outputs have.)  State the algorithm at a high level.  (A detailed pseudocode is not required, but either sketch the algorithm's steps in words or go ahead and give a pseudocode.)  What are the main geometric and/or algebraic ideas behind the algorithm?  What is the work estimate?  (Use big-O appropriately, and give leading-order constants if relevant.)  If there is a backward stability theorem, summarize what it says.  If it is important to compare to other well-known algorithms, please do so.
 
 \smallskip
-FIXME Except for special cases, a Summary should \textbf{state the problem} (DE and initial/boundary conditions), comment on or supply an \textbf{exact solution}, state one or two \textbf{FD discretization}(s), summarize the \textbf{truncation error}, and summarize \textbf{stability}.  Then it should consider and fill-in any relevant additional ideas for the problem and the chosen method; see ``Consider:'' below for the specific problems.  The goal is \emph{not} to prove anything, but to accurately and precisely summarize what we know---or we easily could know---about the problem and the available method(s), especially in advance of writing a code.
-
-\smallskip
-For each Summary your goal is to write something like a neat 10 or 15 minute white-board presentation of how you would solve the problem numerically, as you might give to a hypothetical fellow graduate student who has not seen that particular problem but who has taken similar-level classes.  Give an executive summary, and remember to point out the basic things!
+This is a writing assignment.  Please give an ``executive summary,'' making sure to point-out all the key ideas.  You may regard your target audience as a typical student in the first week of this course.  I will grade for correctness, clarity, and completeness.
 
 \medskip
 
-\newcommand{\ecomment}[1]{ \hfill \mbox{\emph{#1}} }
+\newcommand{\alg}[1]{ \hfill \mbox{\emph{Alg.~#1}} }
 
-\renewcommand{\labelenumi}{ODE \circled{\arabic{enumi}}}
+\noindent\textbf{A: essential matrix factorizations}
+
+\renewcommand{\labelenumi}{A\arabic{enumi}.}
 \begin{enumerate}
 \setlength{\itemsep}{4pt}
-\item A general linear 2nd-order ODE BVP. \ecomment{eqn (2.64)}
-
-\noindent Consider: how to solve the linear system.
-\item The nonlinear 2nd-order ODE BVP for a pendulum.  \ecomment{eqn (2.77)}
-
-\noindent Consider: Newton's method, how to solve the linear Newton steps.
-\item A non-homogeneous, constant-coefficient linear ODE IVP system.  \ecomment{eqn (5.6)}
-
-\noindent Consider: matrix exponentials, compare $\ge 2$ schemes, absolute stability regions.
+\item Householder QR factorization \alg{10.1}
+\item Gauss elimination with partial pivoting \alg{21.1}
 \end{enumerate}
 
-\renewcommand{\labelenumi}{PDE \circled{\alph{enumi}}}
+\noindent\textbf{B: least squares solvers}
+
+\renewcommand{\labelenumi}{B\arabic{enumi}.}
 \begin{enumerate}
 \setlength{\itemsep}{4pt}
-\item The Poisson problem PDE in 2D. \ecomment{eqn (3.5)}
-
-\noindent Consider: ordering the unknowns, how to solve the linear system.
-\item The time-dependent heat equation PDE in 1D. \ecomment{eqn (9.1)}
-
-\noindent Consider: compare $\ge 2$ schemes.
-\item The time-dependent scalar advection equation PDE in 1D.  \ecomment{eqn (10.1)}
-
-\noindent Consider: compare $\ge 2$ schemes.
+\item least squares via normal equations \alg{11.1}
+\item least squares via QR factorization \alg{11.2}
+\item least squares via SVD \alg{11.3}
 \end{enumerate}
 
+\noindent\textbf{C: eigenvalue computations}
+
+\renewcommand{\labelenumi}{C\arabic{enumi}.}
+\begin{enumerate}
+\setlength{\itemsep}{4pt}
+\item reduction of Hermitian matrix to tridiagonal \alg{26.1}
+\item Rayleigh quotient iteration \alg{27.1}
+\end{enumerate}
+
+\bigskip
+\noindent \hrulefill
+
+\noindent \textbf{\large Instructions:}
+
+\begin{itemize}
+\item \textbf{Please choose one algorithm from each category A,B,C above.}
+\item \textbf{Write each summary on a separate sheet.  Identify each by ``A1'', etc.}
+\item \textbf{Each summary should be more than half a page but at most one page; between 250 and 500 words.}
+\end{itemize}
 \end{document}
 
