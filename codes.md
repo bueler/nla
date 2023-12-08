@@ -48,3 +48,8 @@ From Assignment #7:
 
   * [polycos.m](assets/codes/F23/polycos.m)
   * [wigglepoly.m](assets/codes/F23/wigglepoly.m)
+
+From Assignment #9:
+
+  * [luouter.m](assets/codes/F23/luouter.m)
+  * [newtonex.m](assets/codes/F23/newtonex.m)
