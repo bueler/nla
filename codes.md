@@ -53,3 +53,12 @@ From Assignment #9:
 
   * [luouter.m](assets/codes/F23/luouter.m)
   * [newtonex.m](assets/codes/F23/newtonex.m)
+
+From Assignment #10:
+
+  * [iplu.m](assets/codes/F23/iplu.m)
+  * [bslash.m](assets/codes/F23/bslash.m)
+  * [bbslash.m](assets/codes/F23/bbslash.m)
+  * [hessen.m](assets/codes/F23/hessen.m)
+  * [rqi.m](assets/codes/F23/rqi.m)
+  * [testrqi.m](assets/codes/F23/testrqi.m)
