@@ -50,6 +50,6 @@ Log in to [canvas.alaska.edu/courses/15800](https://canvas.alaska.edu/courses/15
     * [Krylov subspace iterations](https://en.wikipedia.org/wiki/Krylov_subspace)
 
 ---
-_Site design derived from [coordinated Calc I](https://uaf-math251.github.io/), an original [Jekyll](https://jekyllrb.com/) design by [David Maxwell](https://damaxwell.github.io/)._
+_Site design derived from [coordinated Calc I](https://uaf-math.github.io/calc1/), an original [Jekyll](https://jekyllrb.com/) design by [David Maxwell](https://damaxwell.github.io/)._
 
 [<img src="assets/images/GitHub-Mark-32px.png" align="right">](https://github.com/bueler/nla "github repository for this site")
