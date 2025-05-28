@@ -1,9 +1,11 @@
 ---
 layout: course-page
-title: Bueler's Math F614 in Fall 2023 at UAF
+title: Bueler's Math F614 at UAF
 ---
 
-Welcome to the public homepage of **Math F614 Numerical Linear Algebra**, Fall 2023, in the [Dept. of Mathematics and Statistics](http://www.uaf.edu/dms/) at the [University of Alaska Fairbanks](http://www.uaf.edu/).
+Welcome to the public homepage of **Math F614 Numerical Linear Algebra** in the [Dept. of Mathematics and Statistics](http://www.uaf.edu/dms/) at the [University of Alaska Fairbanks](http://www.uaf.edu/).
+
+**UNDER CONSTRUCTION FOR Fall 2025!! MANY BAD LINKS FROM OLD COURSES!!**
 
 If you plan to be present on campus in Fairbanks during the semester, please sign up for the in-person "901" section (crn 75513), and plan to attend lecture in Chapman 107.  If you are remote, signing up for the web-based "701" section (crn 75512) is just fine!
 
