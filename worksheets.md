@@ -9,4 +9,10 @@ PDFs for Worksheets, and their solutions, will appear here as they occur.  (You 
 
 {% include worksheet_table.md  data=site.data.worksheets %}
 
-<div style="padding-bottom: 100px"></div>
+<div style="padding-bottom: 40px"></div>
+
+
+---
+### Worksheets from Fall 2023
+
+{% include worksheet_table.md  data=site.data.worksheetsF23 %}

@@ -6,10 +6,10 @@ docs:
 #  url: assets/general/F23/advert.pdf  # delete once course started
 
 - title: Syllabus
-  url: assets/general/F23/syllabus.pdf  # rebuild by "make syllabus.pdf" in assets/general/S23/
+  url: assets/general/F25/syllabus.pdf  # rebuild by "make syllabus.pdf" in assets/general/F25
 
 - title: Schedule
-  url: assets/general/F23/schedule.pdf  # rebuild by "make schedule.pdf" in assets/general/S23/
+  url: assets/general/F25/schedule.pdf  # rebuild by "make schedule.pdf" in assets/general/F25
 
 - title: Homework
   url: homework.html

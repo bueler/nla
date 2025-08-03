@@ -1,24 +1,9 @@
-semester: Fall 2023
-home: assets/worksheets/F23
+semester: Fall 2025
+home: assets/worksheets/F25
 worksheets:
 - name: Visualize vectors and matrices
-  blank: visualize.pdf
-- name: Matrix norm essentials
-  blank: normmanifesto.pdf
-- name: One-page advice on writing proofs
-  blank: proofadvice.pdf
-- name: Condition numbers practice
-  blank: conditioning.pdf
-- name: IEEE 754 floating point
-  blank: ieeefloat.pdf
-- name: Practice with bits ("binary12")
-  blank: binary12.pdf
-  solutions: binary12-solns.pdf
-- name: Practice proving backward stability
-  blank: backstab.pdf
-- name: Unitary multiplication is backward-stable
-  blank: unitarybs.pdf
-#  description: FIXME
+  #blank: visualize.pdf
+  description: FIXME
 #  more: see
 #  solutions: solns/singular.pdf
 #  image: trefbau.jpg

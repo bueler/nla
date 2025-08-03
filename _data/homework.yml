@@ -1,46 +1,10 @@
-semester: Fall 2023
-home: assets/homework/F23
+semester: Fall 2025
+home: assets/homework/F25
 homework:
-- name: Assignment 10
-  due: Tuesday 12 December at noon in my box (revised)
-  blank: A10.pdf
-  sections: Lectures 24, 25, 26, 27
-- name: Assignment 9
-  due: Wednesday 29 November
-  blank: A9.pdf
-  sections: Lectures 17, 20, 21, 22, 23
-- name: Assignment 8
-  due: Friday 10 November
-  blank: A8.pdf
-  sections: Lectures 14, 15
-- name: Assignment 7
-  due: Wednesday 1 November (revised)
-  blank: A7.pdf
-  sections: Lectures 11,12,13
-- name: Assignment 6
-  due: Friday 20 October
-  blank: A6.pdf
-  sections: Lectures 8,9,10,11
-- name: Assignment 5
-  due: Mon 9 October
-  blank: A5.pdf
-  sections: Lectures 6,7,8
-- name: Assignment 4
-  due: Mon 2 October
-  blank: A4.pdf
-  sections: Lectures 4,5,6
-- name: Assignment 3
-  due: Fri 22 September
-  blank: A3.pdf
-  sections: Lectures 3,4,5
-- name: Assignment 2
-  due: Wed 13 September
-  blank: A2.pdf
-  sections: Lectures 2,3,4
 - name: Assignment 1
-  due: Wed 6 September
-  blank: A1.pdf
-  sections: Lectures 1,2
+  due: FIXME
+  #blank: A1.pdf
+  sections: Lectures 1, 2
 
 #  seealsoname: Classical iterative methods slides
 #  seealsopdf: https://bueler.github.io/nade/assets/slides/iterative.pdf

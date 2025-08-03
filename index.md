@@ -3,11 +3,11 @@ layout: course-page
 title: Bueler's Math F614 at UAF
 ---
 
-Welcome to the public homepage of **Math F614 Numerical Linear Algebra** in the [Dept. of Mathematics and Statistics](http://www.uaf.edu/dms/) at the [University of Alaska Fairbanks](http://www.uaf.edu/).
+Welcome to the homepage of **Math F614 Numerical Linear Algebra** in the [Dept. of Mathematics and Statistics](http://www.uaf.edu/dms/) at the [University of Alaska Fairbanks](http://www.uaf.edu/).
 
-**UNDER CONSTRUCTION FOR Fall 2025!! MANY BAD LINKS FROM OLD COURSES!!**
+### Sections
 
-If you plan to be present on campus in Fairbanks during the semester, please sign up for the in-person "901" section (crn 75513), and plan to attend lecture in Chapman 107.  If you are remote, signing up for the web-based "701" section (crn 75512) is just fine!
+If you plan to be present on campus in Fairbanks during the semester, please sign up for the in-person "901" section (crn 75364), and plan to attend lecture in Chapman 107.  If you are remote, signing up for the web-based "701" section (crn 75371) is just fine, and you should see the [Canvas page for the Zoom link](https://canvas.alaska.edu/courses/27130).
 
 #### Instructor:  [Ed Bueler](http://bueler.github.io/)
 
@@ -15,19 +15,19 @@ Email me at [elbueler@alaska.edu](mailto:elbueler@alaska.edu).  I hold [office h
 
 ### Canvas course page
 
-Log in to [canvas.alaska.edu/courses/15800](https://canvas.alaska.edu/courses/15800) for the lecture Zoom link, Homework and Exam solutions, and to see your grades.
+Log in to [canvas.alaska.edu/courses/27130](https://canvas.alaska.edu/courses/27130) for the lecture Zoom link, Homework and Exam solutions, and to see your grades.
 
 ### Getting Started
 
-* Attend lectures: MWF 2:15-3:15pm in Chapman 107, or online.
+* Attend lectures: MWF 2:15-3:15pm in Chapman 107, or online (see [Canvas page for Zoom link](https://canvas.alaska.edu/courses/27130)).
 
-* Read the [Syllabus (PDF)](assets/general/F23/syllabus.pdf).
+* Read the [Syllabus (PDF)](assets/general/F25/syllabus.pdf).
 
-* See the [Schedule (PDF)](assets/general/F23/schedule.pdf).  Check it often for due dates, and for which topics come next!
+* See the [Schedule (PDF)](assets/general/F25/schedule.pdf).  Check it often for due dates, and for which topics come next!
 
 * Check out the nearly-weekly [homework Assignments](homework).
 
-* There are three Exams, two Midterm Quizzes and a Final.  All are in class, and the Final will happen at the scheduled time.  See the [Exams](exams) tab for review guides.
+* There are three Exams, namely two Midterm Quizzes and a Final.  All are in class, and the Final will happen at the scheduled time.  See the [Exams](exams) tab for review guides and sample exams.
 
 * Homework will require programming in Matlab/Octave or some other suitable scientific computing language.  See the [this page](computing) and the [_Programming languages compared_ (PDF)](https://bueler.github.io/compareMOP.pdf) handout for recommended languages.  Code example are at the [Codes tab](codes).
 
