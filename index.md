@@ -7,7 +7,7 @@ Welcome to the homepage of **Math F614 Numerical Linear Algebra** in the [Dept. 
 
 ### Sections
 
-If you plan to be present on campus in Fairbanks during the semester, please sign up for the in-person "901" section (crn 75364), and plan to attend lecture in Chapman 107.  If you are remote, signing up for the web-based "701" section (crn 75371) is just fine, and you should see the [Canvas page for the Zoom link](https://canvas.alaska.edu/courses/27130).
+If you plan to be present on campus in Fairbanks during the semester, please sign up for the in-person "901" section (crn 75364), and plan to attend lecture in Chapman 107.  If you are remote, signing up for the web-based "701" section (crn 75371) is just fine!  Online students should use the [Zoom link on the Canvas page](https://canvas.alaska.edu/courses/27130).
 
 #### Instructor:  [Ed Bueler](http://bueler.github.io/)
 
@@ -27,7 +27,7 @@ Log in to [canvas.alaska.edu/courses/27130](https://canvas.alaska.edu/courses/27
 
 * Check out the nearly-weekly [homework Assignments](homework).
 
-* There are three Exams, namely two Midterm Quizzes and a Final.  All are in class, and the Final will happen at the scheduled time.  See the [Exams](exams) tab for review guides and sample exams.
+* There are three Exams, namely two Midterm Quizzes and a Final.  All are in-class and on paper, with no computer tools or internet.  (Remote students should set up proctoring; [please contact me by email](mailto:elbueler@alaska.edu).)  The Final will happen at the scheduled time.  See the [Exams](exams) tab for review guides and sample exams.
 
 * Homework will require programming in Matlab/Octave or some other suitable scientific computing language.  See the [this page](computing) and the [_Programming languages compared_ (PDF)](https://bueler.github.io/compareMOP.pdf) handout for recommended languages.  Code example are at the [Codes tab](codes).
 
