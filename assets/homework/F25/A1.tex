@@ -4,7 +4,7 @@
 \addtolength{\evensidemargin}{-.65in}
 \addtolength{\topmargin}{-.4in}
 \addtolength{\textwidth}{1.3in}
-\addtolength{\textheight}{.75in}
+\addtolength{\textheight}{.8in}
 
 \renewcommand{\baselinestretch}{1.05}
 
@@ -70,14 +70,14 @@
 \newcommand{\Julia}{\textsc{Julia}\xspace}
 
 \begin{document}
-\scriptsize \noindent Math 614 Numerical Linear Algebra (Bueler) \hfill \emph{Assigned FIXME}
+\scriptsize \noindent Math 614 Numerical Linear Algebra (Bueler) \hfill \emph{assigned 25 August 2025}
 \normalsize\medskip
 
 \Large\centerline{\textbf{Assignment \#1}}
 \large
 \medskip
 
-\centerline{\textbf{Due FIXME, at the start of class}}
+\centerline{\textbf{Due Monday 1 September, at the start of class}}
 \medskip
 \normalsize
 
@@ -85,10 +85,12 @@
 
 \bigskip
 
-A major purpose of this assignment is to familiarize you with \Matlab (or \Octave, \Python, \Julia, etc.; see the \href{https://bueler.github.io/compareMOP.pdf}{\emph{Programming languages compared}} PDF).  You will need to find and download, or in any case set up, a copy of your preferred language.  Make sure you can use the command line, do basic operations at the command line (as a calculator), and plot simple things.  Make sure you can create a new program (i.e.~in a text file), save it, edit it, and run it at the command line.
+\begin{quote}
+{\small \emph{One purpose here is to become familiar with \Matlab.\footnote{You can use any language you want!  But I will call it ``\Matlab'' for brevity.  The textbook and I will support \Matlab in some detail.  Note \Octave is a \Matlab clone for the purposes of this class.  Also consider \Python or \Julia.  See the \href{https://bueler.github.io/compareMOP.pdf}{\emph{Programming languages compared PDF}} online.}  Please find and download, or in any case set-up, your preferred language.  Make sure you can use the command line, do basic operations at the command line (as a calculator), and plot simple things.  Make sure you can create a new program in a text file, edit it, and run it at the command line. Also, please turn in a single document for this Assignment, with the problems in order.  Feel free to use a search engine or generative AI to help you learn how to do any of these things, but note you will not have such tools for Quizzes and the Final Exam.}}
+\end{quote}
 
 \bigskip
-\noindent Please read Lectures 1 and 2 in the textbook \emph{Numerical Linear Algebra} by Trefethen and Bau.
+\noindent Please read Lectures 1 and 2 in the textbook \emph{Numerical Linear Algebra}, SIAM Press 1997, by Trefethen and Bau.
 
 \bigskip
 \noindent \textsc{Do the following exercises} from Lecture 1:
@@ -98,48 +100,58 @@ A major purpose of this assignment is to familiarize you with \Matlab (or \Octav
 \end{itemize}
 
 
-\bigskip
-\noindent \textsc{Do the following additional exercises.}
+\medskip
+\noindent \textsc{Do the following additional problems.}
 
-\prob{P1}  (\emph{This exercise starts with a reminder of things you knew how to do during your undergraduate linear algebra course.  It is recommended that you find an undergrad linear algebra textbook, as it will be useful again this semester.})
+\prob{P1}  \emph{This should be a reminder of things you knew how to do during your undergraduate linear algebra course.  I suggest you find an undergrad linear algebra textbook; it will be useful this semester!}
 
-Consider the $3\times 3$ real matrix
-    $$A = \begin{bmatrix}   3     &     2    &     2 \\
+\smallskip
+Consider the $3\times 3$ real matrix\quad $A = \begin{bmatrix}   1     &     1    &     2 \\
                             -2    &     0    &     4 \\
-                            1     &     1    &     2  \end{bmatrix}$$
+                            3     &     2    &     2  \end{bmatrix}$.
 
 \epart{a} \underline{By hand}, on paper:\begin{itemize}
-\item compute the eigenvalues of $A$,
 \item compute the determinant of $A$,
 \item compute the rank of $A$,
-\item compute the inverse of $A$ (if possible),
-\item compute the inverse of $B=A(2:3,1:2)$ (if possible), and
-\item solve the linear system $Ax=b$ where $b = \begin{bmatrix} -6 & 8 & -1 \end{bmatrix}^*$ (if possible).
+\item compute the eigenvalues of $A$,
+\item compute the inverse of $A$ (\emph{if possible}),
+\item compute the inverse of $B=A(2:3,1:2)$ (\emph{if possible}), and
+\item find all solutions to the linear system $Ax=b$ where $b = \begin{bmatrix} -1 & 8 & -6 \end{bmatrix}^*$ (\emph{if any}).
 \end{itemize}
 
-\epart{b} Now check your work at the \Matlab command line.  (\emph{You'll use these \Matlab commands among others:} \texttt{eig,rank,det,inv,\,$\backslash$\;.})  As usual for any computational exercise, show the commands and their results in what you turn in.
+\epart{b} Now check your work at the \Matlab command line.  (\emph{Consider these \Matlab commands among others:} \texttt{eig,rank,det,inv,\,$\backslash$\;.})  As usual for any computational exercise, show the commands and their results in what you turn in, with attention to brevity and readability.
 
+
+\clearpage
+\newpage
+\prob{P2}  \emph{This problem exercises additional \Matlab commands such as} \texttt{rand,plot,loglog, semilogy}. \emph{It is also an exercise in communicating results.  You will generate 81 matrices, so please do \emph{not} turn in a giant table of the matrices themselves!  Don't even turn in a table of their ranks or determinants.  Instead, please use plots to communicate data and patterns.  Perhaps you will compute averages, but generally the data itself can and should appear in the plot(s).}
+
+\smallskip
+Write a \Matlab script which generates 9 random matrices of size $m\times m$ for each of these powers of two: $m=2,4,8,\dots,512$.  Every matrix will have entries which are independent random real numbers uniformly distributed on $[0,1/2]$.  For each of these matrices compute the rank and the absolute value of the determinant.  Now communicate these data using plots in reasonable and appropriate ways.  Add the plot commands to your script.  A significant part of your script will be devoted to generating the plots.\footnote{It should go without saying: turn in the script!}  In a few final sentences, describe any patterns you see.  Also answer these questions: Are the matrices invertible? Did rounding errors occur in these computations?
 
 % like Exercise 1.1
-\prob{P2} Let $B$ be \emph{any} $4\times 4$ matrix to which we apply the following operations in turn:
+\prob{P3} Let $B$ be \emph{any} $4\times 4$ matrix to which we apply the following operations in order:
 \renewcommand{\labelenumi}{\arabic{enumi}.}
 \begin{enumerate}
-\item interchange columns 1 and 3
-\item interchange rows 2 and 4
-\item double column 2
-\item add row 3 to row 1
-\item subtract row 2 from each of the other rows
+\item interchange columns 2 and 3
+\item interchange rows 1 and 4
+\item double column 3
+\item add row 2 to row 1
+\item subtract row 4 from each of the other rows
 \item replace column 3 by column 4
 \item delete row 2 (so the resulting matrix is $3\times 4$)
 \end{enumerate}
 
-\epart{a} Write the result as a product of eight matrices.
+\epart{a} Write the result as a product of eight matrices.  (\emph{Just write ``$B$'' for the original matrix; you have no entries for it!  The other matrices are specific.})
 
-\epart{b} Write it again as a product $ABC$ of three matrices.  While $B$ remains arbitrary as before, please write specific matrices for $A$ and $C$.
+\epart{b} Write it again as a product $ABC$ of three matrices.  (\emph{$B$ remains arbitrary as before, but please write specific matrices for $A$ and $C$.})
 
+\prob{P4} \emph{The first sentence of the textbook says ``You already know the formula for matrix-vector multiplication.''  Is this true?}
 
-\prob{P3}  (\emph{This problem exercises additional \Matlab commands such as} \texttt{rand,ones,norm, plot,loglog,semilogy}. \emph{It is also an exercise in communicating numerical results.  In fact, because you will generate 80 matrices, please do \emph{not} turn in a giant table of the matrices themselves!  Don't even turn in a table of their ranks, norms, or determinants.  Instead, use plots to communicate data and patterns.  It may make sense to compute averages over the 10 tries, but generally the data itself should appear in a plot.})
+\smallskip
+Write a short \Matlab function which uses \texttt{for} loops\footnote{Do not use colon notation, supposing you have already learned it.  Also, don't ever use this code for production!  Just use \,\texttt{A\,$\ast$\,x}\, in \Matlab!} to compute the product of an $m\times n$ matrix $A$ and a $n\times 1$ column vector $x$.  The first line will be:
 
-Write a \Matlab script which generates 10 random matrices of size $m\times m$ for each of these powers of two: $m=2,4,8,\dots,256$.  Every matrix will have entries which are independent random real numbers uniformly distributed on $[-5,5]$.  For each of these matrices compute the rank, the 2-norm, and the absolute value of the determinant.  Now communicate these data using plots in reasonable and appropriate ways.  Add the plot commands to your script.  A significant part of your script will be devoted to generating the plots.  In a few final sentences, describe the patterns you see.
+\centerline{\texttt{function b = mymatvec(A,x)}}
 
+\noindent Do several things to make this into a well-implemented function:  Use \texttt{size()} to determine $m$ and $n$.  Once you get the sizes of $A$ and $x$, do error-checking\footnote{\texttt{error()} is a \Matlab command \dots use it!} to make sure $A$ and $x$ have compatible sizes.  Use a few short comments to explain what is happening.  Demonstrate that it is correct by running it on a couple of small cases where you know the correct answer by hand.  Finally, answer these questions:  How many additions are needed?  Multiplications?
 \end{document}

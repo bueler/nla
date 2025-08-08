@@ -2,8 +2,8 @@ semester: Fall 2025
 home: assets/homework/F25
 homework:
 - name: Assignment 1
-  due: FIXME
-  #blank: A1.pdf
+  due: Monday 1 Sep
+  blank: A1.pdf
   sections: Lectures 1, 2
 
 #  seealsoname: Classical iterative methods slides
