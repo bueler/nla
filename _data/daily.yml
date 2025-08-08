@@ -1,0 +1,14 @@
+semester: Fall 2025
+home: assets
+daily:
+- name: Monday 25 Aug
+  covered: getting started with matrix multiplication
+  lecture: 1
+  worksheet: worksheets/F25/visualize.pdf
+  worksheetname: visualize vectors and matrices
+
+#  otherurl: https://bueler.github.io/opt/assets/slides/F24/mon16sep.pdf
+#  otherurlname: "PDF slides: section 2.6"
+#  handout: worksheets/F24/5exs.pdf
+#  handoutname: 5 example optimization problems
+#  more: x

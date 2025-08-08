@@ -11,14 +11,14 @@ docs:
 - title: Schedule
   url: assets/general/F25/schedule.pdf  # rebuild by "make schedule.pdf" in assets/general/F25
 
+- title: Daily Log
+  url: daily.html
+
 - title: Homework
   url: homework.html
 
 - title: Exams
   url: exams.html
-
-- title: Worksheets
-  url: worksheets.html
 
 - title: Codes
   url: codes.html
