@@ -1,18 +1,18 @@
-semester: Fall 2023
-home: assets/exams/F23
+semester: Fall 2025
+home: assets/exams/F25
 exams:
 - name: Midterm Quiz 1
-  date: FIXME
+  date: Wednesday 8 October
   info: <b>in class</b> or proctored
   #reviewguide: mid1review.pdf
   #blank: mid1.pdf
   #solutions: mid1solns.pdf
 - name: Midterm Quiz 2
-  date: FIXME
+  date: Wednesday 12 November
   info: <b>in class</b> or proctored
   #reviewguide: mid2review.pdf
 - name: Final Exam
-  date: FIXME
+  date: Thursday 11 December, 1:00-3:00 pm
   info: <b>in class</b> or proctored
   #doc: final.pdf
   #rubric: finalrubric.pdf
