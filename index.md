@@ -27,7 +27,7 @@ Log in to [canvas.alaska.edu/courses/27130](https://canvas.alaska.edu/courses/27
 
 * Check out the nearly-weekly [homework Assignments](homework).
 
-* There are three Exams, namely two Midterm Quizzes and a Final.  All are in-class and on paper, with no computer tools or internet.  (Remote students should set up proctoring; [please contact me by email](mailto:elbueler@alaska.edu).)  The Final will happen at the scheduled time.  See the [Exams](exams) tab for review guides and sample exams.
+* There are three major assessments, namely two Midterm Quizzes and a Final.  All are in-class and on paper, with no computer tools or internet.  (Remote students should set up proctoring; [please contact me by email](mailto:elbueler@alaska.edu).)  The Final will happen at the scheduled time.  See the [Exams](exams) tab for review guides and sample exams.
 
 * Homework will require programming in Matlab/Octave or some other suitable scientific computing language.  See the [this page](computing) and the [_Programming languages compared_ (PDF)](https://bueler.github.io/compareMOP.pdf) handout for recommended languages.  Code example are at the [Codes tab](codes).
 
