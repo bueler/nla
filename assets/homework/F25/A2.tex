@@ -1,0 +1,140 @@
+\documentclass[12pt]{amsart}
+%prepared in AMSLaTeX, under LaTeX2e
+\addtolength{\oddsidemargin}{-.65in} 
+\addtolength{\evensidemargin}{-.65in}
+\addtolength{\topmargin}{-.4in}
+\addtolength{\textwidth}{1.3in}
+\addtolength{\textheight}{.8in}
+
+\renewcommand{\baselinestretch}{1.05}
+
+\usepackage{verbatim} % for "comment" environment
+
+\usepackage{palatino}
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{defn}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{problem}{Problem}
+\newtheorem*{remark}{Remark}
+
+\newcommand{\mtt}{\texttt}
+\usepackage{verbatim,xspace}
+
+\usepackage[final]{graphicx}
+
+% macros
+\usepackage{amssymb}
+
+\usepackage{hyperref}
+\hypersetup{pdfauthor={Ed Bueler},
+            pdfcreator={pdflatex},
+            colorlinks=true,
+            citecolor=blue,
+            linkcolor=red,
+            urlcolor=blue,
+            }
+
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\grad}{\nabla}
+\newcommand{\lam}{\lambda}
+\newcommand{\lap}{\triangle}
+
+\newcommand{\ip}[2]{\ensuremath{\left<#1,#2\right>}}
+
+\newcommand{\image}{\operatorname{im}}
+\newcommand{\onull}{\operatorname{null}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\range}{\operatorname{range}}
+\newcommand{\trace}{\operatorname{tr}}
+
+\newcommand{\prob}[1]{\bigskip\noindent\textbf{#1.}\quad }
+\newcommand{\exer}[2]{\prob{Exercise #2 in Lecture #1}}
+
+\newcommand{\pts}[1]{(\emph{#1 pts}) }
+\newcommand{\epart}[1]{\medskip\noindent\textbf{(#1)}\quad }
+\newcommand{\ppart}[1]{\,\textbf{(#1)}\quad }
+
+\newcommand{\Matlab}{\textsc{Matlab}\xspace}
+\newcommand{\Octave}{\textsc{Octave}\xspace}
+\newcommand{\Python}{\textsc{Python}\xspace}
+\newcommand{\Julia}{\textsc{Julia}\xspace}
+
+\begin{document}
+\scriptsize \noindent Math 614 Numerical Linear Algebra (Bueler) \hfill \emph{assigned 3 September 2025}
+\normalsize\medskip
+
+\Large\centerline{\textbf{Assignment \#2}}
+\large
+\medskip
+
+\centerline{\textbf{Due Monday 15 September, at the start of class}}
+\medskip
+\normalsize
+
+\thispagestyle{empty}
+
+\bigskip
+
+\noindent Please read Lectures 2, 3, and 4 in the textbook \emph{Numerical Linear Algebra}, SIAM Press 1997, by Trefethen and Bau.  An ongoing purpose in this Assignment is to familiarize you with \Matlab,\footnote{You can use any language you want, but I am calling it ``\Matlab'' for brevity.} but emphasis is increasingly on ideas and algorithms from the textbook.
+
+\bigskip
+\noindent \textsc{Do the following exercises} from Lecture 2:
+
+\begin{itemize}
+\item \textbf{Exercise 2.1}
+\item \textbf{Exercise 2.3}
+\end{itemize}
+
+
+\medskip
+\noindent \textsc{Do the following additional problems.}
+
+\prob{P5}  Write a \Matlab function which uses \texttt{for} loops to compute the product $C=AB$ of an $m\times n$ matrix $A$ and a $n\times k$ matrix $B$.  The first line will be:
+
+\centerline{\texttt{function C = mymatmat(A,B)}}
+
+\noindent As for \texttt{mymatvec()} from Assignment \#1, please make this a well-implemented function.  Specifically, use \texttt{size()} to determine $m,n,k$, do error-checking to ensure compatible sizes, and add a few short comments to explain what is happening.  Demonstrate that it is correct by running it on a couple of small cases where you have computed the correct answer by hand; the largest case you should do by hand might be $m=3,n=4,k=3$, for example.  (I recommend computing norms of differences to demonstrate correctness.)  Then count the exact number of floating-point arithmetic operations, as a function of $m,n,k$.
+
+
+\prob{P6}  Use \Matlab to reproduce Figure 3.1 in the textbook.  Start with plotting the unit balls in $\RR^2$ just by plotting many points with unit norms.  Then apply $A$ to those points and generate the right-hand figures.  \verb|subplot| may be useful.  Then add the annotation/decorations to match the appearance in a reasonable manner.  For mathematical annotations, try \verb#text(3,0,"$\|A\|_1=4$")#, for example.
+
+
+\prob{P7}  It is likely that you have already learned a recursive algorithm for computing determinants called ``expansion in minors.''  If you do not know it, please look it up.
+
+\epart{a} Compute the following determinant by hand, showing your work to demonstrate that you can apply expansion in minors:
+	$$\det\left(\begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9 \end{bmatrix}\right).$$
+
+\epart{b} For any matrix $A\in\CC^{m\times m}$, find an exact recursion for the number of multiplication operations needed to compute $\det(A)$ by expansion in minors.  (\emph{Hint}:  How much more work is the $m\times m$ case than the $(m-1)\times (m-1)$ case?)  Describe the significance of this recursion in at least one sentence, and give a clear estimate which shows that the algorithm is appallingly expensive.
+
+\smallskip
+\noindent Comment: \emph{If $\det(A)=0$ \emph{exactly} then $A$ is not invertible.  However, for matrices with generic real or complex entries, rounding error makes an exact zero value extremely unlikely on such matrices.  On the other hand, the magnitude of $\det(A)$ does not measure or correlate with invertibility of $A$ anyway!  The next part addresses this idea.}
+
+\smallskip
+\epart{c}  Consider square, diagonal matrices $A$.  Give a formula for $\det(A)$.  Give a formula for $A^{-1}$, if it exists.  Show by example that $\det(A)$ is often very large or very small even for obviously and easily invertible diagonal matrices with boring-magnitude entries.
+
+\medskip
+\medskip
+\noindent Comment: \emph{Based upon such ideas and results, I claim these generalities about determinants.}
+
+\smallskip
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+\begin{enumerate}
+\setlength\itemsep{5pt}
+\item \emph{Numerical determinants should not be used to measure invertibility of matrices.  (\emph{Use the condition number instead; Lectures 4, 5.})}
+\item \emph{If the value of a numerical determinant is actually needed, it should not be computed by expansion in minors.  (\emph{Use an $O(m^3)$ LU decomposition instead, for example; Lectures 20, 21.})}
+\item \emph{Never use Cramer's rule.  (\emph{Do not learn it if you don't know it.})}
+\item \emph{Determinants \emph{are} indeed needed for changing variables in integrals.  Typically the matrices are small, and this is numerically safe.}
+\item \emph{Computing determinants is a low priority, rarely-used algorithm within practical linear algebra.}
+\end{enumerate}
+
+\end{document}
