@@ -1,9 +1,11 @@
 semester: Fall 2025
 home: assets
 daily:
-- name: Monday 25 Aug
-  covered: getting started with matrix multiplication
+- name: Wednesday 27 Aug
+  covered: thinking matrix multiplication
   lecture: 1
+- name: Monday 25 Aug
+  covered: getting started
   worksheet: worksheets/F25/visualize.pdf
   worksheetname: visualize vectors and matrices
 
