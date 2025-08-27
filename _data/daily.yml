@@ -4,8 +4,8 @@ daily:
 - name: Wednesday 27 Aug
   covered: thinking matrix multiplication
   lecture: 1
-  otherurl: https://bueler.github.io/compareMOP.pdf
-  otherurlname: comparing Matlab, Octave, Python, and Julia
+  otherurl: https://bueler.github.io/compareMOP.zip
+  otherurlname: example Matlab/Octave, Python, Julia codes, and PDF documentation (in .zip)
 - name: Monday 25 Aug
   covered: getting started
   worksheet: worksheets/F25/visualize.pdf
