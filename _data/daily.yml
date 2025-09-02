@@ -1,6 +1,10 @@
 semester: Fall 2025
 home: assets
 daily:
+- name: Wednesday 3 September
+  covered: inner products, orthogonality, adjoints, unitary matrices
+- name: Friday 29 Aug
+  covered: matrix multiplication, invertible matrices, Matlab intro
 - name: Wednesday 27 Aug
   covered: thinking matrix multiplication
   lecture: 1
