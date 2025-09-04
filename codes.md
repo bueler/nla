@@ -15,4 +15,5 @@ See [this page](computing) and [this PDF](https://bueler.github.io/compareMOP.pd
 
 ## from homework solutions
 
-  * _... codes to come_
+  * [matexper.m](assets/codes/F25/matexper.m)
+  * [mymatvec.m](assets/codes/F25/mymatvec.m)
