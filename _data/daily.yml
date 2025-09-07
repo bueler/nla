@@ -1,8 +1,14 @@
 semester: Fall 2025
 home: assets
 daily:
+- name: Monday 8 September
+  covered: vector norms, induced matrix norms
+  handout: worksheets/F25/normmanifesto.pdf
+  handoutname: matrix norm essentials
+- name: Friday 5 September
+  covered: unitary matrices
 - name: Wednesday 3 September
-  covered: inner products, orthogonality, adjoints, unitary matrices
+  covered: inner products, orthogonality, adjoints
 - name: Friday 29 Aug
   covered: matrix multiplication, invertible matrices, Matlab intro
 - name: Wednesday 27 Aug
