@@ -2,9 +2,9 @@
 
 \addtolength{\oddsidemargin}{-0.9in} 
 \addtolength{\evensidemargin}{-0.9in}
-\addtolength{\topmargin}{-0.5in}
+\addtolength{\topmargin}{-0.6in}
 \addtolength{\textwidth}{1.4in}
-\addtolength{\textheight}{1.2in}
+\addtolength{\textheight}{1.4in}
 
 \usepackage{verbatim}
 \usepackage{color}
@@ -50,7 +50,7 @@
 \LARGE
 \begin{itemize}
 \setlength\itemsep{1em}
-\item Matrix norms have vector norm \alert{properties}:
+\item All matrix norms have \alert{vector norm properties}:
   \begin{itemize}
   \item[$\circ$] $\|A\| \ge 0$ and $\|A\|=0 \,\implies \,A=0$
   \item[$\circ$] $\|A+B\| \le \|A\| + \|B\|$
@@ -58,21 +58,25 @@
   \end{itemize}
 \item \alert{Induced matrix norms} arise from vector norms.  For $A\in\CC^{m\times n}$,
 	$$\|A\| = \sup_{\begin{smallmatrix} x\in\CC^n \\ x\ne 0 \end{smallmatrix}} \frac{\|Ax\|_{(m)}}{\|x\|_{(n)}} = \max_{\|x\|_{(n)}=1} \|Ax\|_{(m)}$$
+\item This follows directly from the definition of an induced norm:
+  \begin{itemize}
+  \item[$\circ$] $\|Ax\|_{(m)} \le \|A\| \|x\|_{(n)}$
+  \end{itemize}
 \item There are really only \alert{four} matrix norms to know:
   $$\|\cdot\|_1, \quad \|\cdot\|_2, \quad \|\cdot\|_\infty, \quad \|\cdot\|_{\mathrm{Fro}}$$
   \begin{itemize}
   \item[$\circ$] 3 are \alert{induced} from vector norms: \quad $1,2,\infty$
   \item[$\circ$] 3 have \alert{easy-to-compute formulas}: \quad $1,\infty,\mathrm{Fro}$
-  \item[$\circ$] \dots so \, \texttt{norm(A,1|"inf"|"fro")} \, are fast in Matlab, while \texttt{norm(A,2)} is slow
+  \item[$\circ$] {\Large \texttt{norm(A,1|Inf|"fro")}} are fast in Matlab, {\Large \texttt{norm(A,2)}} is slow
   \end{itemize}
-\item Induced norms (\emph{and} Frobenius) have an additional \alert{multiplicative} property:
+\item Induced norms (\emph{and} Frobenius) have a \alert{multiplicative property}:
   \begin{itemize}
   \item[$\circ$] $\|A B\|\le \|A\|\|B\|$
   \end{itemize}
 \item Induced norms (\emph{and} Frobenius) satisfy \alert{$\rho(A)\le \|A\|$}.
   \begin{itemize}
   \item[$\circ$] Recall $\rho(A) = \max |\lambda|$ where $\lambda$ is an eigenvalue.
-  \item[$\circ$] However, $\rho(A)\ll\|A\|$ is common.  The norm can be a very conservative estimate of $\rho(A)$.
+  \item[$\circ$] However, $\rho(A)\ll\|A\|$ is common.  The norm can be a very conservative, that is, too large, estimate of $\rho(A)$.
   \end{itemize}
 \item The $\|\cdot\|_2$ norm is best for \alert{Euclidean ideas} and \alert{hermitian/normal matrices}.  Reasons: 
   \begin{itemize}
