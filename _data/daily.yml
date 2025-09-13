@@ -5,6 +5,8 @@ daily:
   covered: induced matrix norms
   handout: worksheets/F25/normmanifesto.pdf
   handoutname: matrix norm essentials
+  otherurl: https://www.matematiksider.dk/piethein.html
+  otherurlname: article in Danish on Piet Hein, including Sergels plaza in Stockholm
 - name: Monday 8 September
   covered: vector norms
   lecture: 3
