@@ -1,11 +1,13 @@
 semester: Fall 2025
 home: assets
 daily:
-- name: Monday 8 September
-  covered: vector norms, induced matrix norms
-  lecture: 3
+- name: Wednesday 10 September
+  covered: induced matrix norms
   handout: worksheets/F25/normmanifesto.pdf
   handoutname: matrix norm essentials
+- name: Monday 8 September
+  covered: vector norms
+  lecture: 3
 - name: Friday 5 September
   covered: unitary matrices
 - name: Wednesday 3 September
