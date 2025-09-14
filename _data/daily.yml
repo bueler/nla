@@ -1,6 +1,9 @@
 semester: Fall 2025
 home: assets
 daily:
+- name: Monday 15 September
+  covered: singular value decomposition (SVD)!
+  lecture: 4
 - name: Wednesday 10 September
   covered: induced matrix norms
   handout: worksheets/F25/normmanifesto.pdf
