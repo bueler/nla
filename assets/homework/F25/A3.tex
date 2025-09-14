@@ -1,0 +1,112 @@
+\documentclass[12pt]{amsart}
+%prepared in AMSLaTeX, under LaTeX2e
+\addtolength{\oddsidemargin}{-.65in} 
+\addtolength{\evensidemargin}{-.65in}
+\addtolength{\topmargin}{-.4in}
+\addtolength{\textwidth}{1.3in}
+\addtolength{\textheight}{.8in}
+
+\renewcommand{\baselinestretch}{1.05}
+
+\usepackage{verbatim} % for "comment" environment
+\usepackage{palatino}
+\usepackage[final]{graphicx}
+\usepackage{amssymb,enumitem,xspace}
+\usepackage{hyperref}
+\hypersetup{pdfauthor={Ed Bueler},
+            pdfcreator={pdflatex},
+            colorlinks=true,
+            citecolor=blue,
+            linkcolor=red,
+            urlcolor=blue,
+            }
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{defn}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{problem}{Problem}
+\newtheorem*{remark}{Remark}
+
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\grad}{\nabla}
+\newcommand{\lam}{\lambda}
+\newcommand{\lap}{\triangle}
+
+\newcommand{\ip}[2]{\ensuremath{\left<#1,#2\right>}}
+
+\newcommand{\image}{\operatorname{im}}
+\newcommand{\onull}{\operatorname{null}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\range}{\operatorname{range}}
+\newcommand{\trace}{\operatorname{tr}}
+
+\newcommand{\prob}[1]{\bigskip\noindent\textbf{#1.}\quad }
+\newcommand{\exer}[2]{\prob{Exercise #2 in Lecture #1}}
+
+\newcommand{\pts}[1]{(\emph{#1 pts}) }
+\newcommand{\epart}[1]{\medskip\noindent\textbf{(#1)}\quad }
+\newcommand{\ppart}[1]{\,\textbf{(#1)}\quad }
+
+\newcommand{\Matlab}{\textsc{Matlab}\xspace}
+\newcommand{\Octave}{\textsc{Octave}\xspace}
+\newcommand{\Python}{\textsc{Python}\xspace}
+\newcommand{\Julia}{\textsc{Julia}\xspace}
+
+\newcommand{\ds}{\displaystyle}
+
+\begin{document}
+\scriptsize \noindent Math 614 Numerical Linear Algebra (Bueler) \hfill \emph{assigned 15 September 2025}
+\normalsize\medskip
+
+\Large\centerline{\textbf{Assignment \#3}}
+\large
+\medskip
+
+\centerline{\textbf{Due Wednesday 24 September, at the start of class}}
+\medskip
+\normalsize
+
+\thispagestyle{empty}
+
+\bigskip
+
+\noindent Please read Lectures 3, 4, and 5 in the textbook \emph{Numerical Linear Algebra}, SIAM Press 1997, by Trefethen and Bau.
+
+\bigskip
+\noindent \textsc{Do the following exercises from the textbook}:
+
+\begin{itemize}[itemsep=4pt]
+\item \textbf{Exercise 3.2}
+\item \textbf{Exercise 3.3}
+\item \textbf{Exercise 4.1} \qquad Definitely see the advice for \textbf{P9} first!
+\item \textbf{Exercise 4.3} \qquad \begin{minipage}[t]{0.7\textwidth}
+Use the \texttt{svd} command on $A$.  Write a \Matlab \texttt{function} of the form \texttt{showmat(A)}.  Start by checking that the input $A$ is a $2\times 2$ real matrix.  Correctness is more important than figure appearance.\end{minipage}
+\item \textbf{Exercise 5.1} \qquad Use Theorem 5.4 to get the singular values of $A$ by hand.
+\end{itemize}
+
+
+\medskip
+\noindent \textsc{Do the following additional problems.}
+
+\prob{P8}  On page 21 of the textbook, equation (3.10) gives a formula for the $\infty$-norm of an $m\times n$ matrix, where $a_i^*$ denotes the $i$th row of $A$:
+    $$\|A\|_\infty = \max_{1\le i \le m} \|a_i^*\|_1.$$
+Prove this.
+
+\prob{P9}  Use by-hand calculations to determine full SVDs of the following matrices.  Note that in the decomposition $A = U \Sigma V^*$, the factor $\Sigma$ is unique but the factors $U$, $V$ are not, so there will be more than one correct answer.  (\emph{Hints.  First, think!  In particular, can you use the identity matrix and/or permutation\footnote{A \emph{permutation matrix} has zero entries except for a single 1 in each row and column.  You can check that such matrices are unitary.} matrices as the unitary factors?  Then use Theorem 5.4 or Theorem 5.5 as needed.  Check that the unitary factors are indeed unitary.  Also check that the singular values are in the proper order in the diagonal of $\Sigma$, and that $A = U \Sigma V^*$ is actually true!})
+
+\bigskip
+\textbf{(a)} \quad $\ds \begin{bmatrix} 0 & 0 \\ 3 & 0 \\ 0 & 0 \end{bmatrix}$ \qquad
+\textbf{(b)} \quad $\ds \begin{bmatrix} 0 & 0 \\ 1 & 1 \end{bmatrix}$ \qquad
+\textbf{(c)} \quad $\ds \begin{bmatrix} 2 & -1 \\ -1 & 2 \end{bmatrix}$
+
+
+\end{document}

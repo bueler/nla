@@ -1,12 +1,16 @@
 semester: Fall 2025
 home: assets/homework/F25
 homework:
+- name: Assignment 3
+  due: Wednesday 24 September
+  blank: A3.pdf
+  sections: Lectures 3, 4, 5
 - name: Assignment 2
-  due: Monday 15 Sep
+  due: Monday 15 September
   blank: A2.pdf
-  sections: Lectures 3, 4
+  sections: Lectures 2, 3
 - name: Assignment 1
-  due: Wednesday 3 Sep
+  due: Wednesday 3 September
   blank: A1.pdf
   sections: Lectures 1, 2
 
