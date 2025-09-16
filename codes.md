@@ -15,6 +15,11 @@ See [this page](computing) and [this PDF](https://bueler.github.io/compareMOP.pd
 
 ## from homework solutions
 
+Assignment 2:
+
+  * [figure3p1.m](assets/codes/F25/figure3p1.m)
+  * [mymatmat.m](assets/codes/F25/mymatmat.m)
+
 Assignment 1:
 
   * [matexper.m](assets/codes/F25/matexper.m)
