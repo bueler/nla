@@ -11,7 +11,7 @@ See [this page](computing) and [this PDF](https://bueler.github.io/compareMOP.pd
 
 ## from lectures
 
-  * _... codes to come_
+  * [mysvd.m](assets/codes/F25/mysvd.m)
 
 ## from homework solutions
 
