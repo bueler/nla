@@ -11,6 +11,8 @@ See [this page](computing) and [this PDF](https://bueler.github.io/compareMOP.pd
 
 ## from lectures
 
+  * [svdhello.m](assets/codes/F25/svdhello.m)
+  * [hello.m](assets/codes/F25/hello.m)
   * [mysvd.m](assets/codes/F25/mysvd.m)
 
 ## from homework solutions
