@@ -1,9 +1,21 @@
 semester: Fall 2025
 home: assets
 daily:
+- name: Wednesday 24 September
+  covered: projectors
+  lecture: 6
+- name: Monday 22 September
+  covered: applications of SVD
+- name: Friday 19 September
+  covered: existence of SVD
+- name: Wednesday 17 September
+  covered: computing SVD by hand and code
+  lecture: 5
 - name: Monday 15 September
   covered: singular value decomposition (SVD)!
   lecture: 4
+- name: Friday 12 September
+  covered: class cancelled
 - name: Wednesday 10 September
   covered: induced matrix norms
   handout: worksheets/F25/normmanifesto.pdf
