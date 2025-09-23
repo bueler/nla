@@ -10,9 +10,9 @@
 		  <tr>
         <td>due {{ hw.due }}</td>
 			</tr>
-		  {% if hw.sections %}
+		  {% if hw.read %}
 			  <tr>
- 		      <td>read: {{ hw.sections }}</td>
+ 		      <td>read: {{ hw.read }}</td>
 				</tr>
 		  {% endif %}
 		  {% if hw.seealsopdf %}
