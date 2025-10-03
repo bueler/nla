@@ -1,6 +1,16 @@
 semester: Fall 2025
 home: assets
 daily:
+- name: Friday 3 October
+  covered: modified Gram-Schmidt
+  lecture: 8
+- name: Wednesday 1 October
+  covered: cont.
+- name: Monday 29 September
+  covered: classical Gram-Schmidt as QR
+  lecture: 7
+- name: Friday 26 September
+  covered: orthogonal projectors
 - name: Wednesday 24 September
   covered: projectors
   lecture: 6
