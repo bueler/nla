@@ -1,0 +1,137 @@
+\documentclass[12pt,dvipsnames]{amsart}
+%prepared in AMSLaTeX, under LaTeX2e
+\addtolength{\oddsidemargin}{-.65in} 
+\addtolength{\evensidemargin}{-.65in}
+\addtolength{\topmargin}{-.4in}
+\addtolength{\textwidth}{1.3in}
+\addtolength{\textheight}{.8in}
+
+\renewcommand{\baselinestretch}{1.05}
+
+\usepackage{fancyvrb}
+\usepackage{palatino}
+\usepackage[final]{graphicx}
+\usepackage{amssymb,enumitem,xspace,xcolor}
+\usepackage{hyperref}
+\hypersetup{pdfauthor={Ed Bueler},
+            pdfcreator={pdflatex},
+            colorlinks=true,
+            citecolor=blue,
+            linkcolor=red,
+            urlcolor=blue,
+            }
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{defn}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{problem}{Problem}
+\newtheorem*{remark}{Remark}
+
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\grad}{\nabla}
+\newcommand{\lam}{\lambda}
+\newcommand{\lap}{\triangle}
+
+\newcommand{\ip}[2]{\ensuremath{\left<#1,#2\right>}}
+
+\newcommand{\image}{\operatorname{im}}
+\newcommand{\onull}{\operatorname{null}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\range}{\operatorname{range}}
+\newcommand{\trace}{\operatorname{tr}}
+
+\newcommand{\prob}[1]{\bigskip\noindent\textbf{#1.}\quad }
+\newcommand{\exer}[2]{\prob{Exercise #2 in Lecture #1}}
+
+\newcommand{\pts}[1]{(\emph{#1 pts}) }
+\newcommand{\epart}[1]{\medskip\noindent\textbf{(#1)}\quad }
+\newcommand{\ppart}[1]{\,\textbf{(#1)}\quad }
+
+\newcommand{\Matlab}{\textsc{Matlab}\xspace}
+\newcommand{\Octave}{\textsc{Octave}\xspace}
+\newcommand{\Python}{\textsc{Python}\xspace}
+\newcommand{\Julia}{\textsc{Julia}\xspace}
+
+\newcommand{\ds}{\displaystyle}
+
+\DefineVerbatimEnvironment{mVerb}{Verbatim}{numbersep=2mm,
+frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
+
+
+\begin{document}
+\scriptsize \noindent Math 614 Numerical Linear Algebra (Bueler) \hfill \emph{assigned 3 October 2025}
+\normalsize\medskip
+
+\Large\centerline{\textbf{Assignment \#5}}
+\large
+\medskip
+
+\centerline{\textbf{Due Monday 13 October, at the start of class}}
+\medskip
+\normalsize
+
+\thispagestyle{empty}
+
+\bigskip
+
+\noindent Please read Lectures 7, 8, 10, and 11 in the textbook \emph{Numerical Linear Algebra}, SIAM Press 1997, by Trefethen and Bau.  The experiments in Lecture 9 are interesting, but not needed for any Homework or Exams.
+
+\bigskip
+\noindent \textsc{Do the following exercises from the textbook}:
+
+\begin{itemize}[itemsep=4pt]
+\item \textbf{Exercise 7.1}
+\item \textbf{Exercise 7.3} \quad\, Start by explaining why $|\det(Q)|=1$ if $Q$ is unitary.
+\item \textbf{Exercise 8.2} \quad\, \begin{minipage}[t]{0.68\textwidth}  Use your preferred language.  Implicit in this, and similar questions, is to show that your code works!  After the code, please show a brief command line session where you generate a generic/random matrix, run the code on it, and then verify that the outputs have the required properties.  Use \,\texttt{norm()} to avoid spewing numbers at me.  In other words, act like a professional.  See my previous Homework solutions for examples. \end{minipage}
+\item \textbf{Exercise 10.2} \quad Same advice.
+\item \textbf{Exercise 10.3}
+\end{itemize}
+
+
+\medskip
+\noindent \textsc{Do the following additional problems.}
+
+\prob{P12}  Suppose $A\in \CC^{m\times n}$, for $m\ge n$, is a matrix with ortho\emph{gonal}, but not necessarily ortho\emph{normal}, columns.  Describe its reduced QR decomposition.
+
+
+\prob{P13}  \emph{While we have used QR to solve linear systems, here we see that QR factorization has a completely different application.  For more, see Lectures 24--29.}
+
+\epart{a} By googling for ``unsolvable quintic polynomials'' or similar, confirm that there is a theorem which shows that fifth and higher-degree polynomials cannot be solved using finitely-many operations, including $n$th roots (``radicals'').  In other words, there is no finite formula for the solutions (``roots'') of such polynomial equations.  Who proved this theorem?  When?  Show a quintic polynomial for which it is known that there is no finite formula.  (\emph{You do \emph{not} need to prove that it is ``unsolvable''!})
+
+%\clearpage\newpage
+\epart{b} At the Matlab command line, do the following:
+\begin{mVerb}
+>> A = randn(5,5);  A = A' * A     % create a random 5x5 symmetric matrix
+...
+>> A0 = A;                         % save a copy of the original A
+>> [Q, R] = qr(A);  A = R * Q
+...                                % repeat about 10 times
+>> [Q, R] = qr(A);  A = R * Q
+\end{mVerb}
+We start with a random, symmetric $5\times 5$ matrix $A_0$ and then generate a sequence of new matrices $A_i$.  Specifically, each matrix is factored and then the next matrix is generated by multiplying-back in reversed order:
+    $$A_i = Q_i R_i \qquad \longrightarrow \qquad A_{i+1} = R_i Q_i.$$
+What happens to the matrix entries when you iterate at least 10 times?    What do you observe about this sequence of $A_i$?  Now compare, both visually and using \texttt{norm()}, the vectors/lists \verb|sort(diag(A))| to \verb|sort(eig(A0))|.
+
+\medskip
+\noindent \emph{Without turning in anything for this stuff, also do:}
+\begin{itemize}
+\item \emph{Use a} \texttt{for} \emph{loop to see results from 100 iterations.}
+\item \emph{Repeat the experiment for a $13\times 13$ matrix.  That is, there is nothing special about $5\times 5$.}
+\end{itemize} 
+
+\epart{c} To see a bit more of what is going on in part \textbf{(b)}, show that
+    $$A_{i+1} = Q_i^* A_i Q_i.$$
+So, at least this shows $A_{i+1}$ has exactly the same eigenvalues as $A_i$\,; \,explain why.
+
+\epart{d} Apparently we have discovered an eigenvalue solver for symmetric matrices.  Write a few sentences which relate the context from part \textbf{(a)} to the results in \textbf{(b)} and \textbf{(c)}.  (\emph{Hint.  Think and speculate.  Then read ``A Fundamental Difficulty'' in Lecture 25 to confirm your understanding.})
+
+\end{document}
