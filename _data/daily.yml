@@ -1,6 +1,12 @@
 semester: Fall 2025
 home: assets
 daily:
+- name: Wednesday 8 October
+  covered: Midterm Quiz 1
+- name: Monday 6 October
+  covered: review-by-worksheet, more MGS
+  worksheet: worksheets/F25/factorizations.pdf
+  worksheetname: recalling and using matrix factorizations
 - name: Friday 3 October
   covered: modified Gram-Schmidt
   lecture: 8

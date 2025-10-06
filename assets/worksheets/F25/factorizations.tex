@@ -1,0 +1,118 @@
+\documentclass[11pt]{amsart}
+%prepared in AMSLaTeX, under LaTeX2e
+\addtolength{\oddsidemargin}{-.9in} 
+\addtolength{\evensidemargin}{-.9in}
+\addtolength{\topmargin}{-.9in}
+\addtolength{\textwidth}{1.5in}
+\addtolength{\textheight}{1.5in}
+
+\renewcommand{\baselinestretch}{1.05}
+
+\usepackage{verbatim} % for "comment" environment
+
+\usepackage{palatino,enumitem}
+
+\usepackage[final]{graphicx}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\usepackage{enumitem,xspace,fancyvrb}
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{defn}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{problem}{Problem}
+\newtheorem*{remark}{Remark}
+
+\DefineVerbatimEnvironment{mVerb}{Verbatim}{numbersep=2mm,frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
+
+% macros
+\usepackage{amssymb}
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\bB}{\mathbf{B}}
+\newcommand{\bE}{\mathbf{E}}
+\newcommand{\bF}{\mathbf{F}}
+\newcommand{\bJ}{\mathbf{J}}
+
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bw}{\mathbf{w}}
+\newcommand{\bx}{\mathbf{x}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+
+\newcommand{\Div}{\ensuremath{\nabla\cdot}}
+\newcommand{\Curl}{\ensuremath{\nabla\times}}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\grad}{\nabla}
+\newcommand{\image}{\operatorname{im}}
+
+\newcommand{\ip}[2]{\ensuremath{\left<#1,#2\right>}}
+\newcommand{\lam}{\lambda}
+
+\newcommand{\Null}{\operatorname{null}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\range}{\operatorname{range}}
+\newcommand{\trace}{\operatorname{tr}}
+
+\newcommand{\prob}[1]{\bigskip\noindent\textbf{#1.}\quad }
+\newcommand{\exer}[2]{\prob{Exercise #2 on page #1}}
+\newcommand{\exerpages}[2]{\prob{Exercise #2 on pages #1}}
+
+\newcommand{\pts}[1]{(\emph{#1 pts}) }
+\newcommand{\epart}[1]{\bigskip\noindent\textbf{(#1)}\quad }
+\newcommand{\ppart}[1]{\,\textbf{(#1)}\quad }
+
+
+\begin{document}
+\scriptsize \noindent Math 614 Numerical Linear Algebra \hfill Bueler
+\normalsize\medskip
+
+\Large\centerline{\textbf{Worksheet: Recalling and using matrix factorizations.}}
+\medskip
+\normalsize
+
+\thispagestyle{empty}
+
+\begin{quote}
+Coming just before Midterm Quiz 1, the goal of this worksheet is to recall \emph{which matrix factorizations are known already}, and \emph{how they are used to solve linear systems} and \emph{how they are used to build orthogonal projections}.
+\end{quote}
+
+\bigskip
+\begin{enumerate}[leftmargin=-1mm]
+\renewcommand{\labelenumi}{\textbf{\arabic{enumi}.}}
+\item Assume $A\in\CC^{m\times m}$ is square and invertible.  State the \textbf{full SVD} of $A$, including properties of the factors, and then give the additional three steps needed to solve a linear system $Ax=b$.  Make notes on the cost of the steps.
+
+\vfill
+
+\item Assume $A\in\CC^{m\times m}$ is square, invertible, \emph{and diagonalizable}.  State a \textbf{diagonalization factorization} of $A$, including properties of the factors, and then give the additional three steps needed to solve a linear system $Ax=b$.
+
+\vfill
+
+\clearpage\newpage
+\item Assume $A\in\CC^{m\times m}$ is square and invertible.  State the \textbf{full QR factorization} of $A$, including properties of the factors, and then give the additional two steps needed to solve a linear system $Ax=b$.  Make notes on the cost of the steps.
+
+\vfill
+
+\end{enumerate}
+
+\noindent\hrulefill
+
+\medskip
+\begin{enumerate}[leftmargin=-1mm]
+\renewcommand{\labelenumi}{\textbf{\Alph{enumi}.}}
+\item Assume $A\in\CC^{m\times n}$, $m\ge n$, is full-rank.  State the \textbf{reduced SVD} of $A$, including sizes and properties of the factors.  Then give a formula for the projection onto the range of $A$.
+
+\vfill
+
+\item Assume $A\in\CC^{m\times n}$, $m\ge n$, is full-rank.  State the \textbf{reduced QR factorization} of $A$, including sizes and properties of the factors.  What is the cost of this factorization?  Then give a formula for the projection onto the range of $A$.
+
+\vfill
+
+\end{enumerate}
+
+\end{document}
