@@ -5,12 +5,14 @@ exams:
   date: Wednesday 11 October
   info: <b>in class</b> or proctored
   reviewguide: mid1review.pdf
-  #blank: mid1.pdf
-  #solutions: mid1solns.pdf
+  blank: blank/mid1.pdf
+  solutions: solns/mid1.pdf
 - name: Midterm Quiz 2
   date: Wednesday 15 November
   info: <b>in class</b> or proctored
   reviewguide: mid2review.pdf
+  blank: blank/mid2.pdf
+  solutions: solns/mid2.pdf
 - name: Final Exam
   date: Wednesday 13 December, 1-3 pm
   info: <b>in class</b> or proctored
