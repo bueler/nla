@@ -1,6 +1,11 @@
 semester: Fall 2025
 home: assets
 daily:
+- name: Friday 10 October
+  covered: Householder reflections for QR
+  lecture: 10
+  handout: worksheets/F25/Householder1958.pdf
+  handoutname: the 4-page paper by Householder in 1958
 - name: Wednesday 8 October
   covered: Midterm Quiz 1
 - name: Monday 6 October
