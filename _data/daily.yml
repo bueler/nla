@@ -1,6 +1,11 @@
 semester: Fall 2025
 home: assets
 daily:
+- name: Wednesday 15 October
+  covered: algorithms for linear least squares
+- name: Monday 13 October
+  covered: cont.; linear least squares problems
+  lecture: 11
 - name: Friday 10 October
   covered: Householder reflections for QR
   lecture: 10
