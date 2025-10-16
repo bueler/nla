@@ -17,6 +17,12 @@ See [this page](computing) and [this PDF](https://bueler.github.io/compareMOP.pd
 
 ## from homework solutions
 
+Assignment 5:
+
+  * [house.m](assets/codes/F25/house.m)
+  * [formQ.m](assets/codes/F25/formQ.m)
+  * [mgs.m](assets/codes/F25/mgs.m)
+
 Assignment 3:
 
   * [showmat.m](assets/codes/F25/showmat.m)
