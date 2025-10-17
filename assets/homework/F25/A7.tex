@@ -68,14 +68,14 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 
 
 \begin{document}
-\scriptsize \noindent Math 614 Numerical Linear Algebra (Bueler) \hfill \emph{assigned 17 October 2025}
+\scriptsize \noindent Math 614 Numerical Linear Algebra (Bueler) \hfill \emph{assigned 20 October 2025}
 \normalsize\medskip
 
-\Large\centerline{\textbf{Assignment \#6}}
+\Large\centerline{\textbf{Assignment \#7}}
 \large
 \medskip
 
-\centerline{\textbf{Due {\color{BrickRed} Friday 24 October}, at the start of class} {\color{BrickRed} $\longleftarrow$ \emph{revised date}}}
+\centerline{\textbf{Due FIXME, at the start of class}}
 \medskip
 \normalsize
 
@@ -83,15 +83,14 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 
 \bigskip
 
-\noindent Please read Lectures 10, 11, 12, and 13 in the textbook \emph{Numerical Linear Algebra}, SIAM Press 1997, by Trefethen and Bau.
+\noindent Please read Lectures 12, 13, 14, and 15 in the textbook \emph{Numerical Linear Algebra}, SIAM Press 1997, by Trefethen and Bau.
 
 \bigskip
 \noindent \textsc{Do the following exercises from the textbook}:
 
 \begin{itemize}[itemsep=4pt]
-\item \textbf{Exercise 11.3}
-\item \textbf{Exercise 12.2}
-\item[] {\color{BrickRed} \emph{(Exercise 13.4 was moved to Assignment 7)}}
+\item \textbf{Exercise 13.4}  \quad\, \begin{minipage}[t]{0.68\textwidth}   \emph{Any computer you touch has $\eps_{\text{machine}}\approx 10^{-16}$, so do part (a) with floating point numbers as usual.  I was able to get Matlab to do part (b) by starting with} {\small \texttt{x = sym('0')}} \emph{and then doing Newton's method the usual way at the command line.  For instance, if I were approximating $\sqrt{2}$ by Newton's method then I might start with} \, {\small \texttt{x = sym('1')}} \emph{and then repeat} \, {\small \texttt{x = x - (x$\wedge$2-2) / (2*x)}}.  \emph{What is Trefethen's point in showing you this calculation?}\end{minipage}
+\item \textbf{Exercise X.X}
 \end{itemize}
 
 
@@ -99,11 +98,7 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 \noindent \textsc{Do the following additional problems.}
 
 \medskip
-\noindent \emph{The Matlab built-in} \texttt{qr()} \emph{computes the QR factorization using Householder reflectors (Lecture 10).  Generally you should use it when QR is needed, but of course you can check it against} \texttt{mgs()}, \emph{which you wrote on Assignment \#5 from Lecture 8.}
-
-\prob{P14}  By applying Matlab's backslash command, reproduce Figure 11.1.  Then, by applying Algorithm 11.2, using the \texttt{qr} and backslash commands, reproduce Figure 11.2.  Please make at least a modest effort to capture the appearance of these Figures.  (\emph{Hints.}  Note \,\texttt{axis off}\, creates a clean picture without ticks and axes labels.  You can put back the black axes using\, \texttt{plot([-6 6],[0 0],'k')} and similar.)
-
-\prob{P15}  Suppose $A$ is a $101\times 101$ matrix with $\|A\|_2=50$ and $\|A\|_F=51$.  Give the sharpest possible lower bound on the 2-norm condition number of $A$.  (\emph{Hint.  Write everything in terms of singular values, and then think about best cases for $\kappa_2(A)$.})
+\prob{P16}  FIXME
 
 
 
