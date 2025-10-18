@@ -1,11 +1,16 @@
 semester: Fall 2025
 home: assets
 daily:
-- name: Wednesday 15 October
+- name: Monday 20 October
+  covered: defining and computing conditioning
+  lecture: 12
+- name: Friday 17 October
   covered: algorithms for linear least squares
-- name: Monday 13 October
-  covered: cont.; linear least squares problems
+- name: Wednesday 15 October
+  covered: linear least squares
   lecture: 11
+- name: Monday 13 October
+  covered: cont.
 - name: Friday 10 October
   covered: Householder reflections for QR
   lecture: 10
