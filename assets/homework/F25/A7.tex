@@ -68,14 +68,14 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 
 
 \begin{document}
-\scriptsize \noindent Math 614 Numerical Linear Algebra (Bueler) \hfill \emph{assigned 20 October 2025}
+\scriptsize \noindent Math 614 Numerical Linear Algebra (Bueler) \hfill \emph{assigned 27 October 2025}
 \normalsize\medskip
 
 \Large\centerline{\textbf{Assignment \#7}}
 \large
 \medskip
 
-\centerline{\textbf{Due FIXME, at the start of class}}
+\centerline{\textbf{Due Wednesday 5 November, at the start of class}}
 \medskip
 \normalsize
 
@@ -89,8 +89,10 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 \noindent \textsc{Do the following exercises from the textbook}:
 
 \begin{itemize}[itemsep=4pt]
-\item \textbf{Exercise 13.4}  \quad\, \begin{minipage}[t]{0.68\textwidth}   \emph{Any computer you touch has $\eps_{\text{machine}}\approx 10^{-16}$, so do part (a) with floating point numbers as usual.  I was able to get Matlab to do part (b) by starting with} {\small \texttt{x = sym('0')}} \emph{and then doing Newton's method the usual way at the command line.  For instance, if I were approximating $\sqrt{2}$ by Newton's method then I might start with} \, {\small \texttt{x = sym('1')}} \emph{and then repeat} \, {\small \texttt{x = x - (x$\wedge$2-2) / (2*x)}}.  \emph{What is Trefethen's point in showing you this calculation?}\end{minipage}
-\item \textbf{Exercise X.X}
+\item \textbf{Exercise 13.2}  \quad\, \emph{Do parts \emph{(a)} and \emph{(b)} only.}
+\item \textbf{Exercise 13.4}  \quad\, \begin{minipage}[t]{0.68\textwidth}   \emph{Any computer you touch these days has $\eps_{\text{machine}}\approx 10^{-16}$, so do part (a) with floating point numbers as usual.  Note that the symbolic computation abilities of modern Matlab suffice for part (b), so there is no need to try Maple or Mathematica.  I'm not sure how to do this in Julia or Octave, but Sympy will work from Python.  I was able to get Matlab to do part (b) by simply starting with} {\small \texttt{x = sym('0')}} \emph{and then doing Newton's method the usual way at the command line.\footnotemark \, What is Trefethen's point in showing you this calculation?}\end{minipage}
+\footnotetext{For example, if I were approximating $\sqrt{2}$ by solving $x^2-2=0$ with Newton's method then I might start with \texttt{x = sym('1')} and then repeat \, \texttt{x = x - (x$\wedge$2-2)/(2*x)}. \, Try this first?}
+\item \textbf{Exercise 14.2}
 \end{itemize}
 
 
@@ -98,8 +100,56 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 \noindent \textsc{Do the following additional problems.}
 
 \medskip
-\prob{P16}  FIXME
+\prob{P16}  For each part, clearly state the problem.  Then compute the absolute condition number $\hat\kappa$ and the relative condition number $\kappa$.  You may use formulas (12.3) and (12.6) without justification, and generally your result will depend on $x$.  Choose the most convenient norm, making your choice explicit if it is important.  (For \textbf{(a)} and \textbf{(b)} just use absolute values.)  Comment on which $x$-values make the problem well-conditioned or ill-conditioned, if it depends on $x$.
+\renewcommand{\labelenumi}{\textbf{(\alph{enumi})}}
+\begin{enumerate}
+\item Compute $x^3$ for $x>0$.
+\item Compute $\cos x$ for real $x$.
+\item For $x\in\CC^2$ compute $x_1x_2$, the product of the entries.
+\item Fix $a\in\CC^m$, a column vector.  Compute the inner product $a^*x$ for $x\in \CC^m$.
+\end{enumerate}
 
 
+\prob{P17}  Consider the polynomial
+\begin{align*}
+p(x) &= (x-3)^{10} \\
+     &= x^{10} - 30 x^9 + 405 x^8 - 3240 x^7 + 17010 x^6 - 61236 x^5 \\
+     &\qquad   + 153090 x^4 - 262440 x^3 + 295245 x^2 - 196830 x + 59049
+\end{align*}
+
+\epart{a} For $x=$ \small\verb|2.85:0.01:3.15|\normalsize, plot $p(x)$ by evaluating it via its coefficients $1,-30,405,\dots$
+
+\epart{b} Plot $p(x)$ again on the same interval and same axes, using expression $(x-3)^{10}$.
+
+\epart{c} In two or three sentences, compare and contrast the bad behavior here with the ill-conditioning phenomenon in Example 12.5 on page 92, i.e.~Wilkinson's example.
+
+
+\prob{P18}  \emph{This is a reading assignment.  Please read it!  It's good!}
+
+\medskip
+\noindent Please read the following 12 page encyclopedia entry:
+
+\medskip
+\begin{quote}
+L.~N.~Trefethen, \emph{Numerical Analysis}, in W.~T.~Gowers, editor, Princeton Companion to Mathematics, Princeton U.~Press, 2008.
+
+\href{https://people.maths.ox.ac.uk/trefethen/NAessay.pdf}{\texttt{people.maths.ox.ac.uk/trefethen/NAessay.pdf}}
+\end{quote}
+
+\medskip
+\noindent Answer the following questions, most of which are about the sub-field of numerical linear algebra, with a sentence or two at most:
+\renewcommand{\labelenumi}{\emph{(\arabic{enumi})}}
+\begin{enumerate}
+\item Give a one-sentence version of Trefethen's definition of ``numerical analysis.''
+% from 2nd page: Numerical analysis is the study of algorithms for solving the problems of continuous mathematics, by which we mean problems involving real or complex variables.
+\item Gaussian elimination with pivoting is a matrix factorization.  State it.
+\item Trefethen refers to Householder triangularization, Algorithm 10.1 in our textbook, as ``QR factorization''.  But then what does the ``QR algorithm'' do?
+%\item Which of the major ``algorithmic developments in the history of numerical analysis'' have we already covered in MATH 614?  Which do you think we will (or should) cover?
+\item What is the ``younger cousin'' of eigenvalue decomposition?
+\item What is the ``central dogma'' of numerical linear algebra?
+\item Fill the blank: ``The discovery of \underline{\phantom{LJpivotingAJ}} came quickly, but its theoretical analysis has proved astonishingly hard.'' %pivoting
+\item What is the preconditioned version of the linear system $Ax=b$?
+\item What is the ``the biggest unsolved problem in numerical analysis''?
+\end{enumerate}
 
 \end{document}
