@@ -17,6 +17,12 @@ See [this page](computing) and [this PDF](https://bueler.github.io/compareMOP.pd
 
 ## from homework solutions
 
+Assignment 6:
+
+  * [polycos.m](assets/codes/F25/polycos.m)
+  * [polymat.m](assets/codes/F25/polymat.m)
+  * [polymatnorms.m](assets/codes/F25/polymatnorms.m)
+
 Assignment 5:
 
   * [house.m](assets/codes/F25/house.m)
