@@ -1,6 +1,10 @@
 semester: Fall 2025
 home: assets
 daily:
+- name: Wednesday 29 October
+  covered: axioms for floating point
+  handout: worksheets/F25/ieeefloat.pdf
+  handoutname: summary of the IEEE 754 floating-point standard
 - name: Monday 27 October
   covered: floating point
   lecture: 13
