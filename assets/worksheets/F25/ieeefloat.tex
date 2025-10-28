@@ -74,7 +74,7 @@ frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
 
 \thispagestyle{empty}
 
-The textbook\footnote{L.~Trefethen and D. Bau, \emph{Numerical Linear Algebra}, SIAM Press, 1997.} has an idealized view of floating point, which is wise.  However, in this separate document I lay out some basic details of how floating point numbers are \emph{actually} implemented on a computer, assuming they conform to the IEEE 754 standard, which they almost certainly do.
+Lecture 13 of the textbook\footnote{L.~Trefethen and D. Bau, \emph{Numerical Linear Algebra}, SIAM Press, 1997.} has an idealized view of floating point, which is wise.  However, in this separate document I lay out some basic details of how floating point numbers are \emph{actually} implemented on a computer, assuming they conform to the IEEE 754 standard, which they almost certainly do.
 
 \bigskip
 \begin{itemize}
@@ -173,7 +173,7 @@ binary128 & 34.02 & 4931.77 & -4931.47
 
 \item When all bits $e_i$ are one there are representations of $+\infty$ and $-\infty$ and of things that are ``not a number'' (\texttt{NaN}).  We omit all details here.  
 
-\item It is safe to assume your laptop implements IEEE-compliant binary64 floating point operations \emph{in hardware}.  Other types are commonly implemented in software, especially binary128, which is thus much slower on current computers.  The smaller binary16 and binary32 formats are typically used for \emph{storing} numbers, which increases storage capacity, or for graphics, or for the weights in a neural network.
+\item It is safe to assume that any modern desktop or laptop computer implements IEEE-compliant binary64 floating point operations \emph{in hardware}.  Other types are commonly implemented in software, especially binary128, which is thus much slower on current computers.  The smaller binary16 and binary32 formats are typically used for \emph{storing} numbers, which increases storage capacity, or for graphics, or for the weights in a neural network.
 
 \item One major goal of the IEEE 754 standard is that axiom (13.5) in the textbook applies.  The standard also addresses the rounding errors which occur in arithmetic operations (addition, multiplication, etc.), with the goal that axiom (13.7) in the textbook applies.  In fact, the design goal is that the two axioms hold with as small a value for $\eps_{\text{machine}}$ as practically possible.  Taking this viewpoint, the other details are not so important.
 
