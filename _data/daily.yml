@@ -1,6 +1,10 @@
 semester: Fall 2025
 home: assets
 daily:
+- name: Friday 31 October
+  covered: machine epsilon meaning
+  worksheet: worksheets/F25/binary12.pdf
+  worksheetname: floating-point practice
 - name: Wednesday 29 October
   covered: axioms for floating point
   handout: worksheets/F25/ieeefloat.pdf
