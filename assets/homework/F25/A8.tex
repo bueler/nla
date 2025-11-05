@@ -1,0 +1,156 @@
+\documentclass[12pt,dvipsnames]{amsart}
+%prepared in AMSLaTeX, under LaTeX2e
+\addtolength{\oddsidemargin}{-.65in} 
+\addtolength{\evensidemargin}{-.65in}
+\addtolength{\topmargin}{-.4in}
+\addtolength{\textwidth}{1.3in}
+\addtolength{\textheight}{.8in}
+
+\renewcommand{\baselinestretch}{1.05}
+
+\usepackage{fancyvrb}
+\usepackage{palatino}
+\usepackage[final]{graphicx}
+\usepackage{amssymb,enumitem,xspace,xcolor,bm}
+\usepackage{hyperref}
+\hypersetup{pdfauthor={Ed Bueler},
+            pdfcreator={pdflatex},
+            colorlinks=true,
+            citecolor=blue,
+            linkcolor=red,
+            urlcolor=blue,
+            }
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{defn}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{problem}{Problem}
+\newtheorem*{remark}{Remark}
+
+\newcommand{\bbf}{\mathbf{f}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bs}{\mathbf{s}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+
+\newcommand{\bzero}{\bm{0}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\grad}{\nabla}
+\newcommand{\lam}{\lambda}
+\newcommand{\lap}{\triangle}
+
+\newcommand{\ip}[2]{\ensuremath{\left<#1,#2\right>}}
+
+\newcommand{\image}{\operatorname{im}}
+\newcommand{\onull}{\operatorname{null}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\range}{\operatorname{range}}
+\newcommand{\trace}{\operatorname{tr}}
+
+\newcommand{\prob}[1]{\bigskip\noindent\textbf{#1.}\quad }
+\newcommand{\exer}[2]{\prob{Exercise #2 in Lecture #1}}
+
+\newcommand{\pts}[1]{(\emph{#1 pts}) }
+\newcommand{\epart}[1]{\medskip\noindent\textbf{(#1)}\quad }
+\newcommand{\ppart}[1]{\,\textbf{(#1)}\quad }
+
+\newcommand{\Matlab}{\textsc{Matlab}\xspace}
+\newcommand{\Octave}{\textsc{Octave}\xspace}
+\newcommand{\Python}{\textsc{Python}\xspace}
+\newcommand{\Julia}{\textsc{Julia}\xspace}
+
+\newcommand{\fl}{\operatorname{fl}}
+
+\newcommand{\ds}{\displaystyle}
+
+\DefineVerbatimEnvironment{mVerb}{Verbatim}{numbersep=2mm,
+frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
+
+
+\begin{document}
+\scriptsize \noindent Math 614 Numerical Linear Algebra (Bueler) \hfill \emph{assigned 5 November 2025}
+\normalsize\medskip
+
+\Large\centerline{\textbf{Assignment \#8}}
+\large
+\medskip
+
+\centerline{\textbf{Due Monday 10 November, at the start of class}}
+\medskip
+\normalsize
+
+\thispagestyle{empty}
+
+\bigskip
+
+\noindent Please read Lectures 14, 15, 16, and 17 in the textbook \emph{Numerical Linear Algebra}, SIAM Press 1997, by Trefethen and Bau.
+
+\bigskip
+\noindent \textsc{Do the following exercises from the textbook}:
+
+\medskip
+\begin{itemize}[itemsep=4pt]
+\item \textbf{Exercise 15.1}  \quad\, \emph{Do parts \emph{(a)}, \emph{(b)}, and \emph{(c)} only.}
+\end{itemize}
+
+
+\bigskip
+\noindent \textsc{Do the following additional problems}:
+
+\medskip
+\prob{P19}  \emph{The goal of this exercise is to show that the usual matrix-vector multiplication algorithm is backward-stable when we regard the \emph{matrix} as the input; see part} \textbf{(c)}.  \emph{Always assume axioms (13.5) and (13.7) hold.  Also, for simplicity, please assume all entries are real numbers.}
+
+\epart{a}  Fix $x\in \RR^1$.  Show that if the problem is scalar multiplication, $f(a) = ax$ for $a \in \RR^1$, then the obvious algorithm $\tilde f(a) = \fl(a)\otimes \fl(x)$ is backward-stable.
+
+\epart{b}  Fix $x\in \RR^3$, a column vector.   Show that if $a \in \RR^3$, a column vector, then the obvious algorithm
+    $$\tilde f(a) = \fl(a_1)\otimes \fl(x_1) \oplus \Big(\fl(a_2)\otimes \fl(x_2) \oplus \fl(a_3)\otimes \fl(x_3)\Big)$$
+for the inner product problem $f(a) = a^* x$ is backward-stable.  (\emph{Hint.  You must choose a vector norm to finish the proof.  Note that multiplication comes before addition in the order of operations.})
+
+\medskip
+\noindent \emph{A proof by induction extends the way you argued part} \textbf{(b)} \emph{to show that the obvious inner product algorithm is backward-stable in any dimension; see Example 15.1.  From now on you can assume it is true.}
+
+\epart{c}  Fix $x\in \RR^n$.   Show that if $A \in \RR^{m \times n}$ then the obvious algorithm $\tilde f(A)$ for the product problem $f(A) = A x$ is backward-stable.  (\emph{Hints.  Express $Ax$ using inner products.  Do not bother with scalar entries of $A$ or $x$.  However, you must choose a vector norm and an induced norm.})
+
+\epart{d}  Fix $A \in \RR^{m \times n}$.  Explain in at least 4 sentences why the obvious algorithm $\tilde f(x)$ for the problem $f(x) = A x$, over $x\in\RR^n$, is generally \textbf{\emph{not}} backward-stable.  However, this result depends on dimension.  In fact, for what $m$, $n$ is this $\tilde f(x)$ backward-stable?  (\emph{Hints.  The algorithm is the same as in part} \textbf{(c)}, \emph{but the input is $x$.  Use what we know for inner products.})
+
+
+\clearpage
+\newpage
+\prob{P20}  \emph{This question requires nothing but calculus as a prerequisite.  It simply illustrates a major source of linear systems from applications.}
+
+\epart{a}  Consider these three equations, chosen for visualizability:
+\begin{gather*}
+x^2+y^2+z^2 = 4 \\
+y = \cos(\pi z) \\
+x = z^2
+\end{gather*}
+Sketch each equation individually as a surface in $\RR^3$.  (Do this by hand or in \Matlab.  Precision in your sketch is not important.  The goal is to have a clear mental image of a nonlinear system as a set of intersecting surfaces.)  Considering where all three surfaces intersect, explain informally why there are two solutions, that is, two points $(x,y,z)\in\RR^3$ at which all three equations are satisfied.  Explain why both solutions are inside the closed box $0\le x \le 2, -1\le y \le 1, -2\le z \le 2$.
+
+\epart{b}  Newton's method for a system of nonlinear equations is an iterative, approximate, and sometimes very fast, method for solving systems like the one above.  Let $\bx=(x_1,x_2,x_3)\in\RR^3$.  Suppose there are three scalar functions $f_i(\bx)$ forming a (column) vector function $\bbf(\bx)=(f_1,f_2,f_3)$, and consider the system
+    $$\bbf(\bx)=\bzero.$$
+(It is easy to put the part \textbf{(a)} system in this form.)  Let
+	$$J_{ij} = \frac{\partial f_i}{\partial x_j}$$
+be the Jacobian matrix: $J\in\RR^{3\times 3}$.  The Jacobian generally depends on location, i.e.~$J=J(\bx)$.  Of course, it generalizes the ordinary scalar derivative.
+
+Newton's method itself is
+\begin{gather}
+J(\bx_n)\, \bs = - \bbf(\bx_n), \label{stepeqn} \\
+\bx_{n+1} = \bx_n + \bs \label{updateeqn}
+\end{gather}
+where $\bs=(s_1,s_2,s_3)$ is the \emph{step} and $\bx_0$ is an initial iterate.  Equation \eqref{stepeqn} is a system of linear equations which determines $\bs$, which you need to \emph{solve} for $\bs$, and then equation \eqref{updateeqn} moves to the next iterate.
+
+Using $\bx_0=(1,-1,1)$, write out equation \eqref{stepeqn} in the $n=0$ case, for the problem in part \textbf{(a)}, as a concrete linear system for the step $\bs = (s_1,s_2,s_3)$.
+
+\epart{c}  Implement Newton's method in \Matlab to solve the part \textbf{(a)} nonlinear system.  Show your code.  Generate at least five iterations.  Use $\bx_0=(1,-1,1)$ as an initial iterate to find one solution.  Find the other solution using a different initial iterate.  Note that \, \texttt{format\;long} \, is appropriate here.  Check that $\bbf(\bx_5)$ is close to zero.
+
+\epart{d}  In calculus you probably learned Newton's method as a memorized formula:
+    $$x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}.$$
+Rewrite equations \eqref{stepeqn}, \eqref{updateeqn} for $\RR^1$ to derive this formula.
+
+\end{document}
