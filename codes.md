@@ -17,6 +17,10 @@ See [this page](computing) and [this PDF](https://bueler.github.io/compareMOP.pd
 
 ## from homework solutions
 
+Assignment 7:
+
+  * [wigglepoly.m](assets/codes/F25/wigglepoly.m)
+
 Assignment 6:
 
   * [polycos.m](assets/codes/F25/polycos.m)
