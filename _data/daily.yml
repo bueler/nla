@@ -1,6 +1,12 @@
 semester: Fall 2025
 home: assets
 daily:
+- name: Friday 7 November
+  covered: the fundamental theorem (Thm 15.1), and back-substitution
+  lecture: 17
+- name: Wednesday 5 November
+  covered: cont.
+  lecture: 15
 - name: Monday 3 November
   covered: backward stability
 - name: Friday 31 October
