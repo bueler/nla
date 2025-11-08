@@ -1,0 +1,168 @@
+\documentclass[11pt]{amsart}
+\addtolength{\topmargin}{-0.5in} % usually -0.25in
+\addtolength{\textheight}{1.05in} % usually 1.25in
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.25in} %\setlength{\parindent}{0pt}
+
+\newcommand{\normalspacing}{\renewcommand{\baselinestretch}{1.1}\tiny\normalsize}
+\newcommand{\bigspacing}{\renewcommand{\baselinestretch}{1.21}\tiny\normalsize}
+\newcommand{\tablespacing}{\renewcommand{\baselinestretch}{1.0}\tiny\normalsize}
+\normalspacing
+
+% macros
+\usepackage{amssymb,xspace}
+\usepackage[pdftex,colorlinks=true]{hyperref}
+
+\usepackage[final]{graphicx}
+\newcommand{\regfigure}[3]{\includegraphics[height=#2in,width=#3in]{#1.eps}}
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{lem}{Lemma}
+
+\newcommand{\mtt}{\texttt}
+\newcommand{\mtl}[1]{{\texttt{>>#1}}}
+\usepackage{alltt}
+\usepackage{fancyvrb}
+
+\newcommand{\CC}{{\mathbb{C}}}
+\newcommand{\FF}{{\mathbb{F}}}
+\newcommand{\RR}{{\mathbb{R}}}
+\newcommand{\ZZ}{{\mathbb{Z}}}
+\newcommand{\ZZn}{{\mathbb{Z}}_n}
+\newcommand{\NN}{{\mathbb{N}}}
+\newcommand{\eps}{\epsilon}
+\newcommand{\lam}{\lambda}
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\ip}[2]{\mathrm{\left<#1,#2\right>}}
+\newcommand{\erf}{\operatorname{erf}}
+
+\renewcommand{\Re}{\operatorname{Re}}
+
+\newcommand{\cond}{\operatorname{cond}}
+\newcommand{\Null}{\operatorname{null}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\range}{\operatorname{range}}
+\newcommand{\trace}{\operatorname{tr}}
+
+\newcommand{\Matlab}{\textsc{Matlab}\xspace}
+\newcommand{\Octave}{\textsc{Octave}\xspace}
+\newcommand{\pylab}{\textsc{pylab}\xspace}
+\newcommand{\longMOP}{\textsc{Matlab}\big|\textsc{Octave}\big|\textsc{pylab}\xspace}
+\newcommand{\MOP}{\textsc{M}\big|\textsc{O}\big|\textsc{p}\xspace}
+
+\newcommand{\prob}[1]{\bigskip\noindent\large\textbf{#1.} \normalsize}
+\newcommand{\bookprob}[1]{\bigskip\noindent\large\textbf{Exercise #1.} \normalsize}
+\newcommand{\probpart}[1]{\smallskip\noindent\textbf{(#1)}\quad }
+\newcommand{\aprobpart}[1]{\textbf{(#1)}\quad }
+
+\newcommand{\emach}{\eps_{\text{machine}}}
+\newcommand{\fl}{f\ell}
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\textbook}{\textsc{Trefethen \& Bau}}
+
+\begin{document}
+\scriptsize \noindent Math 614 Numerical Linear Algebra (Bueler) \hfill 8 November 2025
+\thispagestyle{empty}
+
+\bigskip
+\Large\centerline{\textbf{Review Topics} }
+
+\Large\centerline{for in-class \textbf{Midterm Quiz 2} on}
+
+\Large\centerline{\textbf{Wednesday 12 November 2025}}
+
+\normalsize
+\bigskip
+\normalspacing
+\begin{quote}
+The second Midterm Quiz will cover Lectures 10, 11, 12, 13, 14, 15, 17 in \textbook.  The problems will be of these types: \textbf{state definitions and axioms}, state theorems, state algorithms (as pseudocode or \Matlab), describe or illustrate geometrical ideas, basic applications of theorems, quick calculations, prove simple theorems/corollaries.
+\end{quote}
+\bigskip
+
+\medskip
+\noindent \textbf{Definitions and Axioms}. Know how to define, and how to use:
+\begin{itemize}
+\item residual $r=b-Ax$ for overdetermined ``$Ax=b$''
+\item problem and problem instance (as defined in Lecture 12)
+\item Jacobian of a differentiable function (i.e.~problem)
+\item absolute condition number $\hat\kappa=\hat\kappa_f(x)$ of a problem instance
+\item relative condition number $\kappa=\kappa_f(x)$ of a problem instance
+\item condition number of a square matrix: $\kappa(A)=\|A\|\,\|A^{-1}\|$
+\item idealized floating point system $\FF$:
+    $$x = \pm \frac{m}{\beta^{t-1}} \beta^e, \quad \beta^{t-1} \le m \le \beta^t - 1$$
+\item function $\fl:\RR\to\FF$
+\item axiom (13.5): \quad $\fl(x) = x (1+\eps)$ where $|\eps|\le \emach$
+\item axiom (13.7): \quad $x \circledast y = (x \ast y) (1+\eps)$ where $|\eps|\le \emach$
+\item big O: $f(t) = O(g(t))$ as $t\to 0$ means there is $C\ge 0$ so that $|f(t)| \le C |g(t)|$
+\item big O: $\phi(n) = O(\psi(n))$ as $n\to \infty$ means there is $C\ge 0$ so that $|\phi(n)| \le C |\psi(n)|$
+\item backward stability of an algorithm
+\item stability of an algorithm
+\end{itemize}
+
+\medskip
+\bigspacing
+\noindent \textbf{Background Definitions}.  The following may be needed somewhere, but I won't literally ask for the definition: matrix-vector product, matrix-matrix product, inner product, outer product, triangular matrix, unitary matrix, projector, orthogonal projector, $\|\cdot\|_p$ for vectors, induced matrix norm, $\|\cdot\|_F$, eigenvalue, eigenvector, singular value
+
+\medskip\noindent \textbf{Constructions}.  Know the properties of the objects in each construction below.  Be able to use the construction in simple cases.
+
+\begin{itemize}
+\item reduced QR decomposition, wherein $\hat Q$ is basis for $\range(A)$: \quad $A=\hat Q \hat R$
+\item orthogonal projector onto $\range(A)$: \quad $P=\hat Q\hat Q^* = A\left(A^* A\right)^{-1} A^*$
+\item Householder reflector: \quad $F = I - 2 q q^* = I - 2 v v^* / (v^* v)$
+\item linear system actually solved for overdetermined ``$Ax=b$'': \quad $A x = P b$
+\item normal equations for overdetermined ``$Ax=b$'': \quad $A^* A x = A^* b$
+\end{itemize}
+
+\clearpage\newpage
+\medskip\noindent \textbf{Algorithms}. Be able to state these algorithms, including the amount of work to leading order.
+\begin{itemize}
+\item Alg.~10.1: Householder triangularization for $QR$
+\item Alg.~10.2: compute $Q^*b$ after Householder triangularization
+\item Alg.~11.1: solve normal equations for least squares on overdetermined ``$Ax=b$''
+    \begin{itemize}
+    \item[$\circ$] just know that you use Cholesky \dots what that \emph{is} will not be on Midterm
+    \end{itemize}
+\item Alg.~11.2: QR for least squares on overdetermined ``$Ax=b$''
+\item Alg.~11.3: SVD for least squares on overdetermined ``$Ax=b$''
+    \begin{itemize}
+    \item[$\circ$] \emph{how} SVD is computed will not be on Midterm
+    \end{itemize}
+\item Alg.~16.1: solve $Ax=b$, $A$ invertible, via QR factorization
+\item Alg.~17.1: back substitution for $Rx=b$ where $R$ is upper-triangular and invertible
+\end{itemize}
+
+\medskip
+\noindent \textbf{Facts/Formulas/Theorems}.  Know as facts.  Be able to use in a context.
+\begin{itemize}
+\item for $A\in \CC^{m\times n}$ with $m\ge n$, $A$ has full rank if and only if $A^* A$ is nonsingular
+\item if $P$ is an orthogonal projector then $I-2P$ is unitary
+\item if $A$ is square then $\kappa_2(A)=\sigma_1/\sigma_m$
+\item if $f(x)$ is a differentiable problem then $\hat\kappa(x) = \|J(x)\|$
+\item if $f(x)$ is a differentiable problem then $\ds \kappa(x) = \frac{\|J(x)\|}{\|f(x)\|/\|x\|} = \frac{\|J(x)\|\|x\|}{\|f(x)\|}$
+\item Theorem 15.1: if $f(x)$ is a problem with condition number $\kappa(x)$, and if $\tilde f(x)$ is a backward stable algorithm for it, then $\ds \frac{\|\tilde f(x) - f(x)\|}{\|f(x)\|} = O(\kappa(x) \emach)$
+
+\smallskip
+\item Theorem 17.1: back substitution is backward stable
+\end{itemize}
+
+\normalspacing
+
+\bigskip\noindent \textbf{Ideas}.  Please be comfortable with the following ideas!  Some ideas correspond to theorems, but others are just a perspective or paradigm.
+
+\bigspacing
+\begin{itemize}
+\item L10: Householder is ``orthogonal triangularization''.  (Gram-Schmidt is ``triangular orthogonalization'' and Gauss elimination is ``triangular triangularization''.)
+\item L11: If $A$ is a tall matrix, $\kappa(A^* A)$ is the square of $\kappa(A)$, which is why the normal equations might have an inaccurate solution in floating point.
+\item L12: Theorems 12.1, 12.2: \,All problems associated to linear system $Ax=b$ have $\kappa(A)=\|A\|\|A^{-1}\|$ as the relative condition number, or as a bound on it.
+\item L13: The most-useful definition of $\emach$ is as the smallest number so that axioms (13.5) and (13.7) hold for your computer.
+\item L14: Inevitably the constant in your proof of backward stability or stability will depend on the vector/matrix dimension, i.e.~$m$ or $n$.
+\item L15: The usual inner product algorithm is backward stable.  Not so for the outer product.  These facts are instances of the (informal) idea that backward stability only occurs when the problem input has large enough dimension to assign blame to it.
+\end{itemize}
+
+
+\end{document}
+

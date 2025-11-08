@@ -8,7 +8,7 @@ exams:
 - name: Midterm Quiz 2
   date: Wednesday 12 November
   info: <b>in class</b> or proctored
-  #reviewguide: mid2review.pdf
+  reviewguide: mid2review.pdf
 - name: Final Exam
   date: Thursday 11 December, 1:00-3:00 pm
   info: <b>in class</b> or proctored
