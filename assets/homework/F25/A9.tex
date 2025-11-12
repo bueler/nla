@@ -1,0 +1,136 @@
+\documentclass[12pt,dvipsnames]{amsart}
+%prepared in AMSLaTeX, under LaTeX2e
+\addtolength{\oddsidemargin}{-.65in} 
+\addtolength{\evensidemargin}{-.65in}
+\addtolength{\topmargin}{-.4in}
+\addtolength{\textwidth}{1.3in}
+\addtolength{\textheight}{.8in}
+
+\renewcommand{\baselinestretch}{1.05}
+
+\usepackage{fancyvrb}
+\usepackage{palatino}
+\usepackage[final]{graphicx}
+\usepackage{amssymb,enumitem,xspace,xcolor,bm}
+\usepackage{hyperref}
+\hypersetup{pdfauthor={Ed Bueler},
+            pdfcreator={pdflatex},
+            colorlinks=true,
+            citecolor=blue,
+            linkcolor=red,
+            urlcolor=blue,
+            }
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{defn}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{problem}{Problem}
+\newtheorem*{remark}{Remark}
+
+\newcommand{\bbf}{\mathbf{f}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bs}{\mathbf{s}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+
+\newcommand{\bzero}{\bm{0}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\grad}{\nabla}
+\newcommand{\lam}{\lambda}
+\newcommand{\lap}{\triangle}
+
+\newcommand{\ip}[2]{\ensuremath{\left<#1,#2\right>}}
+
+\newcommand{\image}{\operatorname{im}}
+\newcommand{\onull}{\operatorname{null}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\range}{\operatorname{range}}
+\newcommand{\trace}{\operatorname{tr}}
+
+\newcommand{\prob}[1]{\bigskip\noindent\textbf{#1.}\quad }
+\newcommand{\exer}[2]{\prob{Exercise #2 in Lecture #1}}
+
+\newcommand{\pts}[1]{(\emph{#1 pts}) }
+\newcommand{\epart}[1]{\medskip\noindent\textbf{(#1)}\quad }
+\newcommand{\ppart}[1]{\,\textbf{(#1)}\quad }
+
+\newcommand{\Matlab}{\textsc{Matlab}\xspace}
+\newcommand{\Octave}{\textsc{Octave}\xspace}
+\newcommand{\Python}{\textsc{Python}\xspace}
+\newcommand{\Julia}{\textsc{Julia}\xspace}
+
+\newcommand{\fl}{\operatorname{fl}}
+
+\newcommand{\ds}{\displaystyle}
+
+\DefineVerbatimEnvironment{mVerb}{Verbatim}{numbersep=2mm,
+frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
+
+
+\begin{document}
+\scriptsize \noindent Math 614 Numerical Linear Algebra (Bueler) \hfill \emph{assigned 12 November 2025}
+\normalsize\medskip
+
+\Large\centerline{\textbf{Assignment \#9}}
+\large
+\medskip
+
+\centerline{\textbf{Due Friday 21 November, at the start of class}}
+\medskip
+\normalsize
+
+\thispagestyle{empty}
+
+\bigskip
+
+\noindent Please read Lectures 16, 17, 20, 21, and 22 in the textbook \emph{Numerical Linear Algebra}, SIAM Press 1997, by Trefethen and Bau.  We are outright skipping Lectures 18 and 19!
+
+\bigskip
+\noindent \textsc{Do the following exercises from the textbook}:
+
+\medskip
+\begin{itemize}[itemsep=4pt]
+\item \textbf{Exercise 15.2}
+\item \textbf{Exercise 17.1}
+\item \textbf{Exercise 17.2} \quad \emph{Exactly what do Theorem 17.1 \underline{and Theorem  15.1} imply \dots}
+\item \textbf{Exercise 20.3} \quad \emph{Do part \emph{(a)} only.}
+\item \textbf{Exercise 20.4}
+
+\end{itemize}
+
+
+\bigskip
+\noindent \textsc{Do the following additional problems}:
+
+\prob{P21}   Implement Algorithm 20.1 in \Matlab etc.~as a function with signature \verb|[L, U]| \verb|= mylu(A)|.  Demonstrate that your implementation works by reproducing the stages of the calculation on pages 148--149, starting from the matrix given in equation (20.3).
+
+\prob{P22}  Consider the ``two strokes of luck'' in Lecture 20.  Write a short \Matlab code which generates random $L_k$ matrices and confirms the ``strokes of luck'' in the $m=4$ case.  Specifically, generate random matrices $L_1,L_2,L_3$ which are $4\times 4$ matrices of the pattern shown in the middle of page 150.  Note that the entries $\ell_{jk}$ for $j=k+1,\dots,m$ are just random numbers your code generates; they do \emph{not} come from ratios $x_{jk}/x_{kk}$.  Then compute $L_1^{-1} L_2^{-1} L_3^{-1}$ and confirm that it comes out as in equation (20.7).
+
+\prob{P23}   An \emph{in-place} Gauss elimination algorithm re-uses the memory in which $A$ is stored, to store $L$ and $U$.  This is mentioned in the sentence after Algorithm 20.1.
+
+\epart{a}  Write a function with signature \verb|Z = iplu(A)| which takes as input a square $m\times m$ matrix $A$ and computes $A=LU$ by Algorithm 20.1.  It will not create separate matrices $L$ and $U$.  It will produce a matrix $Z$ which has the numbers $l_{jk}$ and $u_{jk}$ in the corresponding locations.  You will be able to recover matrices $L$ and $U$ as follows:
+\begin{verbatim}
+  >> Z = iplu(A);
+  >> U = triu(Z),  L = tril(Z,-1) + diag(ones(m,1))
+\end{verbatim}
+Demonstrate that \verb|iplu(A)| works by applying it to the matrix $A$ in (20.3) and recovering the factors in (20.5).
+
+\epart{b}  Now write another function with signature \verb|x = bslash(A,b)| which solves square systems $Ax=b$.  It must call \texttt{iplu(A)} to compute the in-place LU factorization.  Then it solves the system from $Z$ \emph{without} forming $L$ or $U$.\footnote{And, of course, without using \Matlab's backslash operation!}  It will have loops which implement forward- and backward-substitution (Alg.~17.1) using the entries of $Z$.  Show it works by comparing to ``$\backslash$'' on randomly-generated linear systems $Ax=b$:
+\begin{verbatim}
+  >> x1 = bslash(A,b);
+  >> x2 = A \ b;
+  >> norm(x1 - x2) / norm(x2)
+\end{verbatim}
+
+\epart{c}  Why is your \verb|x = bslash(A,b)| solver not recommended for general use?  Sketch how you might modify it to add partial pivoting.  (\emph{No code is needed here.})
+
+\medskip
+\epart{Extra Credit} Figure out how to build an in-place Householder QR based solver.  That is, solve $Ax=b$ for square and invertible $A$, based on Algorithms 10.1, 10.2, and 17.1, which is to say based on Algorithm 16.1, but using \textbf{only slightly more memory} than needed to store $A$ and $b$.  (\emph{Hint: Where can you put the $v$ vectors for the Householder reflectors, equivalently the matrix $W$ mentioned in Exercise 10.2, as you generate zeros below the diagonal?})  One point extra credit for sketching how to do it.  Two more points for a demonstrated working implementation; feel free to start from codes I have written on old homework solutions etc.
+
+\end{document}

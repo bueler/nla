@@ -1,6 +1,10 @@
 semester: Fall 2025
 home: assets/homework/F25
 homework:
+- name: Assignment 9
+  due: Friday 21 November
+  blank: A9.pdf
+  read: Lectures 16, 17, 20, 21
 - name: Assignment 8
   due: Monday 10 November
   blank: A8.pdf
