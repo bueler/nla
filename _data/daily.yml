@@ -7,6 +7,8 @@ daily:
 - name: Friday 14 November
   covered: solution by Householder QR is backward stable
   lecture: 16
+  otherurl: https://www.youtube.com/watch?v=qgwrt7vYY4U
+  otherurlname: "culture only: How History Shaped the Programming Terms We Still Use Today"
 - name: Wednesday 12 November
   covered: Midterm Quiz 2
 - name: Monday 10 November
