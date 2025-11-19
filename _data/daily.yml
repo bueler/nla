@@ -1,6 +1,11 @@
 semester: Fall 2025
 home: assets
 daily:
+- name: Wednesday 19 November
+  covered: Gauss elimination with partial pivoting, and its (in)stability
+  lecture: 21 and 22
+  otherurl: https://www.mathworks.com/help/matlab/ref/double.mldivide.html
+  otherurlname: Matlab documentation for "A\b"; scroll down for flowchart
 - name: Monday 17 November
   covered: Gauss elimination, actually
   lecture: 20
