@@ -1,9 +1,12 @@
 semester: Fall 2025
 home: assets
 daily:
+- name: Friday 21 November
+  covered: (in)stability of Gauss elimination with partial pivoting; Cholesky
+  lecture: 22 and 23
 - name: Wednesday 19 November
   covered: Gauss elimination with partial pivoting, and its (in)stability
-  lecture: 21 and 22
+  lecture: 21
   otherurl: https://www.mathworks.com/help/matlab/ref/double.mldivide.html
   otherurlname: Matlab documentation for "A\b"; scroll down for flowchart
 - name: Monday 17 November
