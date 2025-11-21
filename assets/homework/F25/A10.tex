@@ -1,0 +1,190 @@
+\documentclass[12pt,dvipsnames]{amsart}
+%prepared in AMSLaTeX, under LaTeX2e
+\addtolength{\oddsidemargin}{-.65in} 
+\addtolength{\evensidemargin}{-.65in}
+\addtolength{\topmargin}{-.4in}
+\addtolength{\textwidth}{1.3in}
+\addtolength{\textheight}{.8in}
+
+\renewcommand{\baselinestretch}{1.05}
+
+\usepackage{fancyvrb}
+\usepackage{palatino}
+\usepackage[final]{graphicx}
+\usepackage{amssymb,enumitem,xspace,xcolor,bm}
+\usepackage{hyperref}
+\hypersetup{pdfauthor={Ed Bueler},
+            pdfcreator={pdflatex},
+            colorlinks=true,
+            citecolor=blue,
+            linkcolor=red,
+            urlcolor=blue,
+            }
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{defn}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem*{problem}{Problem}
+\newtheorem*{remark}{Remark}
+
+\newcommand{\bbf}{\mathbf{f}}
+\newcommand{\br}{\mathbf{r}}
+\newcommand{\bs}{\mathbf{s}}
+\newcommand{\bv}{\mathbf{v}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\by}{\mathbf{y}}
+
+\newcommand{\bzero}{\bm{0}}
+
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\grad}{\nabla}
+\newcommand{\lam}{\lambda}
+\newcommand{\lap}{\triangle}
+
+\newcommand{\ip}[2]{\ensuremath{\left<#1,#2\right>}}
+
+\newcommand{\image}{\operatorname{im}}
+\newcommand{\onull}{\operatorname{null}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\range}{\operatorname{range}}
+\newcommand{\trace}{\operatorname{tr}}
+
+\newcommand{\prob}[1]{\bigskip\noindent\textbf{#1.}\quad }
+\newcommand{\exer}[2]{\prob{Exercise #2 in Lecture #1}}
+
+\newcommand{\pts}[1]{(\emph{#1 pts}) }
+\newcommand{\epart}[1]{\medskip\noindent\textbf{(#1)}\quad }
+\newcommand{\ppart}[1]{\,\textbf{(#1)}\quad }
+
+\newcommand{\Matlab}{\textsc{Matlab}\xspace}
+\newcommand{\Octave}{\textsc{Octave}\xspace}
+\newcommand{\Python}{\textsc{Python}\xspace}
+\newcommand{\Julia}{\textsc{Julia}\xspace}
+
+\newcommand{\fl}{\operatorname{fl}}
+
+\newcommand{\ds}{\displaystyle}
+
+\DefineVerbatimEnvironment{mVerb}{Verbatim}{numbersep=2mm,
+frame=lines,framerule=0.1mm,framesep=2mm,xleftmargin=4mm,fontsize=\footnotesize}
+
+
+\begin{document}
+\scriptsize \noindent Math 614 Numerical Linear Algebra (Bueler) \hfill \emph{assigned 21 November 2025}
+\normalsize\medskip
+
+\Large\centerline{\textbf{Assignment \#10}}
+\large
+\medskip
+
+\centerline{\textbf{Due Friday 5 December, at the start of class}}
+\medskip
+\normalsize
+
+\thispagestyle{empty}
+
+\bigskip
+
+\noindent Please read Lectures 20, 21, 22, 23, 24, 25, 26, and 27 in the textbook \emph{Numerical Linear Algebra}, SIAM Press 1997, by Trefethen and Bau.
+
+\bigskip
+\noindent \textsc{Do the following exercises from the textbook}:
+
+\medskip
+\begin{itemize}[itemsep=4pt]
+\item \textbf{Exercise 21.1}  \quad\, \begin{minipage}[t]{0.68\textwidth}  \emph{This shows how Matlab's} \texttt{det} \emph{is actually implemented, in $O(m^3)$ work. Recall that expansion in minors implies more than $O(m!)$ work.}\end{minipage}
+\item \textbf{Exercise 22.1}  \quad\, \begin{minipage}[t]{0.68\textwidth}  \emph{Hint.  See the last line of Algorithm 21.1.  What do you know about $\ell_{jk}$ that allows you to generate an upper bound?}\end{minipage}
+\item \textbf{Exercise 24.1}
+\end{itemize}
+
+
+\bigskip
+\noindent \textsc{Do the following additional problems}:
+
+\prob{P24}  \ppart{a}  Implement Algorithm 26.1, Householder reduction to Hessenberg form.  Specifically, build a code with the signature
+
+\begin{center}
+\verb|H = hessen(A, stages)|
+\end{center}
+
+\noindent Your code will check that $A$ is square, and return a Hessenberg matrix $H$ such that $A=QHQ^*$ for some unitary $Q$.  It will print the stages if \verb|stages| is \verb|true|.  For simplicity, your code can discard the vectors $v_k$ after they are used.
+
+\epart{b}  For a random $5\times 5$ matrix $A$ of your choice, run the code and show the four stages $A$,\, $Q_1^*AQ_1$,\, $Q_2^*Q_1^*AQ_1Q_2$,\, and $H=Q_3^*Q_2^*Q_1^*AQ_1Q_2Q_3$, where \verb|H=hessen(A)|.  (\emph{Hint. Thereby show the the matrix patterns in the ``A Good Idea'' subsection on pages 197--198.})  Use the built-in \texttt{eig()} command to show that the eigenvalues of $A$ and $H$ are the same to within rounding error.
+
+\epart{c}  Construct a new $7\times 7$ Hermitian matrix $S$ and compute \verb|T=hessen(S)|.  Check that $T$ is tridiagonal and Hermitian.  Again use \texttt{eig()} to show that the eigenvalues of $S$ and $T$ are the same within rounding error.
+
+
+\prob{P25}  Over the course of the semester, several times we have used a two-word phrase (2WP) to describe a matrix factorization.  There are 10 possible 2WPs which can be formed from a column-A adjective and a column-B noun from the following table:
+
+\medskip
+\begin{center}
+\begin{tabular}{c|c}
+\emph{column A} & \emph{column B} \\ \hline
+triangular & triangularization \\
+orthogonal or unitary & orthogonalization \\
+           & diagonalization \\
+           & tridiagonalization \\
+           & hessenbergization
+\end{tabular}
+\end{center}
+
+Consider only the textbook Lectures which we covered, specifically Lectures 1--17 and 20--27.  For square matrices, which distinct factorizations use, or could use, one of these 10 possible 2WPs?  For each such factorization, state the matrix factorization, its 2WP, its usual/official name, and reference(s) to the textbook.  Reference Algorithms in the textbook too, if any.
+
+\medskip
+\noindent \emph{Hints.  The adjectives ``orthogonal'' and ``unitary'' applied to matrices are essentially synonyms, and I suggest you treat them that way.  However, in listing your factorizations you need to see that there are different ways to apply orthogonal/unitary matrices, so make sure you consider all types.  Regarding your final list, you can get full credit without perfect agreement with my list, but not if you miss important factorization ideas.}
+
+\epart{Extra Credit 1} The SVD factorization is \emph{not} one of the factorizations above.  Why?  Invent a good 2WP to describe it.
+
+\epart{Extra Credit 2}  Develop and implement triangular hessenbergization.
+
+
+\prob{P26}   \emph{This exercise ``discovers'' Fourier series while considering eigenvalues/vectors of certain matrices.  The matrix $F \in \CC^{m\times m}$ with entries $f_{jk}=(f_k)_j$, from formula \eqref{circulantev}, is the discrete Fourier transform.}
+
+\medskip
+\noindent A \emph{circulant matrix} is one where constant diagonals ``wrap around'':
+\begin{equation} \label{circuC}
+C = \begin{bmatrix}
+	c_1 & c_{m} & \dots & c_3 & c_2 \\
+	c_2 & c_1 & c_{m} & & c_3 \\
+	\vdots & c_2 & c_1 & \ddots & \vdots \\
+	c_{m-1} & & \ddots & \ddots & c_{m} \\
+	c_{m} & c_{m-1} & \dots & c_2 & c_1
+	\end{bmatrix}
+\end{equation}
+\smallskip
+
+\noindent Each entry of $C \in \CC^{m\times m}$ is determined from the entries $c_1, \dots, c_{m}$ in its first column:
+	$$C_{jk} = \begin{cases}
+	c_{j-k + 1}, & j \ge k, \\
+	c_{m + j-k + 1}, & j < k.
+	\end{cases}$$
+Specifying the first column of a circulant matrix describes it completely.
+
+An extraordinary fact about a circulant matrix is that it has a complete set of complex eigenvectors \emph{that are known in advance}, without knowing the eigenvalues.  Specifically, define $f_k \in \CC^m$ by
+\begin{equation}
+(f_k)_j = \exp\left(-i(j-1) (k-1) \frac{2\pi}{m}\right) = e^{-i 2\pi (k-1)(j-1)/m}, \label{circulantev}
+\end{equation}
+where, as usual, $i=\sqrt{-1}$.  These vectors are \emph{waves}, that is, combinations of familiar sines and cosines.  After some warm-up exercises you will show in part \textbf{(e)} that $C f_k = \lambda_k f_k$ for a computable eigenvalue $\lambda_k$.
+
+\epart{a}  Define the \emph{periodic convolution} $u \ast w\in \CC^m$ of vectors $u,w\in \CC^m$ by
+	$$(u\ast w)_j = \sum_{k=1}^m u_{\mu(j,k)} w_k \qquad \text{ where } \qquad \mu(j,k) = \begin{cases}
+	j-k + 1, & j \ge k, \\
+	m + j-k + 1, & j < k.
+	\end{cases}$$
+Show that $u\ast w = w\ast u$.
+
+\epart{b}  Show that $C u = v\ast u$ if $C$ is a circulant matrix and $v$ is the first column of $C$.
+
+\epart{c}  Show that the vectors $f_1,\dots,f_m$ defined in \eqref{circulantev} are orthogonal.  (\emph{Hints.  Remember the conjugate in the inner product.  Then consider finite geometric series.})
+
+\epart{d}  For $m=20$, use Matlab to plot the real parts of the vectors $f_1,\dots,f_5$, together in a single figure.  (\emph{Hint. They look like discretized waves.})
+
+\epart{e}  For a general circulant matrix, $C$ in \eqref{circuC} above, give a formula for its eigenvalues $\lambda_k$ in terms of the entries $c_1,\dots,c_m$.  That is, show via by-hand calculation that
+    $$C f_k = \lambda_k f_k$$
+where $f_k$ is given by \eqref{circulantev}.  Your solution will contain a formula for $\lambda_k$.
+
+\end{document}
