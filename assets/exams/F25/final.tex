@@ -1,0 +1,129 @@
+\documentclass[12pt]{amsart}
+\addtolength{\topmargin}{-0.6in} % usually -0.25in
+\addtolength{\textheight}{1.1in} % usually 1.25in
+\addtolength{\oddsidemargin}{-0.7in}
+\addtolength{\evensidemargin}{-0.7in}
+\addtolength{\textwidth}{1.5in} %\setlength{\parindent}{0pt}
+
+\newcommand{\normalspacing}{\renewcommand{\baselinestretch}{1.04}\tiny\normalsize}
+
+\normalspacing
+
+% macros
+\usepackage{amssymb,xspace}
+\usepackage{tikz}
+\usepackage[pdftex,colorlinks=true]{hyperref}
+
+
+\newtheorem*{thm}{Theorem}
+\newtheorem*{lem}{Lemma}
+
+\newcommand{\mtt}{\texttt}
+\newcommand{\mtl}[1]{{\texttt{>>#1}}}
+\usepackage{alltt}
+\usepackage{fancyvrb}
+
+\newcommand{\bu}{\mathbf{u}}
+\newcommand{\bv}{\mathbf{v}}
+
+\newcommand{\CC}{{\mathbb{C}}}
+\newcommand{\RR}{{\mathbb{R}}}
+\newcommand{\ZZ}{{\mathbb{Z}}}
+\newcommand{\ZZn}{{\mathbb{Z}}_n}
+\newcommand{\NN}{{\mathbb{N}}}
+
+\newcommand{\eps}{\epsilon}
+\newcommand{\grad}{\nabla}
+\newcommand{\lam}{\lambda}
+\newcommand{\ip}[2]{\mathrm{\left<#1,#2\right>}}
+\newcommand{\erf}{\operatorname{erf}}
+
+\renewcommand{\Re}{\operatorname{Re}}
+\renewcommand{\Im}{\operatorname{Im}}
+\newcommand{\Arg}{\operatorname{Arg}}
+
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\range}{\operatorname{range}}
+\newcommand{\trace}{\operatorname{tr}}
+\newcommand{\Null}{\operatorname{null}}
+
+\newcommand{\Matlab}{\textsc{Matlab}\xspace}
+\newcommand{\Octave}{\textsc{Octave}\xspace}
+\newcommand{\pylab}{\textsc{pylab}\xspace}
+\newcommand{\longMOP}{\textsc{Matlab}\big|\textsc{Octave}\big|\textsc{pylab}\xspace}
+\newcommand{\MOP}{\textsc{M}\big|\textsc{O}\big|\textsc{p}\xspace}
+
+\newcommand{\prob}[1]{\bigskip\noindent\large\textbf{#1.} \normalsize}
+\newcommand{\bookprob}[1]{\bigskip\noindent\large\textbf{Exercise #1.} \normalsize}
+\newcommand{\probpart}[1]{\smallskip\noindent\textbf{(#1)}\quad }
+\newcommand{\aprobpart}[1]{\textbf{(#1)}\quad }
+
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+
+\begin{document}
+\scriptsize \noindent Math 614 Numerical Linear Algebra (Bueler) \hfill assigned: 1 December 2025
+\thispagestyle{empty}
+
+\bigskip
+\Large\textbf{\centerline{Final Exam: Analyze Three Algorithms}}
+
+\medskip
+\large\textbf{\centerline{Thursday, 11 December, 1:00pm--3:00pm, Chapman 107}}
+
+\normalsize
+\bigskip
+The in-class Final Exam will be a bit different, but fairly short and with a clear path for preparation.  I would like you to \textbf{summarize and analyze three major algorithms} which we have seen during the semester.
+
+You will have this document in your hand during the Exam, but you must remember what you want to say!  \textbf{You may NOT bring notes, the textbook, or electronics of any kind} to the Exam.  Just bring a writing implement.
+
+You are \textbf{strongly encouraged to draft and practice} your planned algorithm summaries.  Make sure to read relevant sections of the textbook.  Get feedback on your drafts from other students/friends/family/pets, or me.  Decide in advance how you will remember enough detail so as to recreate the summary during the Exam itself.
+
+\textbf{Your summary and analysis should include:}  Clearly state the problem the algorithm solves, including what properties the input and outputs have.  State the algorithm at a high level.  What are the main geometric and/or algebraic ideas behind the algorithm?  A detailed pseudocode is not \emph{required}, but please either sketch the algorithm's steps in words or give a pseudocode.  What is the work estimate?  (Use big-O notation appropriately, and give leading-order constants if that is relevant.)  If there is a backward stability theorem, summarize what it says.  Compare to any other relevant/significant algorithms for the same or similar purposes.
+
+\textbf{This is a writing assignment.}  Your goal is an ``executive summary,'' making sure to point-out all the key ideas.  Regard your target audience as a typical student in the first week of this course.  I will grade for correctness, completeness, and readability.
+
+\bigskip
+\noindent \hrulefill
+
+\noindent \textbf{\large Instructions:}
+
+\smallskip
+Please choose one algorithm from each category A,B,C below, and summarize it.  Write each summary on a separate sheet.  Identify each by ``\textbf{A1}'', etc.~in the upper-left corner.  Put your name in the upper-right corner.  Each summary should be more than half a page but at most 1.5 pages.  It should be between 250 and 500 words; note that the text on this page above the horizontal line is 267 words.
+
+\medskip
+
+\newcommand{\alg}[1]{ \hfill \mbox{\emph{Alg.~#1}} }
+
+\noindent A $=$ essential matrix factorizations
+
+\renewcommand{\labelenumi}{\textbf{A\arabic{enumi}.}}
+\begin{enumerate}
+\setlength{\itemsep}{4pt}
+\item Householder QR factorization \alg{10.1}
+\item Gauss elimination with partial pivoting \alg{21.1}
+\end{enumerate}
+
+\noindent B $=$ least squares solvers
+
+\renewcommand{\labelenumi}{\textbf{B\arabic{enumi}.}}
+\begin{enumerate}
+\setlength{\itemsep}{4pt}
+\item solve least squares via normal equations \alg{11.1}
+\item solve least squares via QR factorization \alg{11.2}
+\item solve least squares via SVD \alg{11.3}
+\end{enumerate}
+
+\noindent C $=$ eigenvalue computations
+
+\renewcommand{\labelenumi}{\textbf{C\arabic{enumi}.}}
+\begin{enumerate}
+\setlength{\itemsep}{4pt}
+\item reduction of a Hermitian matrix to tridiagonal \alg{26.1}
+\end{enumerate}
+
+\end{document}
+
