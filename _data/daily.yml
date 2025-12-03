@@ -1,9 +1,14 @@
 semester: Fall 2025
 home: assets
 daily:
+- name: Friday 5 December
+  covered: computing eigenvalues
+  lecture: 27
+- name: Wednesday 3 December
+  covered: eigenvalue algorithms; Hessenberg matrices
+  lecture: 25 and 26
 - name: Monday 1 December
-  covered: eigenvalue algorithms
-  lecture: 25
+  covered: eigenvalue-revealing factorizations
 - name: Monday 24 November
   covered: Cholesky; eigenvalues
   lecture: 23 and 24
